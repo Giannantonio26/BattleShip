@@ -1,4 +1,4 @@
-# This post defines a code of conduct that I try to adhere to on a Scrum team.
+# This post defines a code of conduct that I try to adhere to on a Scrum team
 ## Team participation
 - Fixing my team's broken builds is my highest priority.
 - Participating in my team's code reviews is my second highest priority.
