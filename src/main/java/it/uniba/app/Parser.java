@@ -11,10 +11,13 @@ public final class Parser {
            case "/facile","/medio","/difficile" -> {
                Helper.conferma();
                comando = comando.replace("/", "");
-               p.setLivelloDifficolta(comando);
+               p.setLivelloDifficolta(comando);  
            }
-
-           
+           case "/mostralivello" -> {
+               Helper.conferma();
+               System.out.println("Livello di difficolta' : " + p.getLivelloDifficolta());
+               System.out.println("Tentativi : " + p.getMaxTentativi());
+           }       
            default -> System.out.println("Comando non valido, riprova");
        }
     }
