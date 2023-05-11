@@ -17,9 +17,9 @@ public final class Parser {
                Helper.conferma();
                System.out.println("Livello di difficolta' : " + p.getLivelloDifficolta());
                System.out.println("Tentativi : " + p.getMaxTentativi());
-           }       
+           }
+           case "/esci" -> ExitCommand.confermaUscita();
            default -> System.out.println("Comando non valido, riprova");
        }
     }
-
 }
