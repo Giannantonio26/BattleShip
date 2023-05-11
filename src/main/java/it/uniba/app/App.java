@@ -1,4 +1,5 @@
 package it.uniba.app;
+import java.util.Scanner;
 
 /**
  * Main class of the application.
@@ -20,6 +21,24 @@ public final class App {
      * @param args command line arguments
      */
     public static void main(final String[] args) {
-        System.out.println(new App().getGreeting());
+        if (args.length > 0) {
+            if (args[0].equals("--help") || args[0].equals("-h")) {
+                Helper.stampaHelp();
+            }
+            else {
+                Helper.stampaBenvenuto();
+            }
+        }
+        else {
+            Helper.stampaBenvenuto();
+        }
+        
+        Scanner s = new Scanner(System.in);
+        Parser p = new Parser();
+        Partita g = new Partita();
+        while (s.hasNext()) {
+            p.parse(s.next(), g);
+            System.out.println("Digita un nuovo comando: ");
+        }
     }
 }
