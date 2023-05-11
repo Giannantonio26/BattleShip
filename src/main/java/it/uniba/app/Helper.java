@@ -7,8 +7,7 @@ package it.uniba.app;
 
 public class Helper {
 
-    private Helper(){
-        
+    private Helper(){       
     }
     
     private static String comandoHelp = "Descrizione concisa del gioco e"
@@ -22,5 +21,8 @@ public class Helper {
     public static void stampaBenvenuto(){
         System.out.println(benvenuto);
     }
-  
+
+    public static void conferma(){
+        System.out.println("OK");
+    }
 }
