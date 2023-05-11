@@ -35,9 +35,9 @@ public final class App {
         
         Scanner s = new Scanner(System.in);
         Parser p = new Parser();
-        Partita g = new Partita();
+        Partita part = new Partita();
         while (s.hasNext()) {
-            p.parse(s.next(), g);
+            p.parse(s.next(), part);
             System.out.println("Digita un nuovo comando: ");
         }
     }

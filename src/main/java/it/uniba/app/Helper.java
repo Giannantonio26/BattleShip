@@ -23,4 +23,8 @@ public class Helper {
         System.out.println(benvenuto);
     }
   
+    public static void conferma(){
+        System.out.println("OK");
+    }
+    
 }
