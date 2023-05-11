@@ -3,43 +3,38 @@ package it.uniba.app;
 /**
  *  Classe partita
  */
-public class Partita {    
+public class Partita {
     private int maxTentativiFalliti;
-    private Livello livello_difficolta;
-    
-    public Partita(){
-        this.livello_difficolta = Livello.FACILE;
+    private Livello livelloDifficolta;
+    public Partita() {
+        this.livelloDifficolta = Livello.FACILE;
         this.maxTentativiFalliti = 50;
     }
-    
-    public Partita(Livello livello_diff, int max_tentativi){
-        this.livello_difficolta = livello_diff;
+    public Partita(Livello livelloDiff, int max_tentativi) {
+        this.livelloDifficolta = livelloDiff;
         this.maxTentativiFalliti = max_tentativi;
     }
-    
-    public void setLivelloDifficolta(Livello livelloDiff){
-        this.livello_difficolta = livelloDiff;
-        
-        if (this.livello_difficolta==Livello.FACILE) {
+    public final void setLivelloDifficolta(String livello) {
+        if (livello.equals("facile")) {
+            Livello livelloDiff = Livello.FACILE;
+            this.livelloDifficolta = livelloDiff;
             this.maxTentativiFalliti = 50;
         }
-        
-        if (this.livello_difficolta==Livello.MEDIO) {
+        if (livello.equals("medio")) {
+            Livello livelloDiff = Livello.MEDIO;
+            this.livelloDifficolta = livelloDiff;
             this.maxTentativiFalliti = 30;
         }
-        
-        if (this.livello_difficolta==Livello.DIFFICILE) {
+        if (livello.equals("difficile")) {
+            Livello livelloDiff = Livello.DIFFICILE;
+            this.livelloDifficolta = livelloDiff;
             this.maxTentativiFalliti = 10;
-        }
-        
+        }   
     }
-    
-    public Livello getLivelloDifficolta(){
-        return livello_difficolta;
+    public final Livello getLivelloDifficolta() {
+        return livelloDifficolta;
     }
-    
-    public int getMaxTentativi(){
+    public final int getMaxTentativi() {
         return maxTentativiFalliti;
     }
-    
 }
