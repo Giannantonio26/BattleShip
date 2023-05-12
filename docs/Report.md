@@ -20,7 +20,7 @@
  L'utente ha a disposizione diversi comandi, i quali possono essere visualizzati tramite il comando `/help`, essi permettono di:
  
 - Impostare la difficoltà di gioco ( facile, medio, difficile )
-- Mostrare il livello di gioco e il numero di tentativi falliti
+- Mostrare il livello di gioco e il numero massimo di tentativi disponibili
 - Mostrare le differenti navi e il numero di esemplari da affondare
 - Avviare una nuova partita
 - Svelare la griglia con le navi posizionate
