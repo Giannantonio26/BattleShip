@@ -8,10 +8,16 @@ import java.util.Scanner;
 /**
  *
  * @author santo
+ *
  */
 public final class ExitCommand {
     private ExitCommand() {
     }
+    /**
+    * Questa metodo statico si occupa di gestire l'interazione con l'utente
+    * nel momento in cui abbia inserito il comando /esci,
+    * prima di chiudere l'applicativo viene chiesta conferma!!
+    */
     public static void confermaUscita() {
         Scanner input = new Scanner(System.in, "UTF-8");
         System.out.println("\nSei davvero sicuro di voler uscire ?\n"
