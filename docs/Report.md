@@ -25,3 +25,8 @@
 - Avviare una nuova partita
 - Svelare la griglia con le navi posizionate
 - Uscire dal gioco previa conferma
+
+
+
+## 9. Analisi retrospettiva
+
