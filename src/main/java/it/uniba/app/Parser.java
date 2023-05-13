@@ -5,13 +5,18 @@ package it.uniba.app;
  */
 
 public final class Parser {
-    public void parse (String comando, Partita p){
-       switch (comando) {
+    /**
+     *
+     * @param comando reppresenta il comando inserito dall'utente.
+     * @param p istanza di Partita.
+     */
+    public void parse(String comando, Partita p) {
+           switch (comando) {
            case "/help" -> Helper.stampaHelp();
-           case "/facile","/medio","/difficile" -> {
+           case "/facile", "/medio", "/difficile" -> {
                Helper.conferma();
                comando = comando.replace("/", "");
-               p.setLivelloDifficolta(comando);  
+               p.setLivelloDifficolta(comando);
            }
            case "/mostralivello" -> {
                Helper.conferma();
