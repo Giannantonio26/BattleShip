@@ -63,20 +63,6 @@ public class Nave {
         this.coordinaate.put(posizione, StatoPosizione.INTEGRA);
     }
 
-    //grazie copilot per questa funzione <3
-    public void colpisci(Coord posizione) {
-        this.coordinaate.put(posizione, StatoPosizione.COLPITA);
-        this.affondata = this.coordinaate.values().stream().allMatch(stato -> stato == StatoPosizione.COLPITA);
-    }
-
-    public boolean isAffondata() {
-        return affondata;
-    }
-
-    public boolean isColpita(Coord posizione) {
-        return this.coordinaate.get(posizione) == StatoPosizione.COLPITA;
-    }
-
     @Override
     public String toString() {
         return "NAVE: " + nome +
