@@ -86,16 +86,16 @@ public class Nave {
         int i = 0;
         while(i < dimensione) {
             if(dimensione == 2){
-                quadrati += rosso + "?" + reset;
+                quadrati += rosso + "\u22A0" + reset;
             }
             else if(dimensione == 3){
-                quadrati += verde + "?" + reset;
+                quadrati += verde + "\u22A0" + reset;
             }
             else if(dimensione == 4){
-                quadrati += blu + "?" + reset;
+                quadrati += blu + "\u22A0" + reset;
             }
             else if(dimensione == 5){
-                quadrati += giallo + "?" + reset;
+                quadrati += giallo + "\u22A0" + reset;
             }
             i++;
         }

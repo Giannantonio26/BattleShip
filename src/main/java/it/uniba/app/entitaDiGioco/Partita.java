@@ -1,6 +1,6 @@
 package it.uniba.app.entitaDiGioco;
 
-import it.uniba.app.entitaDiGioco.TipoLivello;
+import java.util.List;
 
 /**
  *  Classe partita.

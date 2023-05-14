@@ -4,6 +4,7 @@
  */
 package it.uniba.app.comandi;
 import it.uniba.app.entitaDiGioco.Partita;
+import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 /**
  *
  * @author leonardo

@@ -4,19 +4,22 @@
  */
 package it.uniba.app.comandi;
 
-
+import it.uniba.app.entitaDiGioco.Partita;
+import it.uniba.app.entitaDiGioco.TipoLivello;
+import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 /**
  *
  * @author leonardo
  */
 public class ComandoLivello implements Comando{
     
-    private String nome;
+    private final String nome;
 
     public ComandoLivello(String nome){
         this.nome = nome;
     }
 
+    @Override
     public void esegui() {
         if (Partita.isIniziata()) {
             System.out.println(

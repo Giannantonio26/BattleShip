@@ -4,11 +4,14 @@
  */
 package it.uniba.app.comandi;
 
+import it.uniba.app.entitaDiGioco.LivelloDiGioco;
+import it.uniba.app.entitaDiGioco.Partita;
 /**
  *
  * @author leonardo
  */
 public class ComandoMostraLivello implements Comando{
+        @Override
         public void esegui(){
         LivelloDiGioco liv = new LivelloDiGioco(Partita.getLivello());
         System.out.println(liv.toString());

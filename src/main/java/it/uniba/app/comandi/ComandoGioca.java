@@ -4,6 +4,9 @@
  */
 package it.uniba.app.comandi;
 
+import it.uniba.app.entitaDiGioco.Partita;
+import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
+
 /**
  *
  * @author leonardo
@@ -14,6 +17,7 @@ public class ComandoGioca implements Comando{
      * se la partita è già iniziata, e l'uente digita il comando "/gioca"
      * chiede all'utente se vuole iniziare una nuova partita o continuare quella attuale.
      */
+    @Override
     public void esegui(){
         if(Partita.iniziata){
             System.out.println("Una partita è gia iniziata. Il comando /gioca non è disponibile");
