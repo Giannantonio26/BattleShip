@@ -25,3 +25,8 @@
 - Avviare una nuova partita
 - Svelare la griglia con le navi posizionate
 - Uscire dal gioco previa conferma
+
+## 9. Analisi retrospettiva
+##    Sprint 0
+![Analisi retrospettiva](./img/Analisi_retrospettiva.png "analisi retrospettiva")
+
