@@ -11,8 +11,14 @@ public final class Helper {
      */
     private Helper() {
     }
-    private static String comandoHelp = "Descrizione concisa del gioco e"
-            + " lista di comandi disponibili";
+    private static String comandoHelp = "Benvenuto al gioco della battaglia navale!\n"
+    + "Il tuo obiettivo è indovinare dove potrebbero essere le navi, "
+    + "fornire una serie di coordinate dove colpire e cercare di abbatterle tutte "
+    + "prima di esaurire i tuoi tentativi.\n"
+    + "Di seguito, ecco una lista dei comandi che puoi digitare. Consultare il "
+    + "manuale utente per ulteriori informazioni.\n"
+    + "/gioca\n/esci\n/facile\n/medio\n/difficile\n/mostralivello\n"
+    + "/mostranavi\n/svelagriglia\n";
     private static String benvenuto = "Benvenuto, per una lista dei comandi"
             + " disponibili, digita /help";
     /**
