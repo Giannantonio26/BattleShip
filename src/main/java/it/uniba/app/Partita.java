@@ -4,12 +4,12 @@ package it.uniba.app;
  */
 public class Partita {
     private int maxTentativiFalliti;
-    private Livello livelloDifficolta;
+    private TipoLivello livelloDifficolta;
     /**
     * Costruttore.
     */
     public Partita() {
-        this.livelloDifficolta = Livello.FACILE;
+        this.livelloDifficolta = TipoLivello.FACILE;
         this.maxTentativiFalliti = 50;
     }
     /**
@@ -17,7 +17,7 @@ public class Partita {
      * @param livelloDiff indica il lvl di difficoltà scelto
      * @param max_tentativi indica il numero max di tentativi a disposizione
      */
-    public Partita(Livello livelloDiff, int max_tentativi) {
+    public Partita(TipoLivello livelloDiff, int max_tentativi) {
         this.livelloDifficolta = livelloDiff;
         this.maxTentativiFalliti = max_tentativi;
     }
@@ -27,17 +27,17 @@ public class Partita {
      */
     public final void setLivelloDifficolta(String livello) {
         if (livello.equals("facile")) {
-            Livello livelloDiff = Livello.FACILE;
+            TipoLivello livelloDiff = TipoLivello.FACILE;
             this.livelloDifficolta = livelloDiff;
             this.maxTentativiFalliti = 50;
         }
         if (livello.equals("medio")) {
-            Livello livelloDiff = Livello.MEDIO;
+            TipoLivello livelloDiff = TipoLivello.MEDIO;
             this.livelloDifficolta = livelloDiff;
             this.maxTentativiFalliti = 30;
         }
         if (livello.equals("difficile")) {
-            Livello livelloDiff = Livello.DIFFICILE;
+            TipoLivello livelloDiff = TipoLivello.DIFFICILE;
             this.livelloDifficolta = livelloDiff;
             this.maxTentativiFalliti = 10;
         }
@@ -46,7 +46,7 @@ public class Partita {
      *
      * @return il livello di difficoltà
      */
-    public final Livello getLivelloDifficolta() {
+    public final TipoLivello getLivelloDifficolta() {
         return livelloDifficolta;
     }
     /**

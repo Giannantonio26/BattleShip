@@ -1,5 +1,7 @@
 package it.uniba.app;
 
+import it.uniba.app.comandi.ExitCommand;
+
 /**
  * Classe Parser per elaborare comandi ricevuti.
  */

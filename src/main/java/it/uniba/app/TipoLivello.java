@@ -8,7 +8,7 @@ package it.uniba.app;
  *
  * @author Giannantonio
  */
-public enum Livello {
+public enum TipoLivello {
       FACILE,
       MEDIO,
       DIFFICILE
