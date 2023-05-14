@@ -23,7 +23,7 @@ public class ComandoLivello implements Comando{
     public void esegui() {
         if (Partita.isIniziata()) {
             System.out.println(
-                    "Non puoi cambiare il livello di difficoltà durante una partita!");
+                    "Non puoi cambiare il livello durante una partita!");
             return;
         }
         else{
@@ -42,7 +42,7 @@ public class ComandoLivello implements Comando{
                     liv.setNumero_tentativi(10);
                     break;
             }
-            System.out.println("OK \n Livello di difficoltà attuale: "+ Partita.getLivello() +
+            System.out.println("OK \n Livello attuale: "+ Partita.getLivello() +
                     "\n Tentativi disponibili: " + liv.getNumeroTentativi());
         }
     }

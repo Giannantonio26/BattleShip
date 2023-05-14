@@ -34,7 +34,7 @@ public final class App {
         while (s.hasNext()) {
             Parser parser = new Parser(s.next());
             parser.elabora();
-            System.out.println("Digita un nuovo comando: ");
+            System.out.println("\nDigita un nuovo comando: ");
         }
     }
 }
