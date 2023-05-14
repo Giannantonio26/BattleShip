@@ -129,7 +129,7 @@ public class CampoDiBattaglia {
     }
 
     public static void svelaGriglia(Map<Coord, Nave> campo){
-        System.out.print("    A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\n");
+        System.out.print("    A B C D E F G H I J\n");
         for(int i = 1; i <= 10; i++){
             if(i == 10){
                 System.out.print(i + "  ");
@@ -149,7 +149,7 @@ public class CampoDiBattaglia {
         for(int i = 1; i <= 10; i++){
             Coord coord = new Coord(riga, i);
             if(campo_battaglia.get(coord) == null){
-                System.out.print("?\t");
+                System.out.print(". ");
             }
             else{
                 System.out.print(campo_battaglia.get(coord).stampaQuadratoColorato());
@@ -158,7 +158,7 @@ public class CampoDiBattaglia {
     }
 
     public void mostraGriliaVuota(){
-        System.out.print("    A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\n");
+        System.out.print("    A B C D E F G H I J\n");
         for(int i = 1; i < 11; i++){
             if(i == 10){
                 System.out.print(i + "  " + stampaRigaVuota() + "\n");
@@ -170,6 +170,6 @@ public class CampoDiBattaglia {
         }
     }
     public String stampaRigaVuota(){
-        return "?\t?\t?\t?\t?\t?\t?\t?\t?\t?";
+        return ". . . . . . . . . .";
     }
 }

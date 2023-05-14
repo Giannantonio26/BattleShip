@@ -11,6 +11,9 @@ import java.util.HashMap;
  *
  * @author leonardo
  */
+/*
+ * Classe Nave
+*/
 public class Nave {
     static final String rosso = "\u001B[31m";
     static final String verde = "\u001B[32m";
@@ -86,16 +89,16 @@ public class Nave {
         int i = 0;
         while(i < dimensione) {
             if(dimensione == 2){
-                quadrati += rosso + "\uDEBC" + reset;
+                quadrati += rosso + "# " + reset;
             }
             else if(dimensione == 3){
-                quadrati += verde + "\uDEBC" + reset;
+                quadrati += verde + "# " + reset;
             }
             else if(dimensione == 4){
-                quadrati += blu + "\uDEBC" + reset;
+                quadrati += blu + "# " + reset;
             }
             else if(dimensione == 5){
-                quadrati += giallo + "\uDEBC" + reset;
+                quadrati += giallo + "# " + reset;
             }
             i++;
         }
@@ -105,16 +108,16 @@ public class Nave {
     public String stampaQuadratoColorato(){
         String quadrato = "";
         if(dimensione == 2){
-            quadrato = rosso + "?\t" + reset;
+            quadrato = rosso + "# " + reset;
         }
         else if(dimensione == 3){
-            quadrato = verde + "?\t" + reset;
+            quadrato = verde + "# " + reset;
         }
         else if(dimensione == 4){
-            quadrato =  blu + "?\t" + reset;
+            quadrato =  blu + "# " + reset;
         }
         else if(dimensione == 5){
-            quadrato = giallo + "?\t" + reset;
+            quadrato = giallo + "# " + reset;
         }
         return quadrato;
     }
