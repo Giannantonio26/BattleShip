@@ -8,6 +8,19 @@ package it.uniba.app.comandi;
  *
  * @author leonardo
  */
-public class ComandoGioca {
-    
+public class ComandoGioca implements Comando{
+     /* il metodo esegui del comando ComandoGioca
+     *  crea una nuova partita e un nuovo campo di battaglia;
+     * se la partita è già iniziata, e l'uente digita il comando "/gioca"
+     * chiede all'utente se vuole iniziare una nuova partita o continuare quella attuale.
+     */
+    public void esegui(){
+        if(Partita.iniziata){
+            System.out.println("Una partita è gia iniziata. Il comando /gioca non è disponibile");
+        }
+        else {
+            CampoDiBattaglia campo = new CampoDiBattaglia(Partita.getLivello());
+            Partita.setCampo(campo);
+        }
+    }
 }

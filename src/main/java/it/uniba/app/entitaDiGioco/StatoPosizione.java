@@ -2,17 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package it.uniba.app.comandi;
-
-import it.uniba.app.Helper;
+package it.uniba.app.entitaDiGioco;
 
 /**
  *
  * @author leonardo
  */
-public class ComandoHelp implements Comando{
-    @Override
-    public void esegui(){
-        Helper.stampaHelp();
-    }
+public enum StatoPosizione {
+    COLPITA, 
+    INTEGRA
 }

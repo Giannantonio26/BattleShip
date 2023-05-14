@@ -31,10 +31,9 @@ public final class App {
             Helper.stampaBenvenuto();
         }
         Scanner s = new Scanner(System.in);
-        Parser p = new Parser();
-        Partita part = new Partita();
         while (s.hasNext()) {
-            p.parse(s.next(), part);
+            Parser parser = new Parser(s.next());
+            parser.elabora();
             System.out.println("Digita un nuovo comando: ");
         }
     }

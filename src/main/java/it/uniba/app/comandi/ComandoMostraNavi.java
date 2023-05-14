@@ -4,10 +4,13 @@
  */
 package it.uniba.app.comandi;
 
+import it.uniba.app.entitaDiGioco.Partita;
 /**
  *
  * @author leonardo
  */
-public class ComandoMostraNavi {
-    
+public class ComandoMostraNavi implements Comando{
+    public void esegui(){
+        Partita.mostraNavi();
+        }
 }

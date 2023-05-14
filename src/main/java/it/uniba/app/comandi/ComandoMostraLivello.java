@@ -8,6 +8,9 @@ package it.uniba.app.comandi;
  *
  * @author leonardo
  */
-public class ComandoMostraLivello {
-    
+public class ComandoMostraLivello implements Comando{
+        public void esegui(){
+        LivelloDiGioco liv = new LivelloDiGioco(Partita.getLivello());
+        System.out.println(liv.toString());
+    }
 }
