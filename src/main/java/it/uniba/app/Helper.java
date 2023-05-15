@@ -33,10 +33,4 @@ public final class Helper {
     public static void stampaBenvenuto() {
         System.out.println(benvenuto);
     }
-    /**
-     * Stampa a schermo la scritta 'OK'.
-     */
-    public static void conferma() {
-        System.out.println("OK");
-    }
 }
