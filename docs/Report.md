@@ -26,6 +26,11 @@
 - Svelare la griglia con le navi posizionate
 - Uscire dal gioco previa conferma
 
+---
+
+<br>
+<br>
+
 # 3. Requisiti specifici
 ## 3.1 Requisiti specifici
 Requisito funzionale 1 : *Visualizzazione Help*
@@ -109,7 +114,16 @@ Come giocatore voglio svelare la griglia con le navi posizionate, digitando il c
 
 L'applicazione risponde visualizzando, una griglia 10x10, con le righe numerate da 1 a 10 e le colonne numerate da A a J, e tutte le navi posizionate
 
+---
+
+<br>
+<br>
+
 ## 3.2 Requisiti non funzionali 
+---
+
+<br>
+
 Requisito non funzionale 1 :
 
 Il container docker dell’app deve essere eseguito da terminali che supportano Unicode con encoding UTF-8 o UTF-16.
@@ -129,6 +143,180 @@ Windows:
 Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il comando Docker da usare per eseguire il container contenente l’applicazione è:
 
 > docker run --rm -it ghcr.io/softeng2223-inf-uniba/battleship-dongarra2223:latest
+
+---
+
+<br>
+
+# 7. Manuale utente
+
+## All'avvio
+
+All'apertura, il gioco si interfaccia con l'utente chiedendogli di visualizzare la lista dei comandi inserendo il comando
+>`/help`
+
+<br>
+
+**Output comando `/help`**
+
+![Comando_/help](./img%20manuale%20utente/help.PNG)
+
+---
+
+<br>
+<br>
+
+## Impostare livello di difficoltà
+
+Il gioco permette all'utente di impostare la difficoltà attraverso tre comandi : 
+>`/facile`
+
+>`/medio`
+
+>`/difficile`
+
+<br>
+
+Più il livello di difficoltà aumenta, più diminuiscono i tentativi in cui l'utente può sbagliare, cioè quei tentativi in cui l'utente non colpisce nessuna nave. Raggiunto il limite massimo di tentativi errati, la partita terminerà con una conseguente sconfitta dell'utente :
+
+- A livello facile l'utente ha a disposizione 50 tentativi falliti al massimo
+- A livello medio l'utente ha a disposizione 30 tentativi falliti al massimo
+- A livello difficile l'utente ha a disposizione 10 tentativi falliti al massimo
+
+<br>
+
+**Output comando `/facile`**
+
+![comando_/facile](./img%20manuale%20utente/facile.PNG)
+
+<br>
+
+**Output comando `/medio`**
+
+![comando_/medio](./img%20manuale%20utente/medio.PNG)
+
+<br>
+
+**Output comando `/difficile`**
+
+![comando_/difficile](./img%20manuale%20utente/facile.PNG)
+
+<br>
+
+Di default, il livello di difficoltà iniziale è impostato a "facile".
+
+---
+
+<br>
+<br>
+
+## Visualizzare livello di difficoltà corrente
+All'utente è permessa la visualizzazione del livello di difficoltà corrente attraverso il comando 
+
+>`/mostralivello`
+
+<br>
+
+**Output comando `/mostralivello`**
+
+![comando_/mostralivello](./img%20manuale%20utente/mostralivello.PNG)
+
+---
+
+<br>
+<br>
+
+## Visualizzare tipo e numero di navi
+
+All'utente è concessa la possibilità di visualizzare i tipi di navi presenti nel gioco. Inoltre per ogni tipo di nave l'utente conosce quante di esse saranno posizionate nel campo di battaglia. Tutto questo viene visualizzato attraverso il comando 
+
+>`/mostranavi`
+
+<br>
+
+**Output comando `/mostranavi`**
+
+![comando_/mostranavi](./img%20manuale%20utente/mostranavi.PNG)
+
+---
+
+<br>
+<br>
+
+## Avviare una nuova partita
+
+Per avviare una nuova partita, l'utente deve lanciare il comando
+
+>`/gioca`
+
+<br>
+
+**Output comando `/gioca`**
+
+![comando_/gioca](./img%20manuale%20utente/gioca.PNG)
+
+<br>
+
+
+All'utente viene prima mostrato il campo di battaglia prima del suo popolamento attraverso le navi. Una volta lanciato il comando, il campo di battaglia viene popolato in modo casuale. Il numero di navi posizionate, per ogni tipo , rispetta quello citato alla voce **Visualizzazione tipo e numero di navi** di questa guida.
+Si ricordi che una volta avviata la partita non sarà più possibile modificare il livello di difficoltà impostato precedentemente. Nel caso si provasse a cambiare livello di difficoltà durante una partita avviata, si avrà il seguente messaggio a schermo : 
+
+![comando_/errore_livello_difficoltà](./img%20manuale%20utente/errore_livello_difficoltà.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Visualizzare campo di battaglia
+
+<br>
+
+All'utente è permesso poter visualizzare il campo di battaglia lanciando il comando
+
+>`/svelagriglia`
+
+<br>
+
+**Output comando `/svelagriglia`**
+
+![comando_/svelagriglia](./img%20manuale%20utente/svelagriglia.PNG)
+
+<br>
+
+Questo comando è utilizzabile solo se si è già avviata una partita. Per ulteriori informazioni su come avviare una nuova partita rimandiamo alla voce 
+**Avvio di una nuova partita** di questa guida. In caso si provi a lanciare questa comando prima dell'avvio di un nuova partita, il gioco risponderà in questo modo :
+
+![comando_/errore_svelagriglia](./img%20manuale%20utente/errore_svelagriglia.PNG)
+
+---
+
+<br>
+<br>
+
+## Uscire dal gioco
+
+All'utente è permesso uscire dal gioco in qualisiasi momento, anche mentre è in corso una partita.  Per ulteriori informazioni su come avviare una nuova partita rimandiamo alla voce **Avvio di una nuova partita** di questa guida.
+<br>
+
+Basta lanciando il comando
+
+>`/esci`
+
+<br>
+
+**Output comando `/esci`**
+
+![comando_/esci](./img%20manuale%20utente/esci.PNG)
+
+<br>
+
+Se la risposta dell'utente è si, si esce dal gioco come richiesto, altrimenti il gioco rimane aperto normalmente.
+
+---
+<br>
+<br>
 
 ## 9. Analisi retrospettiva
 ##    Sprint 0
