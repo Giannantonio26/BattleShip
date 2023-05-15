@@ -56,16 +56,16 @@ public final class LivelloDiGioco {
         return tipoLivello;
     }
 
-    public void setTipoLivello(final TipoLivello tipoLivello) {
-        this.tipoLivello = tipoLivello;
+    public void setTipoLivello(final TipoLivello livello) {
+        this.tipoLivello = livello;
     }
 
     public int getNumeroTentativi() {
         return numeroTentativi;
     }
 
-    public void setNumeroTentativi(int numeroTentativi) {
-        this.numeroTentativi = numeroTentativi;
+    public void setNumeroTentativi(final int numeroTentativiMax) {
+        this.numeroTentativi = numeroTentativiMax;
     }
 
     @Override

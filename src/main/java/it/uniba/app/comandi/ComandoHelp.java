@@ -12,7 +12,7 @@ import it.uniba.app.Helper;
  */
 public final class ComandoHelp implements Comando {
     /**
-     * Implementazione di esegui che stampa l'help
+     * Implementazione di esegui che stampa l'help.
      */
     @Override
     public void esegui() {

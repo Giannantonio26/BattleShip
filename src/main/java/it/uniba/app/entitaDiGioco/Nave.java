@@ -36,10 +36,10 @@ public class Nave {
 /**
  *
  *
- * @param dimensione dimensione nave
+ * @param dim dimensione nave
  */
-    public Nave(final int dimensione) {
-        this.dimensione = dimensione;
+    public Nave(final int dim) {
+        this.dimensione = dim;
         switch (dimensione) {
             case DIMENSIONE2:
                 this.nome = "Cacciatorpediniere";
@@ -89,7 +89,7 @@ public class Nave {
  *
  * @param posizione
  */
-    public void aggiungiPosizione(Coord posizione) {
+    public void aggiungiPosizione(final Coord posizione) {
         this.coordinaate.put(posizione, StatoPosizione.INTEGRA);
     }
 

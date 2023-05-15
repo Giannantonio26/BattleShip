@@ -20,10 +20,10 @@ public final class ComandoLivello implements Comando {
 
 /**
  *
- * @param nome
+ * @param comando comando passato dall'utente.
  */
-    public ComandoLivello(String nome) {
-        this.nome = nome;
+    public ComandoLivello(final String comando) {
+        this.nome = comando;
     }
 
 /**
@@ -31,7 +31,7 @@ public final class ComandoLivello implements Comando {
  * dell'interfaccia Comando.
  */
     @Override
-    public final void esegui() {
+    public void esegui() {
         if (Partita.isIniziata()) {
             System.out.println("\nNon puoi cambiare il "
                     + "livello durante una partita!");

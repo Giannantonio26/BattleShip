@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 public final class CampoDiBattaglia {
     private final Map<Coord, Nave> campoBattaglia = new HashMap<>();
-    protected static final List<Nave> navi = new ArrayList<>();
+    protected static final List<Nave> NAVI = new ArrayList<>();
     private final Random random = new Random();
     private LivelloDiGioco livelloPartita;
 
@@ -35,7 +35,7 @@ public final class CampoDiBattaglia {
      *
      * @param livello Livello di gioco.
      */
-    public CampoDiBattaglia(TipoLivello livello) {
+    public CampoDiBattaglia(final TipoLivello livello) {
         this.livelloPartita = new LivelloDiGioco(livello);
     }
 
@@ -81,16 +81,16 @@ public final class CampoDiBattaglia {
      * Metodo inizializzaNavi.
      */
     public void inizializzaNavi() {
-        navi.add(new Nave(DIMENSIONE2));
-        navi.add(new Nave(DIMENSIONE2));
-        navi.add(new Nave(DIMENSIONE2));
-        navi.add(new Nave(DIMENSIONE2));
-        navi.add(new Nave(DIMENSIONE3));
-        navi.add(new Nave(DIMENSIONE3));
-        navi.add(new Nave(DIMENSIONE3));
-        navi.add(new Nave(DIMENSIONE4));
-        navi.add(new Nave(DIMENSIONE4));
-        navi.add(new Nave(DIMENSIONE5));
+        NAVI.add(new Nave(DIMENSIONE2));
+        NAVI.add(new Nave(DIMENSIONE2));
+        NAVI.add(new Nave(DIMENSIONE2));
+        NAVI.add(new Nave(DIMENSIONE2));
+        NAVI.add(new Nave(DIMENSIONE3));
+        NAVI.add(new Nave(DIMENSIONE3));
+        NAVI.add(new Nave(DIMENSIONE3));
+        NAVI.add(new Nave(DIMENSIONE4));
+        NAVI.add(new Nave(DIMENSIONE4));
+        NAVI.add(new Nave(DIMENSIONE5));
     }
 
     /*
@@ -103,7 +103,7 @@ public final class CampoDiBattaglia {
      * metodo posizionaNavi.
      */
     public void posizionaNavi() {
-        for (Nave nave : navi) {
+        for (Nave nave : NAVI) {
             boolean posizionata = false;
             while (!posizionata) {
                 int riga = random.nextInt(MIN_COORD, MAX_COORD);
@@ -197,7 +197,7 @@ public final class CampoDiBattaglia {
      * @param riga coordinata riga
      * @param campoBattaglia campo di battaglia
      */
-    public static void svelaRiga(int riga, Map<Coord, Nave> campoBattaglia) {
+    public static void svelaRiga(final int riga, final Map<Coord, Nave> campoBattaglia) {
         for (int i = 1; i <= DIM_CAMPO; i++) {
             Coord coord = new Coord(riga, i);
             if (campoBattaglia.get(coord) == null) {
@@ -207,7 +207,6 @@ public final class CampoDiBattaglia {
             }
         }
     }
-    
     /**
      * Metodo per mostrare il campo di battaglia vuoto, senza navi.
      */

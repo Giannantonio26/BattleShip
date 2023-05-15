@@ -13,8 +13,8 @@ import it.uniba.app.entitaDiGioco.Partita;
  */
 public final class ComandoMostraLivello implements Comando {
     /**
-     * Implementazione di esegui che mostra il livello
-     */    
+     * Implementazione di esegui che mostra il livello.
+     */
     @Override
     public void esegui() {
         LivelloDiGioco liv = new LivelloDiGioco(Partita.getLivello());

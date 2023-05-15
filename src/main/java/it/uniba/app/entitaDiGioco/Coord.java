@@ -36,7 +36,7 @@ public final class Coord {
         return y;
     }
 
-    public void setY(int colonna) {
+    public void setY(final int colonna) {
         this.y = colonna;
     }
 
@@ -46,7 +46,7 @@ public final class Coord {
  * @return
  */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) {
             return true;
         }
