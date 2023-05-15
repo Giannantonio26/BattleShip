@@ -182,7 +182,7 @@ public class CampoDiBattaglia {
      * @param campo
      */
     public static void svelaGriglia(final Map<Coord, Nave> campo) {
-        System.out.print("    A B C D E F G H I J\n");
+        System.out.print("\n    A B C D E F G H I J\n");
         for (int i = 1; i <= DIM_CAMPO; i++) {
             if (i == DIM_CAMPO) {
                 System.out.print(i + "  ");
@@ -209,7 +209,7 @@ public class CampoDiBattaglia {
     }
 
     public void mostraGriliaVuota() {
-        System.out.print("    A B C D E F G H I J\n");
+        System.out.print("\n    A B C D E F G H I J\n");
         for (int i = 1; i < DIM_CAMPO + 1; i++) {
             if (i == DIM_CAMPO) {
                 System.out.print(i + "  " + stampaRigaVuota() + "\n");

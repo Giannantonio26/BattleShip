@@ -17,7 +17,7 @@ public final class ComandoSvelaGriglia implements Comando {
     @Override
     public void esegui() {
         if (!Partita.isIniziata()) {
-            System.out.println("Devi prima iniziare una partita");
+            System.out.println("\nDevi prima iniziare una partita");
         } else {
             CampoDiBattaglia.svelaGriglia(Partita.getCampo().getCampo_battaglia());
         }

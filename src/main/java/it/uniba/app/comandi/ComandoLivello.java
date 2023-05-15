@@ -38,7 +38,7 @@ public final class ComandoLivello implements Comando {
     @Override
     public final void esegui() {
         if (Partita.isIniziata()) {
-            System.out.println("Non puoi cambiare il "
+            System.out.println("\nNon puoi cambiare il "
                     + "livello durante una partita!");
         } else {
             LivelloDiGioco liv = new LivelloDiGioco();

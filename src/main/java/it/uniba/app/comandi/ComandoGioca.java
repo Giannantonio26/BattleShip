@@ -25,7 +25,7 @@ public final class ComandoGioca implements Comando {
     @Override
     public void esegui() {
         if (Partita.isIniziata()) {
-            System.out.println("Una partita e' gia' iniziata. "
+            System.out.println("\nUna partita e' gia' iniziata. "
                     + "Il comando /gioca non e' disponibile");
         } else {
             CampoDiBattaglia campo = 
