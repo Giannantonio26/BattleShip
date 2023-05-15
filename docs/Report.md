@@ -26,10 +26,6 @@
 - Svelare la griglia con le navi posizionate
 - Uscire dal gioco previa conferma
 
-## 9. Analisi retrospettiva
-##    Sprint 0
-![Analisi retrospettiva](./img/Analisi_retrospettiva.png "analisi retrospettiva")
-
 # 3. Requisiti specifici
 ## 3.1 Requisiti specifici
 Requisito funzionale 1 : *Visualizzazione Help*
@@ -133,4 +129,10 @@ Windows:
 Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il comando Docker da usare per eseguire il container contenente l’applicazione è:
 
 > docker run --rm -it ghcr.io/softeng2223-inf-uniba/battleship-dongarra2223:latest
+
+## 9. Analisi retrospettiva
+##    Sprint 0
+![Analisi retrospettiva](./img/Analisi_retrospettiva.png "analisi retrospettiva")
+
+
 
