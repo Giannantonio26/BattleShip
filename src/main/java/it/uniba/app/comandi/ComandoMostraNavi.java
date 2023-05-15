@@ -5,12 +5,9 @@
 package it.uniba.app.comandi;
 
 import it.uniba.app.entitaDiGioco.Partita;
-/**
- *
- * @author leonardo
- */
 
 /**
+ * @author leonardo
  * Classe ComandoMostraNavi.
  */
 public final class ComandoMostraNavi implements Comando {

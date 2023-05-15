@@ -7,18 +7,13 @@ package it.uniba.app.comandi;
 import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.entitaDiGioco.TipoLivello;
 import it.uniba.app.entitaDiGioco.LivelloDiGioco;
-/**
- *
- * @author leonardo
- */
 
 /**
- * Classe ComandoLivello
+ * @author leonardo
+ * Classe ComandoLivello.
  */
 public final class ComandoLivello implements Comando {
-    
     private final String nome;
-    
     static final int TENTATIVI_FACILE = 50;
     static final int TENTATIVI_MEDIO = 30;
     static final int TENTATIVI_DIFFICILE = 10;

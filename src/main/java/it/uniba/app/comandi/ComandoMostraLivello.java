@@ -6,17 +6,17 @@ package it.uniba.app.comandi;
 
 import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 import it.uniba.app.entitaDiGioco.Partita;
-/**
- *
- * @author leonardo
- */
 
 /**
+ * @author leonardo
  * Classe ComandoMostraLivello.
  */
-public class ComandoMostraLivello implements Comando{
-        @Override
-        public void esegui(){
+public final class ComandoMostraLivello implements Comando {
+    /**
+     * Implementazione di esegui che mostra il livello
+     */    
+    @Override
+    public void esegui() {
         LivelloDiGioco liv = new LivelloDiGioco(Partita.getLivello());
         System.out.println(liv.toString());
     }

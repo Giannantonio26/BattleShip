@@ -16,6 +16,9 @@ public final class Partita {
     );
     private static boolean iniziata = false;
 
+    private Partita() {
+    }
+
 /**
  * Inizializza lista di navi.
  */

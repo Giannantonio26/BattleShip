@@ -4,18 +4,14 @@
  */
 package it.uniba.app.comandi;
 
-/**
- *
- * @author leonardo
- */
-
  /**
-  * Interfaccia Comando 
+  * @author leonardo
+  * Interfaccia Comando.
   */
-public interface Comando {
 
+public interface Comando {
     /**
      * metodo esegui() da implementare.
      */
-    public void esegui();
+    void esegui();
 }

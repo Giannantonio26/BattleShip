@@ -8,12 +8,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
- *
  * @author leonardo
- */
-
-/**
- *
  * Classe Nave.
  */
 public class Nave {
@@ -35,32 +30,32 @@ public class Nave {
 
     private String nome;
     private final int dimensione;
-    private int esemplari_in_gioco;
+    private int esemplariInGioco;
     private final Map<Coord, StatoPosizione> coordinaate = new HashMap<>();
 
 /**
  *
  *
- * @param dimensione
+ * @param dimensione dimensione nave
  */
     public Nave(final int dimensione) {
         this.dimensione = dimensione;
         switch (dimensione) {
             case DIMENSIONE2:
                 this.nome = "Cacciatorpediniere";
-                this.esemplari_in_gioco = ESEMPLARE_4;
+                this.esemplariInGioco = ESEMPLARE_4;
                 break;
             case DIMENSIONE3:
                 this.nome = "Incrociatore";
-                this.esemplari_in_gioco = ESEMPLARE_3;
+                this.esemplariInGioco = ESEMPLARE_3;
                 break;
             case DIMENSIONE4:
                 this.nome = "Corazzata";
-                this.esemplari_in_gioco = ESEMPLARE_2;
+                this.esemplariInGioco = ESEMPLARE_2;
                 break;
             case DIMENSIONE5:
                 this.nome = "Portaerei";
-                this.esemplari_in_gioco = ESEMPLARE_1;
+                this.esemplariInGioco = ESEMPLARE_1;
                 break;
             default:
                 break;
@@ -92,7 +87,7 @@ public class Nave {
 
 /**
  *
- * @param posizione.
+ * @param posizione
  */
     public void aggiungiPosizione(Coord posizione) {
         this.coordinaate.put(posizione, StatoPosizione.INTEGRA);
@@ -108,7 +103,7 @@ public class Nave {
                 + "; DIMENSIONE: "
                 + stampaNaveInQuadrati()
                 + "; ESEMPLARI IN GIOCO: "
-                + esemplari_in_gioco + "]\n";
+                + esemplariInGioco + "]\n";
     }
 
 /**
@@ -141,7 +136,7 @@ public class Nave {
     }
 
 /**
- * 
+ *
  * @return Simbolo nave colorato.
  */
     public String stampaQuadratoColorato() {

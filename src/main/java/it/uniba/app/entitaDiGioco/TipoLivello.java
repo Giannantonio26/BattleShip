@@ -5,12 +5,8 @@
 package it.uniba.app.entitaDiGioco;
 
 /**
- *
- * @author Giannantonio
- */
-
-/**
-  * Enum ComandoGioca
+  * @author Giannantonio
+  * Tipo enumerativo per comandoGioca.
  */
 public enum TipoLivello {
       FACILE,

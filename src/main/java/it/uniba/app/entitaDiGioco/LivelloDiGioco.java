@@ -5,17 +5,12 @@
 package it.uniba.app.entitaDiGioco;
 
 /**
- *
  * @author leonardo
- */
-
-/**
  * Classe LivelloDiGioco.
  */
 public final class LivelloDiGioco {
     private TipoLivello tipoLivello;
     private int numeroTentativi;
-    
     static final int TENTATIVI_FACILE = 50;
     static final int TENTATIVI_MEDIO = 30;
     static final int TENTATIVI_DIFFICILE = 10;
@@ -47,6 +42,8 @@ public final class LivelloDiGioco {
                 break;
             case DIFFICILE:
                 this.numeroTentativi = TENTATIVI_DIFFICILE;
+                break;
+            default:
                 break;
         }
     }

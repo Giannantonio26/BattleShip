@@ -13,15 +13,22 @@ import it.uniba.app.comandi.ComandoSvelaGriglia;
  * Classe Parser per elaborare comandi ricevuti.
  */
 public final class Parser {
-     private final String comando;
-
+    private final String comando;
+    /**
+     * Costruttore del parser con comando digitato dall'utente.
+     * @param comandoUtente comando digitato dall'utente.
+     */
     public Parser(final String comandoUtente) {
         this.comando = comandoUtente;
     }
 
-    public void elabora(){
+    /**
+     * Metodo per l'elaborazione del comando digitato.
+     */
+    public void elabora() {
         switch (comando) {
-            // in base al comando inserito dall'utente viene creato un tipo diverso di comando con una sua implementazione
+            /*in base al comando inserito dall'utente viene creato
+             un tipo diverso di comando con una sua implementazione */
             case "/help":
                 Comando help = new ComandoHelp();
                 help.esegui();

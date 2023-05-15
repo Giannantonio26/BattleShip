@@ -8,24 +8,20 @@ import java.util.List;
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
-/**
- *
- * @author leonardo
- */
 
 /**
+ * @author leonardo
  * Classe CampoDiBattaglia.
  */
-public class CampoDiBattaglia {
-    private final Map<Coord, Nave> campo_battaglia = new HashMap<>();
-    protected static final List<Nave> navi = new ArrayList<>();  
+public final class CampoDiBattaglia {
+    private final Map<Coord, Nave> campoBattaglia = new HashMap<>();
+    protected static final List<Nave> navi = new ArrayList<>();
     private final Random random = new Random();
     private LivelloDiGioco livelloPartita;
 
     static final int DIM_CAMPO = 10;
     static final int MIN_COORD = 1;
     static final int MAX_COORD = 10;
-    
     static final int DIMENSIONE2 = 2;
     static final int DIMENSIONE3 = 3;
     static final int DIMENSIONE4 = 4;
@@ -51,15 +47,15 @@ public class CampoDiBattaglia {
         inizializzaCampo();
         inizializzaNavi();
         posizionaNavi();
-        mostraGriliaVuota();
+        mostraGrigliaVuota();
     }
 
     /**
      *
      * @return campo di battaglia.
      */
-    public Map<Coord, Nave> getCampo_battaglia() {
-        return campo_battaglia;
+    public Map<Coord, Nave> getCampoBattaglia() {
+        return campoBattaglia;
     }
 
     /*
@@ -72,7 +68,7 @@ public class CampoDiBattaglia {
     public void inizializzaCampo() {
         for (int i = 1; i < DIM_CAMPO + 1; i++) {
             for (int j = 1; j < DIM_CAMPO + 1; j++) {
-                campo_battaglia.put(new Coord(i, j), null);
+                campoBattaglia.put(new Coord(i, j), null);
             }
         }
     }
@@ -118,13 +114,12 @@ public class CampoDiBattaglia {
                     posizionata = true;
                     for (int i = 0; i < nave.getDimensione(); i++) {
                         if (orizzontale) {
-                            campo_battaglia.put(new Coord(riga, colonna + i), nave);
+                            campoBattaglia.put(new Coord(riga, colonna + i), nave);
                             nave.aggiungiPosizione(new Coord(riga, colonna + i));
-                            }
-                        else {
-                            campo_battaglia.put(new Coord(riga + i, colonna), nave);
+                        }   else {
+                            campoBattaglia.put(new Coord(riga + i, colonna), nave);
                             nave.aggiungiPosizione(new Coord(riga + i, colonna));
-                            } 
+                            }
                     }
                 }
             }
@@ -132,7 +127,7 @@ public class CampoDiBattaglia {
     }
 
     /*
-     * il metodo posizionaNave() controlla se la nave può essere posizionata.
+     * il metodo posizionaNave() controlla se la nave puÃ² essere posizionata.
      */
 
     /**
@@ -151,10 +146,10 @@ public class CampoDiBattaglia {
             }
 
             // questo ciclo for controlla se le posizioni
-            // che dovrà occupare la nave sono libere.
+            // che dovrÃ  occupare la nave sono libere.
             for (int i = colonna; i < colonna + nave.getDimensione(); i++) {
                 Coord coord = new Coord(riga, i);
-                if (campo_battaglia.get(coord) != null) {
+                if (campoBattaglia.get(coord) != null) {
                     return false;
                 }
             }
@@ -166,10 +161,10 @@ public class CampoDiBattaglia {
             }
 
             // questo ciclo for controlla se le posizioni
-            // che dovrà occupare la nave sono libere
+            // che dovrÃ  occupare la nave sono libere
             for (int i = riga; i < riga + nave.getDimensione(); i++) {
                 Coord coord = new Coord(i, colonna);
-                if (campo_battaglia.get(coord) != null) {
+                if (campoBattaglia.get(coord) != null) {
                     return false;
                 }
             }
@@ -178,8 +173,8 @@ public class CampoDiBattaglia {
     }
 
     /**
-     * 
-     * @param campo
+     *
+     * @param campo campo di battaglia
      */
     public static void svelaGriglia(final Map<Coord, Nave> campo) {
         System.out.print("\n    A B C D E F G H I J\n");
@@ -197,18 +192,26 @@ public class CampoDiBattaglia {
         }
     }
 
-    public static void svelaRiga(int riga, Map<Coord, Nave> campo_battaglia) {
+    /**
+     *
+     * @param riga coordinata riga
+     * @param campoBattaglia campo di battaglia
+     */
+    public static void svelaRiga(int riga, Map<Coord, Nave> campoBattaglia) {
         for (int i = 1; i <= DIM_CAMPO; i++) {
             Coord coord = new Coord(riga, i);
-            if (campo_battaglia.get(coord) == null) {
+            if (campoBattaglia.get(coord) == null) {
                 System.out.print(". ");
             } else {
-                System.out.print(campo_battaglia.get(coord).stampaQuadratoColorato());
+                System.out.print(campoBattaglia.get(coord).stampaQuadratoColorato());
             }
         }
     }
-
-    public void mostraGriliaVuota() {
+    
+    /**
+     * Metodo per mostrare il campo di battaglia vuoto, senza navi.
+     */
+    public void mostraGrigliaVuota() {
         System.out.print("\n    A B C D E F G H I J\n");
         for (int i = 1; i < DIM_CAMPO + 1; i++) {
             if (i == DIM_CAMPO) {
@@ -219,6 +222,11 @@ public class CampoDiBattaglia {
             }
         }
     }
+
+    /**
+     *
+     * @return Restituisce una riga di puntini da usare in mostraGrigliaVuota.
+     */
     public String stampaRigaVuota() {
         return ". . . . . . . . . .";
     }

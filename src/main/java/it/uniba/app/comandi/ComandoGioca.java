@@ -8,17 +8,13 @@ import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 
 /**
- *
  * @author leonardo
- */
-
-/**
  * Classe ComandoGioca.
  */
 public final class ComandoGioca implements Comando {
      /* il metodo esegui del comando ComandoGioca
      *  crea una nuova partita e un nuovo campo di battaglia;
-     *  se la partita Ë gi‡ iniziata, e l'uente digita il comando "/gioca"
+     *  se la partita √® gi√† iniziata, e l'uente digita il comando "/gioca"
      *  viene stampato un messaggio di errore (scelta di comportamento
      *  provvisoria).
      */
@@ -28,8 +24,7 @@ public final class ComandoGioca implements Comando {
             System.out.println("\nUna partita e' gia' iniziata. "
                     + "Il comando /gioca non e' disponibile");
         } else {
-            CampoDiBattaglia campo = 
-                    new CampoDiBattaglia(Partita.getLivello());
+            CampoDiBattaglia campo = new CampoDiBattaglia(Partita.getLivello());
             Partita.setCampo(campo);
             campo.nuovaPartita();
         }

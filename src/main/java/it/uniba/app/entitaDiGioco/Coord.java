@@ -5,16 +5,13 @@
 package it.uniba.app.entitaDiGioco;
 
 import java.util.Objects;
-/**
- *
- * @author leonardo
- */
 
 /**
-  * Classe Coord.
+ * @author leonardo
+ * Classe Coord.
  */
 public final class Coord {
-     private int x;
+    private int x;
     private int y;
 
 /**
