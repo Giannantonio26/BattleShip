@@ -7,13 +7,8 @@ import java.util.Scanner;
 import it.uniba.app.entitaDiGioco.Partita;
 
 /**
- *
- * @author santo
- *
- */
-
-/**
- * Classe ExitCommand
+ * @author leonardo
+ * Classe ExitCommand.
  */
 public class ExitCommand implements Comando {
 /**

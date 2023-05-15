@@ -9,17 +9,20 @@ public final class Partita {
     private static CampoDiBattaglia campo;
     private static TipoLivello livello = TipoLivello.FACILE;
 
-    public static final List<LivelloDiGioco> livelli = List.of(
+    public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
         new LivelloDiGioco(TipoLivello.MEDIO),
         new LivelloDiGioco(TipoLivello.DIFFICILE)
     );
     private static boolean iniziata = false;
 
+    private Partita() {
+    }
+
 /**
  * Inizializza lista di navi.
  */
-    public static final List<Nave> naviInGioco = List.of(
+    public static final List<Nave> NAVIINGIOCO = List.of(
         new Nave(2),
         new Nave(3),
         new Nave(4),
@@ -52,10 +55,10 @@ public final class Partita {
 
 /**
  *
- * @param livello
+ * @param liv
  */
-    public static void setLivello(final TipoLivello livello) {
-        Partita.livello = livello;
+    public static void setLivello(final TipoLivello liv) {
+        Partita.livello = liv;
     }
 
 /**
@@ -79,7 +82,7 @@ public final class Partita {
  */
     public static void mostraNavi() {
         System.out.println("Navi in gioco: \n");
-        for (Nave nave : naviInGioco) {
+        for (Nave nave : NAVIINGIOCO) {
             System.out.println(nave.toString());
         }
     }

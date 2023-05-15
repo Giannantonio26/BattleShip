@@ -7,14 +7,13 @@ package it.uniba.app.comandi;
 import it.uniba.app.Helper;
 
 /**
- *
  * @author leonardo
- */
-
-/**
  * Classe ComandoHelp.
  */
 public final class ComandoHelp implements Comando {
+    /**
+     * Implementazione di esegui che stampa l'help.
+     */
     @Override
     public void esegui() {
         Helper.stampaHelp();
