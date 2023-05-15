@@ -13,41 +13,55 @@ import it.uniba.app.entitaDiGioco.LivelloDiGioco;
  */
 
 /**
-  * Classe ComandoLivello
+ * Classe ComandoLivello
  */
-public class ComandoLivello implements Comando{
+public final class ComandoLivello implements Comando {
     
     private final String nome;
+    
+    static final int TENTATIVI_FACILE = 50;
+    static final int TENTATIVI_MEDIO = 30;
+    static final int TENTATIVI_DIFFICILE = 10;
 
-    public ComandoLivello(String nome){
+/**
+ *
+ * @param nome
+ */
+    public ComandoLivello(String nome) {
         this.nome = nome;
     }
 
+/**
+ * Implementazione del metodo esegui
+ * dell'interfaccia Comando.
+ */
     @Override
-    public void esegui() {
+    public final void esegui() {
         if (Partita.isIniziata()) {
-            System.out.println(
-                    "Non puoi cambiare il livello durante una partita!");
-            return;
-        }
-        else{
+            System.out.println("Non puoi cambiare il "
+                    + "livello durante una partita!");
+        } else {
             LivelloDiGioco liv = new LivelloDiGioco();
             switch (nome) {
                 case "/facile":
                     Partita.setLivello(TipoLivello.FACILE);
-                    liv.setNumero_tentativi(50);
+                    liv.setNumeroTentativi(TENTATIVI_FACILE);
                     break;
                 case "/medio":
                     Partita.setLivello(TipoLivello.MEDIO);
-                    liv.setNumero_tentativi(30);
+                    liv.setNumeroTentativi(TENTATIVI_MEDIO);
                     break;
                 case "/difficile":
                     Partita.setLivello(TipoLivello.DIFFICILE);
-                    liv.setNumero_tentativi(10);
+                    liv.setNumeroTentativi(TENTATIVI_DIFFICILE);
                     break;
+                default:
+                    System.out.println("Livello non riconosciuto");
             }
-            System.out.println("OK \n Livello attuale: "+ Partita.getLivello() +
-                    "\n Tentativi disponibili: " + liv.getNumeroTentativi());
+            System.out.println("OK \n Livello attuale: "
+                    + Partita.getLivello()
+                    + "\n Tentativi disponibili: "
+                    + liv.getNumeroTentativi());
         }
     }
 }

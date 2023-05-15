@@ -13,5 +13,9 @@ package it.uniba.app.comandi;
   * Interfaccia Comando 
   */
 public interface Comando {
-     public void esegui();
+
+    /**
+     * metodo esegui() da implementare.
+     */
+    public void esegui();
 }

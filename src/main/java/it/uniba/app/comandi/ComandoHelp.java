@@ -12,11 +12,11 @@ import it.uniba.app.Helper;
  */
 
 /**
-  * Classe ComandoHelp
+ * Classe ComandoHelp.
  */
-public class ComandoHelp implements Comando{
+public final class ComandoHelp implements Comando {
     @Override
-    public void esegui(){
+    public void esegui() {
         Helper.stampaHelp();
     }
 }

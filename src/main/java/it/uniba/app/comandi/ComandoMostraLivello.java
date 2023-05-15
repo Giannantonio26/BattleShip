@@ -12,7 +12,7 @@ import it.uniba.app.entitaDiGioco.Partita;
  */
 
 /**
-  * Classe ComandoMostraLivello
+ * Classe ComandoMostraLivello.
  */
 public class ComandoMostraLivello implements Comando{
         @Override

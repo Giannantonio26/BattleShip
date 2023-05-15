@@ -10,7 +10,7 @@ package it.uniba.app.entitaDiGioco;
  */
 
 /**
-  * Enum StatoPosizione
+ * Enum StatoPosizione.
  */
 public enum StatoPosizione {
     COLPITA, 

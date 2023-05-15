@@ -13,23 +13,23 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
  */
 
 /**
-  * Classe ComandoGioca
+ * Classe ComandoGioca.
  */
-
-public class ComandoGioca implements Comando{
+public final class ComandoGioca implements Comando {
      /* il metodo esegui del comando ComandoGioca
      *  crea una nuova partita e un nuovo campo di battaglia;
-     * se la partita è già iniziata, e l'uente digita il comando "/gioca"
-     * viene stampato un messaggio di errore (scelta di comportamento
-       provvisoria).
+     *  se la partita è già iniziata, e l'uente digita il comando "/gioca"
+     *  viene stampato un messaggio di errore (scelta di comportamento
+     *  provvisoria).
      */
     @Override
-    public void esegui(){
-        if(Partita.iniziata){
-            System.out.println("Una partita e' gia' iniziata. Il comando /gioca non e' disponibile");
-        }
-        else {
-            CampoDiBattaglia campo = new CampoDiBattaglia(Partita.getLivello());
+    public void esegui() {
+        if (Partita.isIniziata()) {
+            System.out.println("Una partita e' gia' iniziata. "
+                    + "Il comando /gioca non e' disponibile");
+        } else {
+            CampoDiBattaglia campo = 
+                    new CampoDiBattaglia(Partita.getLivello());
             Partita.setCampo(campo);
             campo.nuovaPartita();
         }

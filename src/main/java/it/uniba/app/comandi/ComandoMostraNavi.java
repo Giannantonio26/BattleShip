@@ -11,10 +11,17 @@ import it.uniba.app.entitaDiGioco.Partita;
  */
 
 /**
-  * Classe ComandoMostraNavi
+ * Classe ComandoMostraNavi.
  */
-public class ComandoMostraNavi implements Comando{
-    public void esegui(){
+public final class ComandoMostraNavi implements Comando {
+
+/**
+ * Implementazione di esegui() che
+ * stampa le navi del gioco chiamando
+ * il metodo statico della classe Partita.
+ */
+    @Override
+    public void esegui() {
         Partita.mostraNavi();
         }
 }

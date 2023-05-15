@@ -10,53 +10,72 @@ package it.uniba.app.entitaDiGioco;
  */
 
 /**
-  * Classe LivelloDiGioco
+ * Classe LivelloDiGioco.
  */
-public class LivelloDiGioco {
-     private TipoLivello tipoLivello;
-    private int numero_tentativi;
+public final class LivelloDiGioco {
+    private TipoLivello tipoLivello;
+    private int numeroTentativi;
+    
+    static final int TENTATIVI_FACILE = 50;
+    static final int TENTATIVI_MEDIO = 30;
+    static final int TENTATIVI_DIFFICILE = 10;
 
+/**
+ * Costruttore vuoto.
+ */
     public LivelloDiGioco() {
 
     }
 
-    /*
-        * Costruttore che inizializza il livello di gioco settando
-        * il numero dei tentativi in base al tipo di livello
-     */
-    public LivelloDiGioco(TipoLivello tipoLivello) {
-        this.tipoLivello = tipoLivello;
-        switch (tipoLivello) {
+/*
+ * Costruttore che inizializza il livello di gioco settando
+ * il numero dei tentativi in base al tipo di livello
+ */
+
+/**
+ *
+ * @param livello
+ */
+    public LivelloDiGioco(final TipoLivello livello) {
+        this.tipoLivello = livello;
+        switch (livello) {
             case FACILE:
-                this.numero_tentativi = 50;
+                this.numeroTentativi = TENTATIVI_FACILE;
                 break;
             case MEDIO:
-                this.numero_tentativi = 30;
+                this.numeroTentativi = TENTATIVI_MEDIO;
                 break;
             case DIFFICILE:
-                this.numero_tentativi = 10;
+                this.numeroTentativi = TENTATIVI_DIFFICILE;
                 break;
         }
     }
 
+/**
+ *
+ * @return
+ */
     public TipoLivello getTipoLivello() {
         return tipoLivello;
     }
 
-    public void setTipoLivello(TipoLivello tipoLivello) {
+    public void setTipoLivello(final TipoLivello tipoLivello) {
         this.tipoLivello = tipoLivello;
     }
 
     public int getNumeroTentativi() {
-        return numero_tentativi;
+        return numeroTentativi;
     }
 
-    public void setNumero_tentativi(int numero_tentativi) {
-        this.numero_tentativi = numero_tentativi;
+    public void setNumeroTentativi(int numeroTentativi) {
+        this.numeroTentativi = numeroTentativi;
     }
 
     @Override
     public String toString() {
-        return "Livello: " + tipoLivello + "\nNumero tentativi: " + numero_tentativi;
+        return "Livello: "
+                + tipoLivello
+                + "\nNumero tentativi: "
+                + numeroTentativi;
     }
 }

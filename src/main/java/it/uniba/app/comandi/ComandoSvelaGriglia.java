@@ -11,15 +11,14 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
  */
 
 /**
-  * Classe ComandoSvelaGriglia
+ * Classe ComandoSvelaGriglia
  */
-public class ComandoSvelaGriglia implements Comando{
+public final class ComandoSvelaGriglia implements Comando {
     @Override
-    public void esegui(){
-        if(!Partita.isIniziata()){
+    public void esegui() {
+        if (!Partita.isIniziata()) {
             System.out.println("Devi prima iniziare una partita");
-        }
-        else{
+        } else {
             CampoDiBattaglia.svelaGriglia(Partita.getCampo().getCampo_battaglia());
         }
     }

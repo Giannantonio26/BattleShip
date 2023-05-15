@@ -1,16 +1,22 @@
 package it.uniba.app;
 
-import it.uniba.app.comandi.*;
+import it.uniba.app.comandi.Comando;
+import it.uniba.app.comandi.ExitCommand;
+import it.uniba.app.comandi.ComandoGioca;
+import it.uniba.app.comandi.ComandoHelp;
+import it.uniba.app.comandi.ComandoLivello;
+import it.uniba.app.comandi.ComandoMostraLivello;
+import it.uniba.app.comandi.ComandoMostraNavi;
+import it.uniba.app.comandi.ComandoSvelaGriglia;
 
 /**
  * Classe Parser per elaborare comandi ricevuti.
  */
-
 public final class Parser {
-     private String comando;
+     private final String comando;
 
-    public Parser (String comando) {
-        this.comando = comando;
+    public Parser(final String comandoUtente) {
+        this.comando = comandoUtente;
     }
 
     public void elabora(){

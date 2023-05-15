@@ -13,31 +13,41 @@ import java.util.Objects;
 /**
   * Classe Coord.
  */
-public class Coord {
+public final class Coord {
      private int x;
     private int y;
 
-    public Coord(int x, int y) {
-        this.x = x;
-        this.y = y;
+/**
+ *
+ * @param riga
+ * @param colonna
+ */
+    public Coord(final int riga, final int colonna) {
+        this.x = riga;
+        this.y = colonna;
     }
 
     public int getX() {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setX(final int riga) {
+        this.x = riga;
     }
 
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setY(int colonna) {
+        this.y = colonna;
     }
 
+/**
+ *
+ * @param o
+ * @return
+ */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
