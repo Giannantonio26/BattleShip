@@ -11,11 +11,17 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
  *
  * @author leonardo
  */
+
+/**
+  * Classe ComandoGioca
+ */
+
 public class ComandoGioca implements Comando{
      /* il metodo esegui del comando ComandoGioca
      *  crea una nuova partita e un nuovo campo di battaglia;
      * se la partita è già iniziata, e l'uente digita il comando "/gioca"
-     * chiede all'utente se vuole iniziare una nuova partita o continuare quella attuale.
+     * viene stampato un messaggio di errore (scelta di comportamento
+       provvisoria).
      */
     @Override
     public void esegui(){
@@ -25,6 +31,7 @@ public class ComandoGioca implements Comando{
         else {
             CampoDiBattaglia campo = new CampoDiBattaglia(Partita.getLivello());
             Partita.setCampo(campo);
+            campo.nuovaPartita();
         }
     }
 }

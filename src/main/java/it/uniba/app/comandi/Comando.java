@@ -8,6 +8,10 @@ package it.uniba.app.comandi;
  *
  * @author leonardo
  */
+
+ /**
+  * Interfaccia Comando 
+  */
 public interface Comando {
      public void esegui();
 }

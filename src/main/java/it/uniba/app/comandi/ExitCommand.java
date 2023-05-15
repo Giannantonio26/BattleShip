@@ -11,9 +11,13 @@ import it.uniba.app.entitaDiGioco.Partita;
  * @author santo
  *
  */
+
+/**
+  * Classe ExitCommand
+ */
 public class ExitCommand implements Comando{
     /**
-    * Questa metodo statico si occupa di gestire l'interazione con l'utente
+    * Questo metodo statico si occupa di gestire l'interazione con l'utente
     * nel momento in cui abbia inserito il comando /esci,
     * prima di chiudere l'applicativo viene chiesta conferma!!
     */

@@ -8,6 +8,10 @@ package it.uniba.app.entitaDiGioco;
  *
  * @author Giannantonio
  */
+
+/**
+  * Enum ComandoGioca
+ */
 public enum TipoLivello {
       FACILE,
       MEDIO,

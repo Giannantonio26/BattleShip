@@ -9,6 +9,10 @@ import it.uniba.app.entitaDiGioco.Partita;
  *
  * @author leonardo
  */
+
+/**
+  * Classe ComandoMostraNavi
+ */
 public class ComandoMostraNavi implements Comando{
     public void esegui(){
         Partita.mostraNavi();

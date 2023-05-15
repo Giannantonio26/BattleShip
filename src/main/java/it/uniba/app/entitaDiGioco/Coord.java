@@ -9,6 +9,10 @@ import java.util.Objects;
  *
  * @author leonardo
  */
+
+/**
+  * Classe Coord.
+ */
 public class Coord {
      private int x;
     private int y;

@@ -9,6 +9,10 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
  *
  * @author leonardo
  */
+
+/**
+  * Classe ComandoSvelaGriglia
+ */
 public class ComandoSvelaGriglia implements Comando{
     @Override
     public void esegui(){

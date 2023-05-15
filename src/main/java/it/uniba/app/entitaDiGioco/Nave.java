@@ -11,37 +11,42 @@ import java.util.HashMap;
  *
  * @author leonardo
  */
+
 /*
  * Classe Nave
 */
 public class Nave {
-    static final String rosso = "\u001B[31m";
-    static final String verde = "\u001B[32m";
-    static final String blu = "\u001B[34m";
-    static final String giallo = "\u001B[33m";
-    static final String reset = "\u001B[0m";
+    static final String ROSSO = "\u001B[31m";
+    static final String VERDE = "\u001B[32m";
+    static final String BLU = "\u001B[34m";
+    static final String GIALLO = "\u001B[33m";
+    static final String RESET = "\u001B[0m";
     private String nome;
-    private int dimensione;
+    private final int dimensione;
     private int esemplari_in_gioco;
-    private Map<Coord, StatoPosizione> coordinaate = new HashMap<>();
-
-    private boolean affondata = false;
+    private final Map<Coord, StatoPosizione> coordinaate = new HashMap<>();
+    
+    static final int DIMENSIONE2 = 2;
+    static final int DIMENSIONE3 = 3;
+    static final int DIMENSIONE4 = 4;
+    static final int DIMENSIONE5 = 5;
+    
 
     public Nave(int dimensione) {
         this.dimensione = dimensione;
-        if (dimensione == 2){
+        if (dimensione == DIMENSIONE2){
             this.nome = "Cacciatorpediniere";
             this.esemplari_in_gioco = 4;
         }
-        else if (dimensione == 3) {
+        else if (dimensione == DIMENSIONE3) {
             this.nome = "Incrociatore";
             this.esemplari_in_gioco = 3;
         }
-        else if(dimensione == 4) {
+        else if(dimensione == DIMENSIONE4) {
             this.nome = "Corazzata";
             this.esemplari_in_gioco = 2;
         }
-        else if(dimensione == 5) {
+        else if(dimensione == DIMENSIONE5) {
             this.nome = "Portaerei";
             this.esemplari_in_gioco = 1;
         }
@@ -74,17 +79,17 @@ public class Nave {
         String quadrati = "";
         int i = 0;
         while(i < dimensione) {
-            if(dimensione == 2){
-                quadrati += rosso + "# " + reset;
+            if(dimensione == DIMENSIONE2){
+                quadrati += ROSSO + "# " + RESET;
             }
-            else if(dimensione == 3){
-                quadrati += verde + "# " + reset;
+            else if(dimensione == DIMENSIONE3){
+                quadrati += VERDE + "# " + RESET;
             }
-            else if(dimensione == 4){
-                quadrati += blu + "# " + reset;
+            else if(dimensione == DIMENSIONE4){
+                quadrati += BLU + "# " + RESET;
             }
-            else if(dimensione == 5){
-                quadrati += giallo + "# " + reset;
+            else if(dimensione == DIMENSIONE5){
+                quadrati += GIALLO + "# " + RESET;
             }
             i++;
         }
@@ -94,16 +99,16 @@ public class Nave {
     public String stampaQuadratoColorato(){
         String quadrato = "";
         if(dimensione == 2){
-            quadrato = rosso + "# " + reset;
+            quadrato = ROSSO + "# " + RESET;
         }
         else if(dimensione == 3){
-            quadrato = verde + "# " + reset;
+            quadrato = VERDE + "# " + RESET;
         }
         else if(dimensione == 4){
-            quadrato =  blu + "# " + reset;
+            quadrato =  BLU + "# " + RESET;
         }
         else if(dimensione == 5){
-            quadrato = giallo + "# " + reset;
+            quadrato = GIALLO + "# " + RESET;
         }
         return quadrato;
     }

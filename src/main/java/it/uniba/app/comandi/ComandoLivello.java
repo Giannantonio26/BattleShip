@@ -11,6 +11,10 @@ import it.uniba.app.entitaDiGioco.LivelloDiGioco;
  *
  * @author leonardo
  */
+
+/**
+  * Classe ComandoLivello
+ */
 public class ComandoLivello implements Comando{
     
     private final String nome;

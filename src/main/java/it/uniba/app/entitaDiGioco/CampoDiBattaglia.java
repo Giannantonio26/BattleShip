@@ -12,24 +12,34 @@ import java.util.HashMap;
  *
  * @author leonardo
  */
+
+/**
+  * Classe CampoDiBattaglia.
+ */
 public class CampoDiBattaglia {
     private final Map<Coord, Nave> campo_battaglia = new HashMap<>();
     public static List<Nave> navi = new ArrayList<>();
-    private Random random = new Random();
+    private final Random random = new Random();
     private LivelloDiGioco livello_partita;
+    
+    static final int DIM_CAMPO = 10;
 
     /*
-    il coostruttore assegna il livello di gioco, utile per il controllo dei tentativi rimasti
-     e inizializza il campo di battaglia
+     il costruttore assegna il livello di gioco, utile per il controllo 
+     dei tentativi rimasti e inizializza il campo di battaglia
      */
     public CampoDiBattaglia(TipoLivello livello) {
         Partita.iniziata = true;
         this.livello_partita = new LivelloDiGioco(livello);
+    }
+    
+    public void nuovaPartita(){
         inizializzaCampo();
         inizializzaNavi();
         posizionaNavi();
         mostraGriliaVuota();
     }
+    
     public Map<Coord, Nave> getCampo_battaglia() {
         return campo_battaglia;
     }
@@ -39,8 +49,8 @@ public class CampoDiBattaglia {
     inserendo come chiave le coordinate e come valore null
      */
     public void inizializzaCampo(){
-        for(int i = 1; i < 11; i++){
-            for(int j = 1; j < 11; j++){
+        for(int i = 1; i < DIM_CAMPO + 1; i++){
+            for(int j = 1; j < DIM_CAMPO + 1; j++){
                 campo_battaglia.put(new Coord(i, j), null);
             }
         }
@@ -98,7 +108,7 @@ public class CampoDiBattaglia {
     public boolean posizionaNave(Nave nave, int riga, int colonna, boolean orizzontale) {
         if (orizzontale) {
             //questo if serve per controllare che la nave non esca dal campo
-            if (colonna + nave.getDimensione() > 10) {
+            if (colonna + nave.getDimensione() > DIM_CAMPO) {
                 return false;
             }
 
@@ -113,7 +123,7 @@ public class CampoDiBattaglia {
         else {                                         //caso verticale
 
             //questo if serve per controllare che la nave non esca dal campo
-            if(riga + nave.getDimensione() > 10){
+            if(riga + nave.getDimensione() > DIM_CAMPO){
                 return false;
             }
 
@@ -130,14 +140,14 @@ public class CampoDiBattaglia {
 
     public static void svelaGriglia(Map<Coord, Nave> campo){
         System.out.print("    A B C D E F G H I J\n");
-        for(int i = 1; i <= 10; i++){
-            if(i == 10){
+        for (int i = 1; i <= DIM_CAMPO; i++) {
+            if(i == DIM_CAMPO){
                 System.out.print(i + "  ");
                 svelaRiga(i, campo);
                 System.out.println();
                 break;
             }
-            else{
+            else {
                 System.out.print(i + "   ");
                 svelaRiga(i, campo);
                 System.out.println();
@@ -146,12 +156,12 @@ public class CampoDiBattaglia {
     }
 
     public static void svelaRiga(int riga, Map<Coord, Nave> campo_battaglia){
-        for(int i = 1; i <= 10; i++){
+        for(int i = 1; i <= DIM_CAMPO; i++){
             Coord coord = new Coord(riga, i);
-            if(campo_battaglia.get(coord) == null){
+            if (campo_battaglia.get(coord) == null) {
                 System.out.print(". ");
             }
-            else{
+            else {
                 System.out.print(campo_battaglia.get(coord).stampaQuadratoColorato());
             }
         }
@@ -159,8 +169,8 @@ public class CampoDiBattaglia {
 
     public void mostraGriliaVuota(){
         System.out.print("    A B C D E F G H I J\n");
-        for(int i = 1; i < 11; i++){
-            if(i == 10){
+        for (int i = 1; i < DIM_CAMPO + 1; i++) {
+            if(i == DIM_CAMPO){
                 System.out.print(i + "  " + stampaRigaVuota() + "\n");
                 break;
             }

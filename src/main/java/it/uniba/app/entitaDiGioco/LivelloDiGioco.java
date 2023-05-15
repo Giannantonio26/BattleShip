@@ -8,6 +8,10 @@ package it.uniba.app.entitaDiGioco;
  *
  * @author leonardo
  */
+
+/**
+  * Classe LivelloDiGioco
+ */
 public class LivelloDiGioco {
      private TipoLivello tipoLivello;
     private int numero_tentativi;

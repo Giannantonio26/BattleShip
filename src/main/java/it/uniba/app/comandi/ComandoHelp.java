@@ -10,6 +10,10 @@ import it.uniba.app.Helper;
  *
  * @author leonardo
  */
+
+/**
+  * Classe ComandoHelp
+ */
 public class ComandoHelp implements Comando{
     @Override
     public void esegui(){

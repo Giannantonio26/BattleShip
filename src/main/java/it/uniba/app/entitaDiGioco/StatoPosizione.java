@@ -8,6 +8,10 @@ package it.uniba.app.entitaDiGioco;
  *
  * @author leonardo
  */
+
+/**
+  * Enum StatoPosizione
+ */
 public enum StatoPosizione {
     COLPITA, 
     INTEGRA
