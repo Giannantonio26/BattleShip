@@ -33,7 +33,11 @@ public final class App {
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
             Parser parser = new Parser(s.next());
-            parser.elabora();
+            try {
+                parser.elabora();
+            } catch (RuntimeException e) {
+                return;
+            }
             System.out.println("\nDigita un nuovo comando: ");
         }
     }

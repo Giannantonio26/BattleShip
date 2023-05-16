@@ -5,7 +5,6 @@
 package it.uniba.app.comandi;
 import java.util.Scanner;
 import it.uniba.app.entitaDiGioco.Partita;
-
 /**
  * @author leonardo
  * Classe ExitCommand.
@@ -25,10 +24,9 @@ public class ExitCommand implements Comando {
             String risposta = input.next();
             if (risposta.equalsIgnoreCase("si")) {
                 Partita.setIniziata(false);
-                System.exit(0);                 // termina l'esecuzione
-                                                     // del programma
+                throw new RuntimeException();
             } else if (risposta.equalsIgnoreCase("no")) {
-                System.out.print("\n");
+                //System.out.print("\n");
                 break;                    // L'istruzione break termina
                                           // l'esecuzione del ciclo piu interno
             } else {
