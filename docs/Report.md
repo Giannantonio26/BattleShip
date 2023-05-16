@@ -11,11 +11,10 @@
 7. Manuale utente
 8. Processo di sviluppo e organizzazione del lavoro
 9. Analisi retrospettiva
-   1. Sprint 0   
+   1. Sprint 0 
  
  ---
- 
- <br>
+  <br>
 
 ## 1. Introduzione
  Il progetto riguarda la realizzazione di un noto gioco di strategia: la battaglia navale, il cui obbiettivo è quello di affondare, nel numero di tentativi disponibili, le varie tipologie di navi esistenti sul campo generato automaticamente dal computer.
