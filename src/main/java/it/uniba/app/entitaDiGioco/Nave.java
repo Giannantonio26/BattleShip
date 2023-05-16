@@ -82,7 +82,7 @@ public class Nave {
  * @return coordinate.
  */
     public Map<Coord, StatoPosizione> getCoordinaate() {
-        return coordinaate;
+        return new HashMap(coordinaate);
     }
 
 /**
