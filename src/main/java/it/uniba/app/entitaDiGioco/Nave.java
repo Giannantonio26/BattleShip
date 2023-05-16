@@ -31,7 +31,7 @@ public class Nave {
     private String nome;
     private final int dimensione;
     private int esemplariInGioco;
-    private final Map<Coord, StatoPosizione> coordinaate = new HashMap<>();
+    private final Map<Coord, StatoPosizione> coordinate = new HashMap<>();
 
 /**
  *
@@ -81,8 +81,8 @@ public class Nave {
  *
  * @return coordinate.
  */
-    public Map<Coord, StatoPosizione> getCoordinaate() {
-        return coordinaate;
+    public Map<Coord, StatoPosizione> getCoordinate() {
+        return coordinate;
     }
 
 /**
@@ -90,7 +90,7 @@ public class Nave {
  * @param posizione
  */
     public void aggiungiPosizione(final Coord posizione) {
-        this.coordinaate.put(posizione, StatoPosizione.INTEGRA);
+        this.coordinate.put(posizione, StatoPosizione.INTEGRA);
     }
 
 /**
