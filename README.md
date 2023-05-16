@@ -7,7 +7,8 @@ La struttura della repository si presenta nel seguente modo:
 ```plaintext
 |-- .github
 |    |-- workflows
-|    |      |-- ingsw2122.yml
+|    |      |-- docker_build&push.yml
+|    |      |-- gradle_build.yml
 |-- build
 |    |-- reports
 |    |      |-- checkstyle
@@ -15,10 +16,14 @@ La struttura della repository si presenta nel seguente modo:
 |    |      |-- tests/test
 |–– config
 |    |–– checkstyle
+|    |–– pmd
 |–– docs
+|    |–– img manuale utente
+|    |–– img
 |    |–– Assegnazione progetto.md
 |    |–– Guida per lo studente.md
-|    |–– img
+|    |–– CODE_OF_CONDUCT.md
+|    |–– ISPIRATORE.md
 |    |–– Report.md
 |–– drawings
 |–– gradle
@@ -37,14 +42,16 @@ La struttura della repository si presenta nel seguente modo:
 
 Nel seguito si dettagliano i ruoli dei diversi componenti:
 
-- `.github/workflows/ingsw2122.yml`: dettaglia le direttive per assicurare la *continuous integration* attraverso l’uso di GitHub Actions;
+- `.github/workflows/docker_build&push.yml` e `.github/workflows/gradle_build.yml` : dettagliano le direttive per assicurare la *continuous integration* attraverso l’uso di GitHub Actions;
 - `build/`: ospita la sottocartella `reports/`, contenente gli output dei tool automatici di test e controllo di qualità;
 - `config/`: ospita i file di configurazione. L’unica configurazione di base richiesta è quella per il tool checkstyle;
-- `docs/`: ospita la documentazione di progetto, incluse le figure (nella sottocartella `img/`).
+- `docs/`: ospita la documentazione di progetto, incluse le figure (nelle sottocartelle `img/` e `img manuale utente/`).
   Il file `Report.md` verrà usato per redigere la relazione finale del progetto.
   La cartella raccoglie inoltre:
   - `Assegnazione progetto.md`: contenente la descrizione dettagliata del progetto assegnato;
   - `Guida per lo studente.md`: contenente la descrizione di tutti i passi di configurazione necessari per l'attivazione del flusso di lavoro a supporto dello sviluppo del progetto;
+  - `CODE_OF_CONDUCT.md`: contenente il codice di condotta del team di sviluppo;
+  - `ISPIRATORE.md`: contenente la biografia del vincitore del Turing Award che da il nome al team;
 - `gradle/`: ospita il `.jar` relativo al sistema di gestione delle dipendenze *Gradle*.
 - `lib`: include eventuali librerie esterne utilizzate dal progetto.
 - `res`: contiene risorse varie utilizzate dal sistema
