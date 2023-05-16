@@ -55,7 +55,7 @@ public final class CampoDiBattaglia {
      * @return campo di battaglia.
      */
     public Map<Coord, Nave> getCampoBattaglia() {
-        return campoBattaglia;
+        return new HashMap(campoBattaglia);
     }
 
     /*
