@@ -14,7 +14,7 @@
    1. Sprint 1   
  
  ---
-## 1. Introduzione
+# 1. Introduzione
  Il progetto riguarda la realizzazione di un noto gioco di strategia: la battaglia navale, il cui obbiettivo è quello di affondare, nel numero di tentativi disponibili, le varie tipologie di navi esistenti sul campo generato automaticamente dal computer.
  
  L'utente ha a disposizione diversi comandi, i quali possono essere visualizzati tramite il comando `/help`, essi permettono di:
@@ -30,6 +30,11 @@
 
 <br>
 <br>
+
+# 2. Modello di dominio
+![modelloDiDominio](./img/modelloDiDominio.png "modello di dominio")
+
+
 
 # 3. Requisiti specifici
 ## 3.1 Requisiti specifici
