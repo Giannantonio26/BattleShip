@@ -177,7 +177,7 @@ public final class CampoDiBattaglia {
      * @param campo campo di battaglia
      */
     public static void svelaGriglia(final Map<Coord, Nave> campo) {
-        System.out.print("\n    A B C D E F G H I J\n");
+        System.out.print("\n    A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\n");
         for (int i = 1; i <= DIM_CAMPO; i++) {
             if (i == DIM_CAMPO) {
                 System.out.print(i + "  ");
@@ -201,7 +201,7 @@ public final class CampoDiBattaglia {
         for (int i = 1; i <= DIM_CAMPO; i++) {
             Coord coord = new Coord(riga, i);
             if (campoBattaglia.get(coord) == null) {
-                System.out.print(". ");
+                System.out.print("\u25A2\t");
             } else {
                 System.out.print(campoBattaglia.get(coord).stampaQuadratoColorato());
             }
@@ -211,7 +211,7 @@ public final class CampoDiBattaglia {
      * Metodo per mostrare il campo di battaglia vuoto, senza navi.
      */
     public void mostraGrigliaVuota() {
-        System.out.print("\n    A B C D E F G H I J\n");
+        System.out.print("\n    A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\n");
         for (int i = 1; i < DIM_CAMPO + 1; i++) {
             if (i == DIM_CAMPO) {
                 System.out.print(i + "  " + stampaRigaVuota() + "\n");
@@ -228,6 +228,6 @@ public final class CampoDiBattaglia {
      * @return Restituisce una riga di puntini da usare in mostraGrigliaVuota.
      */
     public String stampaRigaVuota() {
-        return ". . . . . . . . . .";
+        return "\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t";
     }
 }
