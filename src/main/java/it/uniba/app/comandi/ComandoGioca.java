@@ -14,7 +14,7 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 public final class ComandoGioca implements Comando {
      /* il metodo esegui del comando ComandoGioca
      *  crea una nuova partita e un nuovo campo di battaglia;
-     *  se la partita è già iniziata, e l'uente digita il comando "/gioca"
+     *  se la partita è già iniziata, e l'utente digita il comando "/gioca"
      *  viene stampato un messaggio di errore (scelta di comportamento
      *  provvisoria).
      */

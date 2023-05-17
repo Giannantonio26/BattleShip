@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 public final class CampoDiBattaglia {
     private final Map<Coord, Nave> campoBattaglia = new HashMap<>();
-    protected static final List<Nave> NAVI = new ArrayList<>();
+    static final List<Nave> NAVI = new ArrayList<>();
     private final Random random = new Random();
     private LivelloDiGioco livelloPartita;
 
@@ -29,7 +29,7 @@ public final class CampoDiBattaglia {
 
     /*
      il costruttore assegna il livello di gioco, utile per il controllo
-     dei tentativi rimasti e inizializza il campo di battaglia
+     dei tentativi rimasti e inizializza il campo di battaglia.
      */
     /**
      *
@@ -60,7 +60,7 @@ public final class CampoDiBattaglia {
 
     /*
     il metodo inizializzaCampo() inizializza la mappa campo di battaglia
-    inserendo come chiave le coordinate e come valore null
+    inserendo come chiave le coordinate e come valore null.
      */
     /**
      * Metodo inizializzaCampo.
@@ -75,7 +75,7 @@ public final class CampoDiBattaglia {
 
     /*
     il metodo inizializzaNavi() inizializza la lista di navi
-    secondo i requisiti del gioco
+    secondo i requisiti del gioco.
      */
     /**
      * Metodo inizializzaNavi.
@@ -94,7 +94,7 @@ public final class CampoDiBattaglia {
     }
 
     /*
-    il metodo posizizionaNavi() genera casualmente le coordinate e l'orientamento
+    il metodo posizionaNavi() genera casualmente le coordinate e l'orientamento
     di ogni nave e le posiziona sul campo di battaglia dopo aver controllato che
     non ci siano collisioni con altre navi chiamando il metodo posizionaNave().
      */
@@ -220,6 +220,7 @@ public final class CampoDiBattaglia {
                 System.out.print(i + "   " + stampaRigaVuota() + "\n");
             }
         }
+        System.out.println("Numero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
     }
 
     /**
