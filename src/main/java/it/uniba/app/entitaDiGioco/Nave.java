@@ -116,16 +116,16 @@ public class Nave {
         while (i < dimensione) {
             switch (dimensione) {
                 case DIMENSIONE2:
-                    quadrati += ROSSO + "# " + RESET;
+                    quadrati += ROSSO + "\u22A0\t" + RESET;
                     break;
                 case DIMENSIONE3:
-                    quadrati += VERDE + "# " + RESET;
+                    quadrati += VERDE + "\u22A0\t" + RESET;
                     break;
                 case DIMENSIONE4:
-                    quadrati += BLU + "# " + RESET;
+                    quadrati += BLU + "\u22A0\t" + RESET;
                     break;
                 case DIMENSIONE5:
-                    quadrati += GIALLO + "# " + RESET;
+                    quadrati += GIALLO + "\u22A0\t" + RESET;
                     break;
                 default:
                     break;
@@ -143,16 +143,16 @@ public class Nave {
         String quadrato = "";
         switch (dimensione) {
             case DIMENSIONE2:
-                quadrato = ROSSO + "# " + RESET;
+                quadrato = ROSSO + "\u22A0\t" + RESET;
                 break;
             case DIMENSIONE3:
-                quadrato = VERDE + "# " + RESET;
+                quadrato = VERDE + "\u22A0\t" + RESET;
                 break;
             case DIMENSIONE4:
-                quadrato =  BLU + "# " + RESET;
+                quadrato =  BLU + "\u22A0\t" + RESET;
                 break;
             case DIMENSIONE5:
-                quadrato = GIALLO + "# " + RESET;
+                quadrato = GIALLO + "\u22A0\t" + RESET;
                 break;
             default:
                 break;
