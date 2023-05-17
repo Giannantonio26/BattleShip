@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 public final class CampoDiBattaglia {
     private final Map<Coord, Nave> campoBattaglia = new HashMap<>();
-    protected static final List<Nave> NAVI = new ArrayList<>();
+    static final List<Nave> NAVI = new ArrayList<>();
     private final Random random = new Random();
     private LivelloDiGioco livelloPartita;
 
@@ -220,6 +220,7 @@ public final class CampoDiBattaglia {
                 System.out.print(i + "   " + stampaRigaVuota() + "\n");
             }
         }
+        System.out.println("Numero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
     }
 
     /**
