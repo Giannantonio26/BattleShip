@@ -116,16 +116,16 @@ public class Nave {
         while (i < dimensione) {
             switch (dimensione) {
                 case DIMENSIONE2:
-                    quadrati += ROSSO + "\u22A0\t" + RESET;
+                    quadrati += ROSSO + "\u22A0" + RESET;
                     break;
                 case DIMENSIONE3:
-                    quadrati += VERDE + "\u22A0\t" + RESET;
+                    quadrati += VERDE + "\u22A0" + RESET;
                     break;
                 case DIMENSIONE4:
-                    quadrati += BLU + "\u22A0\t" + RESET;
+                    quadrati += BLU + "\u22A0" + RESET;
                     break;
                 case DIMENSIONE5:
-                    quadrati += GIALLO + "\u22A0\t" + RESET;
+                    quadrati += GIALLO + "\u22A0" + RESET;
                     break;
                 default:
                     break;
