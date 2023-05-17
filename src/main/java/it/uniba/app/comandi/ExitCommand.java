@@ -13,11 +13,11 @@ public class ExitCommand implements Comando {
 /**
 * Questo metodo statico si occupa di gestire l'interazione con l'utente
 * nel momento in cui abbia inserito il comando /esci,
-* prima di chiudere l'applicativo viene chiesta conferma!!
+* prima di chiudere l'applicativo viene chiesta conferma.
 */
     @Override
     public void esegui() {
-       Scanner input = new Scanner(System.in, "UTF-8");
+       try (Scanner input = new Scanner(System.in, "UTF-8")) {
         System.out.println("\nSei davvero sicuro di voler uscire ?\n"
                 + "In caso affermativo digita 'si' altrimenti digita 'no'");
         while (input.hasNext()) {
@@ -33,5 +33,6 @@ public class ExitCommand implements Comando {
                 System.out.println("A quanto pare hai digitato qualcosa di non valido, riprova");
             }
         }
+    }
     }
 }
