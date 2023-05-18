@@ -11,7 +11,7 @@
 7. Manuale utente
 8. Processo di sviluppo e organizzazione del lavoro
 9. Analisi retrospettiva
-   1. Sprint 1   
+   1. Sprint 0  
  
  ---
 # 1. Introduzione
