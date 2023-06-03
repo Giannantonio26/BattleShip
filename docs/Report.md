@@ -323,6 +323,44 @@ Se la risposta dell'utente è si, si esce dal gioco come richiesto, altrimenti i
 <br>
 <br>
 
+## 8. Processo di sviluppo e organizzazione del lavoro
+#
+Il team si è coordinato utilizzando principalmente le piattaforme di comunicazione: WhatsApp e Discord.
+
+
+![Immaggine_Gruppo_WhatsApp](./img/ImmagineGruppoWhatsApp.PNG)
+
+Il team durante lo svolgimento delle consegne ha perseguito una strategia precisa nell’organizzazione e nella suddivisione del lavoro.
+
+
+Prima di mettersi all'opera per la realizzazione dei requisiti funzionali è stato sempre effettuato un primo incontro di chiarifica, seguitosi immediatamente dopo il lancio di ognuno dei 3 sprint, con tutti i membri del team. 
+
+
+
+In questo incontro sono stati analizzati i seguenti temi:
+- Identificazione e chiarimento dei requisiti funzionali richiesti.
+- Identificazione dell'ordine di priorità dei requisiti funzionali da implementare.
+- Assegnazione dei vari compiti da svolgere ai membri del team.
+
+Ogni requisito funzionale è stato assegnato ad uno o più membri del team in base alla effettiva difficoltà di realizzazione con annessa data di scadenza.
+
+Durante il primo incontro di chiarifica sono stati enunciati i requisiti richiesti che il programma doveva rispettare. Ogni requisito è stato poi successivamente analizzato e chiarito in maniera più esaustiva, nel caso in cui erano presenti punti poco chiari o dubbi da parte dei membri del team.
+
+Dopo l’incontro iniziale il team si è solitamente riunito ogni due giorni per discutere delle modifiche apportate e/o delle difficoltà incontrate durante lo sviluppo del progetto.
+
+Per ognuno dei 3 sprint è stato creato un milestone, chiamato con il nome del relativo sprint, a cui sono stati assegnati tutti gli issue, le pull request e la project board associati allo sprint in corso.
+
+La project board di ogni sprint prevedeva le seguenti colonne:
+
+- ToDo, relativa agli incarichi assegnati, ma il cui lavoro non è ancora iniziato.
+- inProgress, per i compiti in fase di realizzazione.
+- Review, per i lavori terminati, ma in attesa di revisione prima del merge.
+- Ready, per gli incarichi revisionati dai membri del team, di cui è stato effettuato il merge.
+- Done, relativa alle modifiche revisionate dal product owner.
+
+Infine, un paio di giorni prima della data di consegna del progetto, per ogni sprint, il team si è riunito in un incontro finale per un’ultima revisione prima di confermare al product owner la conclusione dello sprint.
+
+
 ## 9. Analisi retrospettiva
 ##    Sprint 0
 ![Analisi retrospettiva](./img/Analisi_retrospettiva.png "analisi retrospettiva")
