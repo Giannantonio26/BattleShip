@@ -11,6 +11,7 @@ public final class Helper {
      */
     private Helper() {
     }
+    private static final String comandoTempo = "/tempo:\t\t\tcomando per impostare il tempo di gioco, deve essere espresso in minuti\n";
     private static final String comandoGioca = "/gioca:\t\t\tcomando per avviare la partita\n";
     private static final String comandoEsci = "/esci:\t\t\tcomando per uscire dall'applicativo, verra' chiesta un'ulteriore conferma\n";
     private static final String comandoFacile = "/facile:\t\tcomando per impostare il livello di difficolta' della partita a facile e 50 come numero di tentavi possibili\n";
@@ -26,7 +27,8 @@ public final class Helper {
     + "Di seguito, ecco una lista dei comandi che puoi digitare. Consultare il "
     + "manuale utente per ulteriori informazioni.\n"
     +comandoGioca+comandoEsci+comandoFacile+comandoMedio
-    +comandoDifficile+comandoMostraLivello+comandoMostraNavi+comandoSvelaGriglia;
+    +comandoDifficile+comandoMostraLivello+comandoMostraNavi+comandoSvelaGriglia
+            +comandoTempo;
     private static String benvenuto = "Benvenuto, per una lista dei comandi"
             + " disponibili, digita /help";
     /**
