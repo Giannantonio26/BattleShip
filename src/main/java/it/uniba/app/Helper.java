@@ -18,7 +18,7 @@ public final class Helper {
     + "Di seguito, ecco una lista dei comandi che puoi digitare. Consultare il "
     + "manuale utente per ulteriori informazioni.\n"
     + "/gioca\n/esci\n/facile\n/medio\n/difficile\n/mostralivello\n"
-    + "/mostranavi\n/svelagriglia\n";
+    + "/mostranavi\n/svelagriglia\n/tempo *numero*\n";
     private static String benvenuto = "Benvenuto, per una lista dei comandi"
             + " disponibili, digita /help";
     /**

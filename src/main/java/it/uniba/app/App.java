@@ -32,7 +32,7 @@ public final class App {
         }
         try (Scanner s = new Scanner(System.in, "UTF-8")) {
             while (s.hasNext()) {
-                Parser parser = new Parser(s.next());
+                Parser parser = new Parser(s.nextLine());
                 try {
                     parser.elabora();
                 } catch (RuntimeException e) {
