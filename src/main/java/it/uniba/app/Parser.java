@@ -8,6 +8,12 @@ import it.uniba.app.comandi.ComandoLivello;
 import it.uniba.app.comandi.ComandoMostraLivello;
 import it.uniba.app.comandi.ComandoMostraNavi;
 import it.uniba.app.comandi.ComandoSvelaGriglia;
+import it.uniba.app.comandi.ComandoTempo;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import it.uniba.app.entitaDiGioco.Partita;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Classe Parser per elaborare comandi ricevuti.
@@ -24,41 +30,42 @@ public final class Parser {
 
     /**
      * Metodo per l'elaborazione del comando digitato.
+     * @throws java.lang.InterruptedException
      */
-    public void elabora() {
-        switch (comando) {
-            /*in base al comando inserito dall'utente viene creato
-             un tipo diverso di comando con una sua implementazione */
-            case "/help":
-                Comando help = new ComandoHelp();
-                help.esegui();
-                break;
-            case "/facile", "/medio", "/difficile":
-                Comando difficolta = new ComandoLivello(comando);
-                difficolta.esegui();
-                break;
-            case "/gioca":
-                Comando gioca = new ComandoGioca();
-                gioca.esegui();
-                break;
-            case "/esci":
-                Comando exit = new ExitCommand();
-                exit.esegui();
-                break;
-            case "/mostranavi" :
-                Comando mostranavi = new ComandoMostraNavi();
-                mostranavi.esegui();
-                break;
-            case "/mostralivello":
-                Comando mostralivello = new ComandoMostraLivello();
-                mostralivello.esegui();
-                break;
-            case "/svelagriglia":
-                Comando svelagriglia = new ComandoSvelaGriglia();
-                svelagriglia.esegui();
-                break;
-            default:
-                System.out.println("Comando non valido");
+    public void elabora(){
+        String regex = "/tempo\\s\\d+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(comando);
+        
+        if(comando.equalsIgnoreCase("/help")){
+            Comando help = new ComandoHelp();
+            help.esegui();
+        }else if(comando.equalsIgnoreCase("/facile")||comando.equalsIgnoreCase("/medio")||comando.equalsIgnoreCase("/difficile")){
+            Comando difficolta = new ComandoLivello(comando);
+            difficolta.esegui();   
+        }else if(comando.equalsIgnoreCase("/gioca")){
+            Comando gioca = new ComandoGioca();
+            gioca.esegui();          
+        }else if(comando.equalsIgnoreCase("/esci")){
+            Comando exit = new ExitCommand();
+            exit.esegui();      
+        }else if(comando.equalsIgnoreCase("/mostranavi")){
+            Comando mostranavi = new ComandoMostraNavi();
+            mostranavi.esegui();           
+        }else if(comando.equalsIgnoreCase("/mostralivello")){
+            Comando mostralivello = new ComandoMostraLivello();
+            mostralivello.esegui();          
+        }else if(comando.equalsIgnoreCase("/svelagriglia")){
+            Comando svelagriglia = new ComandoSvelaGriglia();
+            svelagriglia.esegui();          
+        }else if (matcher.find()) {
+            System.out.println("OK");
+            String replace = comando.replace("/tempo ", "");
+            int minuti = Integer.parseInt(replace);
+            Thread t = new Thread(new ComandoTempo(minuti));                   
+            t.start();
+        }else{
+            System.out.println("Comando non valido");
         }
     }
 }
