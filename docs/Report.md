@@ -328,7 +328,7 @@ Se la risposta dell'utente è si, si esce dal gioco come richiesto, altrimenti i
 Il team si è coordinato utilizzando principalmente le piattaforme di comunicazione: WhatsApp e Discord.
 
 
-![Immaggine_Gruppo_WhatsApp](./img/ImmagineGruppoWhatsApp.PNG)
+![Immagine_Gruppo_WhatsApp](./img/ImmagineGruppoWhatsApp.png)
 
 Il team durante lo svolgimento delle consegne ha perseguito una strategia precisa nell’organizzazione e nella suddivisione del lavoro.
 
