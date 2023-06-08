@@ -32,7 +32,7 @@
 <br>
 
 # 2. Modello di dominio
-![modelloDiDominio](./img/modelloDiDominio.png "modello di dominio")
+![modelloDiDominio](./img/MODELLO_DOMINIO.png "modello di dominio")
 
 
 
