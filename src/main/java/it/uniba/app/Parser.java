@@ -42,6 +42,10 @@ public final class Parser {
         Pattern pattern1 = Pattern.compile(regex1);
         Matcher matcher1 = pattern1.matcher(comando);
         
+        String regex2 = "(/tentativi)\\s(\\d+)";
+        Pattern pattern2 = Pattern.compile(regex2);
+        Matcher matcher2 = pattern2.matcher(comando);
+    
         if (comando.equalsIgnoreCase("/help")) {
             Comando help = new ComandoHelp();
             help.esegui();
@@ -74,9 +78,19 @@ public final class Parser {
             int tentativi = Integer.parseInt(matcher1.group(2));
             Comando tentativiPerLivello = new ComandoLivello(livello, tentativi);
             tentativiPerLivello.esegui();
-        } else if (comando.equalsIgnoreCase("/mostratempo")){
+        } else if (comando.equalsIgnoreCase("/mostratempo")) {
             Comando comandoMostraTempo = new ComandoMostraTempo();
             comandoMostraTempo.esegui();
+        } else if (matcher2.matches()) {
+            if(Partita.isIniziata()) {
+                System.out.println("Non puoi cambiare il numero di tentativi possibili durante una partita");
+                return;
+            }else {
+                String comandoTentativi = matcher2.group(1);
+                int numTentativi = Integer.parseInt(matcher2.group(2));
+                Partita.setTentativi(numTentativi);
+                System.out.println("OK il numero massimo di tentativi falliti è stato impostato a "+numTentativi);
+            }
         } else {
             System.out.println("Comando non valido");
         }
