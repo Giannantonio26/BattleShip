@@ -24,7 +24,8 @@ public final class ComandoGioca implements Comando {
             System.out.println("\nUna partita è già iniziata. "
                     + "Il comando /gioca non è disponibile");
         } else {
-            CampoDiBattaglia campo = new CampoDiBattaglia(Partita.getLivello());
+            CampoDiBattaglia campo = 
+                    new CampoDiBattaglia(Partita.getLivello(), Partita.getTentativi());
             Partita.setCampo(campo);
             campo.nuovaPartita();
         }

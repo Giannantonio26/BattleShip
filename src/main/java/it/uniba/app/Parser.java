@@ -38,37 +38,46 @@ public final class Parser {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(comando);
         
-        if(comando.equalsIgnoreCase("/help")){
+        String regex1 = "(/facile|/medio|/difficile)\\s(\\d+)";
+        Pattern pattern1 = Pattern.compile(regex1);
+        Matcher matcher1 = pattern1.matcher(comando);
+        
+        if (comando.equalsIgnoreCase("/help")) {
             Comando help = new ComandoHelp();
             help.esegui();
-        }else if(comando.equalsIgnoreCase("/facile")||comando.equalsIgnoreCase("/medio")||comando.equalsIgnoreCase("/difficile")){
+        } else if (comando.equalsIgnoreCase("/facile")||comando.equalsIgnoreCase("/medio")||comando.equalsIgnoreCase("/difficile")){
             Comando difficolta = new ComandoLivello(comando);
             difficolta.esegui();   
-        }else if(comando.equalsIgnoreCase("/gioca")){
+        } else if (comando.equalsIgnoreCase("/gioca")) {
             Comando gioca = new ComandoGioca();
             gioca.esegui();          
-        }else if(comando.equalsIgnoreCase("/esci")){
+        } else if (comando.equalsIgnoreCase("/esci")) {
             Comando exit = new ExitCommand();
             exit.esegui();      
-        }else if(comando.equalsIgnoreCase("/mostranavi")){
+        } else if (comando.equalsIgnoreCase("/mostranavi")) {
             Comando mostranavi = new ComandoMostraNavi();
             mostranavi.esegui();           
-        }else if(comando.equalsIgnoreCase("/mostralivello")){
+        } else if (comando.equalsIgnoreCase("/mostralivello")) {
             Comando mostralivello = new ComandoMostraLivello();
             mostralivello.esegui();          
-        }else if(comando.equalsIgnoreCase("/svelagriglia")){
+        } else if (comando.equalsIgnoreCase("/svelagriglia")) {
             Comando svelagriglia = new ComandoSvelaGriglia();
             svelagriglia.esegui();          
-        }else if (matcher.find()) {
+        } else if (matcher.find()) {
             System.out.println("OK");
             String replace = comando.replace("/tempo ", "");
             int minuti = Integer.parseInt(replace);
             Thread t = new Thread(new ComandoTempo(minuti));                   
             t.start();
-        }else if(comando.equalsIgnoreCase("/mostratempo")){
+        } else if (matcher1.matches()) {         
+            String livello = matcher1.group(1);
+            int tentativi = Integer.parseInt(matcher1.group(2));
+            Comando tentativiPerLivello = new ComandoLivello(livello, tentativi);
+            tentativiPerLivello.esegui();
+        } else if (comando.equalsIgnoreCase("/mostratempo")){
             Comando comandoMostraTempo = new ComandoMostraTempo();
             comandoMostraTempo.esegui();
-        }else{
+        } else {
             System.out.println("Comando non valido");
         }
     }

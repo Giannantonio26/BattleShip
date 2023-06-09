@@ -14,9 +14,9 @@ import it.uniba.app.entitaDiGioco.LivelloDiGioco;
  */
 public final class ComandoLivello implements Comando {
     private final String nome;
-    static final int TENTATIVI_FACILE = 50;
-    static final int TENTATIVI_MEDIO = 30;
-    static final int TENTATIVI_DIFFICILE = 10;
+    private static int tentativiFacile = 50;
+    private static int tentativiMedio = 30;
+    private static int tentativiDifficile = 10;
 
 /**
  *
@@ -24,6 +24,21 @@ public final class ComandoLivello implements Comando {
  */
     public ComandoLivello(final String comando) {
         this.nome = comando;
+    }
+    
+    public ComandoLivello(final String comando, final int tentativi) {
+        this.nome = comando;
+        switch (nome) {
+            case "/facile":
+                tentativiFacile = tentativi;
+                break;
+            case "/medio":
+                tentativiMedio = tentativi;
+                break;
+            case "/difficile":
+                tentativiDifficile = tentativi;
+                break;
+        }
     }
 
 /**
@@ -38,25 +53,28 @@ public final class ComandoLivello implements Comando {
         } else {
             LivelloDiGioco liv = new LivelloDiGioco();
             switch (nome) {
-                case "/facile":
+                 case "/facile":
                     Partita.setLivello(TipoLivello.FACILE);
-                    liv.setNumeroTentativi(TENTATIVI_FACILE);
+                    Partita.setTentativi(tentativiFacile);
+                    liv.setTipoLivello(Partita.getLivello());
+                    liv.setNumeroTentativi(tentativiFacile);
                     break;
                 case "/medio":
                     Partita.setLivello(TipoLivello.MEDIO);
-                    liv.setNumeroTentativi(TENTATIVI_MEDIO);
+                    Partita.setTentativi(tentativiMedio);
+                    liv.setTipoLivello(Partita.getLivello());
+                    liv.setNumeroTentativi(tentativiMedio);
                     break;
                 case "/difficile":
                     Partita.setLivello(TipoLivello.DIFFICILE);
-                    liv.setNumeroTentativi(TENTATIVI_DIFFICILE);
+                    Partita.setTentativi(tentativiDifficile);
+                    liv.setTipoLivello(Partita.getLivello());
+                    liv.setNumeroTentativi(tentativiDifficile);
                     break;
                 default:
                     System.out.println("Livello non riconosciuto");
             }
-            System.out.println("OK \n Livello attuale: "
-                    + Partita.getLivello()
-                    + "\n Tentativi disponibili: "
-                    + liv.getNumeroTentativi());
+            System.out.println("OK \n" + liv);
         }
     }
 }

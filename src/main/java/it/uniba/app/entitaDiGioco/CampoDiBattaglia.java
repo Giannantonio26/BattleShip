@@ -33,10 +33,12 @@ public final class CampoDiBattaglia {
      */
     /**
      *
-     * @param livello Livello di gioco.
+     * @param livello Livello di gioco
+     * @param tentativi.
      */
-    public CampoDiBattaglia(final TipoLivello livello) {
-        this.livelloPartita = new LivelloDiGioco(livello);
+
+    public CampoDiBattaglia(TipoLivello livello, int tentativi) {
+        this.livelloPartita = new LivelloDiGioco(livello, tentativi);
     }
 
     /**
@@ -220,7 +222,7 @@ public final class CampoDiBattaglia {
                 System.out.print(i + "   " + stampaRigaVuota() + "\n");
             }
         }
-        System.out.println("Numero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
+        System.out.println("\nNumero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
     }
 
     /**
