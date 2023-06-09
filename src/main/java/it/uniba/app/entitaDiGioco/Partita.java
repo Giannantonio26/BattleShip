@@ -12,6 +12,7 @@ public final class Partita {
     private static int minutiDiGioco; //numero di minuti a disposizione per giocare
     private static int minutiTrascorsi; //numero di minuti che sono trascorsi
     private static boolean iniziata = false;
+    private static boolean tempoDiGiocoAttivo = false;
     
     public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
@@ -113,6 +114,14 @@ public final class Partita {
     
     public static int getMinutiTrascorsi(){
         return minutiTrascorsi;
+    }
+    
+    public static void setTempoDiGiocoAttivo(){
+        tempoDiGiocoAttivo = true;
+    }
+    
+    public static boolean isTempoDiGiocoAttivo(){
+        return tempoDiGiocoAttivo;
     }
     
 }
