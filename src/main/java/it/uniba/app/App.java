@@ -31,7 +31,7 @@ public final class App {
             Helper.stampaBenvenuto();
         }
         try (Scanner s = new Scanner(System.in, "UTF-8")) {
-            while (s.hasNext()) {
+            while (s.hasNextLine()) {
                 Parser parser = new Parser(s.nextLine());
                 try {
                     parser.elabora();

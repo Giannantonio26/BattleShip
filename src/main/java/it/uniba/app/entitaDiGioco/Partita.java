@@ -8,6 +8,7 @@ import java.util.List;
 public final class Partita {
     private static CampoDiBattaglia campo;
     private static TipoLivello livello = TipoLivello.FACILE;
+    private static int tentativi = 50;
     private static int tempoDiGioco; //numero di minuti a disposizione per giocare
     public static boolean tempoScaduto=false;
     
@@ -53,6 +54,14 @@ public final class Partita {
  */
     public static TipoLivello getLivello() {
         return livello;
+    }
+
+    public static int getTentativi() {
+        return tentativi;
+    }
+
+    public static void setTentativi(int tentativi) {
+        Partita.tentativi = tentativi;
     }
 
 /**

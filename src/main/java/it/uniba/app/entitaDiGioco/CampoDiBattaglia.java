@@ -33,10 +33,12 @@ public final class CampoDiBattaglia {
      */
     /**
      *
-     * @param livello Livello di gioco.
+     * @param livello Livello di gioco
+     * @param tentativi.
      */
-    public CampoDiBattaglia(final TipoLivello livello) {
-        this.livelloPartita = new LivelloDiGioco(livello);
+
+    public CampoDiBattaglia(TipoLivello livello, int tentativi) {
+        this.livelloPartita = new LivelloDiGioco(livello, tentativi);
     }
 
     /**

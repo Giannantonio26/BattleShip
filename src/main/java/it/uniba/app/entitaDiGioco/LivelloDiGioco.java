@@ -47,6 +47,11 @@ public final class LivelloDiGioco {
                 break;
         }
     }
+    
+    public LivelloDiGioco (TipoLivello livello, int tentativi) {
+        this.tipoLivello = livello;
+        this.numeroTentativi = tentativi;
+    }
 
 /**
  *

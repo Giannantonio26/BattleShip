@@ -17,7 +17,7 @@ public final class ComandoMostraLivello implements Comando {
      */
     @Override
     public void esegui() {
-        LivelloDiGioco liv = new LivelloDiGioco(Partita.getLivello());
-        System.out.println(liv.toString());
+        LivelloDiGioco liv = new  LivelloDiGioco(Partita.getLivello(), Partita.getTentativi());
+        System.out.println(liv);
     }
 }
