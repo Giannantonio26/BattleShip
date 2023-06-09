@@ -7,6 +7,7 @@ import it.uniba.app.comandi.ComandoHelp;
 import it.uniba.app.comandi.ComandoLivello;
 import it.uniba.app.comandi.ComandoMostraLivello;
 import it.uniba.app.comandi.ComandoMostraNavi;
+import it.uniba.app.comandi.ComandoMostraTempo;
 import it.uniba.app.comandi.ComandoSvelaGriglia;
 import it.uniba.app.comandi.ComandoTempo;
 import java.util.regex.Matcher;
@@ -64,6 +65,9 @@ public final class Parser {
             int minuti = Integer.parseInt(replace);
             Thread t = new Thread(new ComandoTempo(minuti));                   
             t.start();
+        }else if(comando.equalsIgnoreCase("/mostratempo")){
+            Comando comandoMostraTempo = new ComandoMostraTempo();
+            comandoMostraTempo.esegui();
         }else{
             System.out.println("Comando non valido");
         }
