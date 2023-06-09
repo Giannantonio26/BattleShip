@@ -16,6 +16,7 @@ public class ComandoTempo implements Runnable{
 
     public ComandoTempo(int minuti){
         Partita.setMinutDiGioco(minuti);
+        Partita.setTempoDiGiocoAttivo();
     }
     
     @Override
