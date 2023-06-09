@@ -8,8 +8,8 @@ import java.util.List;
 public final class Partita {
     private static CampoDiBattaglia campo;
     private static TipoLivello livello = TipoLivello.FACILE;
-    private static int tempoDiGioco; //numero di minuti a disposizione per giocare
-    public static boolean tempoScaduto=false;
+    private static int minutiDiGioco; //numero di minuti a disposizione per giocare
+    private static int minutiTrascorsi; //numero di minuti che sono trascorsi
     
     
     public static final List<LivelloDiGioco> LIVELLI = List.of(
@@ -90,11 +90,20 @@ public final class Partita {
         }
     }
     
-    public static void setTempoDiGioco(final int minuti){
-        tempoDiGioco = minuti;
+    public static void setMinutDiGioco(final int minuti){
+        minutiDiGioco = minuti;
     }
     
-    public static int getTempoDiGioco(){
-        return tempoDiGioco;
+    public static int getMinutiDiGioco(){
+        return minutiDiGioco;
     }
+    
+    public static void setMinutiTrascorsi(int minuti){
+        minutiTrascorsi = minuti;
+    }
+    
+    public static int getMinutiTrascorsi(){
+        return minutiTrascorsi;
+    }
+    
 }

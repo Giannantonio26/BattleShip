@@ -15,19 +15,20 @@ import java.util.logging.Logger;
 public class ComandoTempo implements Runnable{
 
     public ComandoTempo(int minuti){
-        Partita.setTempoDiGioco(minuti);
+        Partita.setMinutDiGioco(minuti);
     }
     
     @Override
     public void run(){
         int minTempoDiGioco;
-        minTempoDiGioco = Partita.getTempoDiGioco();  //tempo di gioco in minuti
+        minTempoDiGioco = Partita.getMinutiDiGioco();  //tempo di gioco in minuti
         int secondiTempoDiGioco = minTempoDiGioco*60; //tempo di gioco in secondi
         
         int min=0,sec=0;
         for(int i=0;i<secondiTempoDiGioco;i++){
-            if (i % 60 == 0) {
+            if (i % 60 == 0 && i!=0) {
                 min++;
+                Partita.setMinutiTrascorsi(min);
                 sec = 0;
             }else {
                 sec++;
