@@ -12,6 +12,13 @@ public final class Helper {
     private Helper() {
     }
     
+    private static final String comandoExtraLarge = "/extralarge:\t\tcomando che imposta la dimensione della griglia a 26x26.\n\n";
+    private static final String comandoLarge = "/large:\t\t\tcomando che imposta la dimensione della griglia a 18x18.\n\n";
+    private static final String comandoStandard = "/standard:\t\tcomando che imposta la dimensione della griglia a 10x10.\n\n";
+    private static final String comandoFacileNumero = "/facile numero:\t\tcomando che imposta a numero il numero massimo di tentativi falliti.\n\n";
+    private static final String comandoMedioNumero = "/medio numero:\t\tcomando che imposta a numero il numero massimo di tentativi falliti.\n\n";
+    private static final String comandoDifficileNumero = "/difficile numero:\tcomando che imposta a numero il numero massimo di tentativi falliti.\n\n";
+    private static final String comandoTentativi = "/tentativi numero:\tcomando che imposta a numero il numero massimo di tentativi.\n\n";
     private static final String comandoAbbandona = "/abbandona:\t\tcomando che permette di abbandonare la partita, se la conferma e' positiva l'applicazione risponde visualizzando sulla griglia la posizione di tutte le navi e si predispone a ricevere nuovi comandi.\n\t\t\tSe la conferma e' negativa, l'applicazione si predispone a ricevere nuovi tentativi o comandi.\n\n";
     private static final String comandoMostraTentativi = "/mostratentativi:\tcomando che mostra il numero di tentativi gia' effettuati, il numero di tentativi falliti e il numero massimo di tentativi falliti.\n\n";
     private static final String comandoMostraGriglia = "/mostragriglia:\t\tcomando che mostra una griglia con le righe numerate a partire da 1 e le colonne numerate a partire da A,\n\t\t\tcon le navi affondate e le sole parti gia' colpite delle navi non affondate.\n\n";
@@ -33,7 +40,8 @@ public final class Helper {
     + "manuale utente per ulteriori informazioni.\n\n"
     +comandoGioca+comandoEsci+comandoFacile+comandoMedio
     +comandoDifficile+comandoMostraLivello+comandoMostraNavi+comandoSvelaGriglia
-            +comandoTempo+comandoMostraTempo+comandoMostraGriglia+comandoMostraTentativi+comandoAbbandona;
+            +comandoTempo+comandoMostraTempo+comandoMostraGriglia+comandoMostraTentativi+comandoAbbandona+comandoTentativi
+            +comandoFacileNumero+comandoMedioNumero+comandoDifficileNumero+comandoStandard+comandoLarge+comandoExtraLarge;
     private static String benvenuto = "Benvenuto, per una lista dei comandi"
             + " disponibili, digita /help";
     /**

@@ -11,6 +11,7 @@ public final class Partita {
     private static int tempoDiGioco; //numero di minuti a disposizione per giocare
     public static boolean tempoScaduto=false;
     
+    
     public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
         new LivelloDiGioco(TipoLivello.MEDIO),
