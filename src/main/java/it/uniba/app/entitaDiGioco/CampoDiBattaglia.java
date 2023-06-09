@@ -222,7 +222,7 @@ public final class CampoDiBattaglia {
                 System.out.print(i + "   " + stampaRigaVuota() + "\n");
             }
         }
-        System.out.println("Numero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
+        System.out.println("\nNumero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
     }
 
     /**

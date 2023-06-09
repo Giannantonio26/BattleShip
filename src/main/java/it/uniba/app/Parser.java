@@ -9,7 +9,6 @@ import it.uniba.app.comandi.ComandoMostraLivello;
 import it.uniba.app.comandi.ComandoMostraNavi;
 import it.uniba.app.comandi.ComandoSvelaGriglia;
 import it.uniba.app.comandi.ComandoTempo;
-import it.uniba.app.comandi.ComandoLivelloTentativi;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import it.uniba.app.entitaDiGioco.Partita;
@@ -72,8 +71,8 @@ public final class Parser {
          }else if (matcher1.matches()) {         
             String livello = matcher1.group(1);
             int tentativi = Integer.parseInt(matcher1.group(2));
-            Comando livelloTentativi = new ComandoLivelloTentativi(livello, tentativi);
-            livelloTentativi.esegui();
+            Comando tentativiPerLivello = new ComandoLivello(livello, tentativi);
+            tentativiPerLivello.esegui();
         } else {
             System.out.println("Comando non valido");
         }
