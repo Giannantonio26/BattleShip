@@ -10,14 +10,14 @@ public final class Partita {
     private static TipoLivello livello = TipoLivello.FACILE;
     private static int minutiDiGioco; //numero di minuti a disposizione per giocare
     private static int minutiTrascorsi; //numero di minuti che sono trascorsi
-    
+    private static boolean iniziata = false;
     
     public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
         new LivelloDiGioco(TipoLivello.MEDIO),
         new LivelloDiGioco(TipoLivello.DIFFICILE)
     );
-    private static boolean iniziata = false;
+    
 
     private Partita() {
     }
