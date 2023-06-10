@@ -69,11 +69,10 @@ public final class Parser {
             Comando svelagriglia = new ComandoSvelaGriglia();
             svelagriglia.esegui();          
         } else if (matcher.find()) {
-            System.out.println("OK");
             String replace = comando.replace("/tempo ", "");
             int minuti = Integer.parseInt(replace);
-            Thread t = new Thread(new ComandoTempo(minuti));                   
-            t.start();
+            Comando comandoImpostaTempo = new ComandoTempo(minuti);
+            comandoImpostaTempo.esegui();
         } else if (matcher1.matches()) {         
             String livello = matcher1.group(1);
             int tentativi = Integer.parseInt(matcher1.group(2));

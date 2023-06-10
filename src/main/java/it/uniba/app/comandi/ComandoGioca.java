@@ -4,6 +4,7 @@
  */
 package it.uniba.app.comandi;
 
+import it.uniba.app.ThreadTempo;
 import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 
@@ -28,6 +29,12 @@ public final class ComandoGioca implements Comando {
                     new CampoDiBattaglia(Partita.getLivello(), Partita.getTentativi());
             Partita.setCampo(campo);
             campo.nuovaPartita();
+            //se il tempo di gioco è attivo parte il timer
+            if(Partita.isTempoDiGiocoAttivo()){
+                System.out.println("Hai a disposizione "+Partita.getMinutiDiGioco()+" minuti per giocare");
+                Thread t = new Thread(new ThreadTempo());                   
+                t.start();
+            }
         }
     }
 }
