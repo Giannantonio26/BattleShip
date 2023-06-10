@@ -39,7 +39,7 @@ public final class ComandoLivello implements Comando {
                 tentativiDifficile = tentativi;
                 break;
             default :
-                System.out.print("\n Livrllo non riconosciuto.\n");
+                System.out.print("\n Livello non riconosciuto.\n");
         }
     }
 
