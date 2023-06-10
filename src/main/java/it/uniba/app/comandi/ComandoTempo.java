@@ -12,36 +12,23 @@ import java.util.logging.Logger;
  *
  * @author Giannantonio
  */
-public class ComandoTempo implements Runnable{
+public class ComandoTempo implements Comando{
 
+    private int minuti;
+    
     public ComandoTempo(int minuti){
-        Partita.setMinutDiGioco(minuti);
-        Partita.setTempoDiGiocoAttivo();
+        this.minuti = minuti;
     }
     
     @Override
-    public void run(){
-        int minTempoDiGioco;
-        minTempoDiGioco = Partita.getMinutiDiGioco();  //tempo di gioco in minuti
-        int secondiTempoDiGioco = minTempoDiGioco*60; //tempo di gioco in secondi
-        
-        int min=0,sec=0;
-        for(int i=0;i<secondiTempoDiGioco;i++){
-            if (i % 60 == 0 && i!=0) {
-                min++;
-                Partita.setMinutiTrascorsi(min);
-                sec = 0;
-            }else {
-                sec++;
-            }
-            try {
-                Thread.sleep(1000);
-            }catch(InterruptedException e){
-                return;
-            }
+    public void esegui(){
+        if(Partita.isIniziata()){
+            System.out.println("Impossibile impostare il tempo di gioco a partita in corso");
+        }else{
+            System.out.println("OK");
+            Partita.setMinutDiGioco(minuti);
+            Partita.setTempoDiGiocoAttivo();
         }
-        System.out.println("TEMPO SCADUTO");
-        System.exit(0);
     }
 }
    
