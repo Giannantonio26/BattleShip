@@ -13,6 +13,7 @@ public final class Partita {
     private static int minutiTrascorsi; //numero di minuti che sono trascorsi
     private static boolean iniziata = false;
     private static boolean tempoDiGiocoAttivo = false;
+    private static int dimensioneGriglia = 10;
     
     public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
@@ -64,6 +65,14 @@ public final class Partita {
 
     public static void setTentativi(int tentativi) {
         Partita.tentativi = tentativi;
+    }
+
+    public static int getDimensioneGriglia() {
+        return dimensioneGriglia;
+    }
+
+    public static void setDimensioneGriglia(int dimensioneGriglia) {
+        Partita.dimensioneGriglia = dimensioneGriglia;
     }
 
 /**

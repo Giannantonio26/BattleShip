@@ -19,9 +19,7 @@ public final class CampoDiBattaglia {
     private final Random random = new Random();
     private LivelloDiGioco livelloPartita;
 
-    static final int DIM_CAMPO = 10;
     static final int MIN_COORD = 1;
-    static final int MAX_COORD = 10;
     static final int DIMENSIONE2 = 2;
     static final int DIMENSIONE3 = 3;
     static final int DIMENSIONE4 = 4;
@@ -68,8 +66,8 @@ public final class CampoDiBattaglia {
      * Metodo inizializzaCampo.
      */
     public void inizializzaCampo() {
-        for (int i = 1; i < DIM_CAMPO + 1; i++) {
-            for (int j = 1; j < DIM_CAMPO + 1; j++) {
+        for (int i = 1; i < Partita.getDimensioneGriglia() + 1; i++) {
+            for (int j = 1; j < Partita.getDimensioneGriglia() + 1; j++) {
                 campoBattaglia.put(new Coord(i, j), null);
             }
         }
@@ -108,8 +106,8 @@ public final class CampoDiBattaglia {
         for (Nave nave : NAVI) {
             boolean posizionata = false;
             while (!posizionata) {
-                int riga = random.nextInt(MIN_COORD, MAX_COORD);
-                int colonna = random.nextInt(MIN_COORD, MAX_COORD);
+                int riga = random.nextInt(MIN_COORD, Partita.getDimensioneGriglia());
+                int colonna = random.nextInt(MIN_COORD, Partita.getDimensioneGriglia());
                 boolean orizzontale = random.nextBoolean();
 
                 if (posizionaNave(nave, riga, colonna, orizzontale)) {
@@ -143,7 +141,7 @@ public final class CampoDiBattaglia {
     public boolean posizionaNave(final Nave nave, final int riga, final int colonna, final boolean orizzontale) {
         if (orizzontale) {
             //questo if serve per controllare che la nave non esca dal campo
-            if (colonna + nave.getDimensione() > DIM_CAMPO) {
+            if (colonna + nave.getDimensione() > Partita.getDimensioneGriglia()) {
                 return false;
             }
 
@@ -158,7 +156,7 @@ public final class CampoDiBattaglia {
         } else {                                         //caso verticale
 
             //questo if serve per controllare che la nave non esca dal campo
-            if (riga + nave.getDimensione() > DIM_CAMPO) {
+            if (riga + nave.getDimensione() > Partita.getDimensioneGriglia()) {
                 return false;
             }
 
@@ -179,15 +177,19 @@ public final class CampoDiBattaglia {
      * @param campo campo di battaglia
      */
     public static void svelaGriglia(final Map<Coord, Nave> campo) {
-        System.out.print("\n    A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\n");
-        for (int i = 1; i <= DIM_CAMPO; i++) {
-            if (i == DIM_CAMPO) {
-                System.out.print(i + "  ");
+        System.out.print("    ");
+        for(int i = 0; i < Partita.getDimensioneGriglia(); i++) {
+            char letteraColonna = (char) ('A' + i);
+            System.out.print(letteraColonna + "\t");
+        }
+        System.out.println();
+        for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
+            if (i < 10) {
+                System.out.print(i + "   ");
                 svelaRiga(i, campo);
                 System.out.println();
-                break;
             } else {
-                System.out.print(i + "   ");
+                System.out.print(i + "  ");
                 svelaRiga(i, campo);
                 System.out.println();
             }
@@ -200,7 +202,7 @@ public final class CampoDiBattaglia {
      * @param campoBattaglia campo di battaglia
      */
     public static void svelaRiga(final int riga, final Map<Coord, Nave> campoBattaglia) {
-        for (int i = 1; i <= DIM_CAMPO; i++) {
+        for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
             Coord coord = new Coord(riga, i);
             if (campoBattaglia.get(coord) == null) {
                 System.out.print("\u25A2\t");
@@ -213,13 +215,17 @@ public final class CampoDiBattaglia {
      * Metodo per mostrare il campo di battaglia vuoto, senza navi.
      */
     public void mostraGrigliaVuota() {
-        System.out.print("\n    A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\n");
-        for (int i = 1; i < DIM_CAMPO + 1; i++) {
-            if (i == DIM_CAMPO) {
-                System.out.print(i + "  " + stampaRigaVuota() + "\n");
-                break;
-            } else {
+        System.out.print("    ");
+        for(int i = 0; i < Partita.getDimensioneGriglia(); i++) {
+            char letteraColonna = (char) ('A' + i);
+            System.out.print(letteraColonna + "\t");
+        }
+        System.out.println();
+        for (int i = 1; i < Partita.getDimensioneGriglia() + 1; i++) {
+            if (i < 10) {
                 System.out.print(i + "   " + stampaRigaVuota() + "\n");
+            } else {
+                System.out.print(i + "  " + stampaRigaVuota() + "\n");
             }
         }
         System.out.println("\nNumero tentativi rimasti: " + livelloPartita.getNumeroTentativi());
@@ -230,6 +236,10 @@ public final class CampoDiBattaglia {
      * @return Restituisce una riga di puntini da usare in mostraGrigliaVuota.
      */
     public String stampaRigaVuota() {
-        return "\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t\u25A2\t";
+        String riga = "";
+        for (int i = 0; i < Partita.getDimensioneGriglia(); i++) {
+            riga = riga +"\u25A2\t";
+        }
+        return riga;
     }
 }

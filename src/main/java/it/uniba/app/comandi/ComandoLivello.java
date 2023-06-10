@@ -38,6 +38,8 @@ public final class ComandoLivello implements Comando {
             case "/difficile":
                 tentativiDifficile = tentativi;
                 break;
+            default :
+                System.out.print("\n Livrllo non riconosciuto.\n");
         }
     }
 

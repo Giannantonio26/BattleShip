@@ -10,6 +10,7 @@ import it.uniba.app.comandi.ComandoMostraNavi;
 import it.uniba.app.comandi.ComandoMostraTempo;
 import it.uniba.app.comandi.ComandoSvelaGriglia;
 import it.uniba.app.comandi.ComandoTempo;
+import it.uniba.app.comandi.ComandoDimensioneGriglia;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import it.uniba.app.entitaDiGioco.Partita;
@@ -84,13 +85,15 @@ public final class Parser {
         } else if (matcher2.matches()) {
             if(Partita.isIniziata()) {
                 System.out.println("Non puoi cambiare il numero di tentativi possibili durante una partita");
-                return;
             }else {
                 String comandoTentativi = matcher2.group(1);
                 int numTentativi = Integer.parseInt(matcher2.group(2));
                 Partita.setTentativi(numTentativi);
                 System.out.println("OK il numero massimo di tentativi falliti è stato impostato a "+numTentativi);
             }
+        } else if (comando.equals("/standard") || comando.equals("/large") || comando.equals("/extralarge")) {
+            Comando dimensioneGriglia = new ComandoDimensioneGriglia(comando);
+            dimensioneGriglia.esegui();
         } else {
             System.out.println("Comando non valido");
         }
