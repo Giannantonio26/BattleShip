@@ -27,7 +27,7 @@ public class ComandoTempo implements Comando{
         }else{
             System.out.println("OK");
             Partita.setMinutDiGioco(minuti);
-            Partita.setTempoDiGiocoAttivo();
+            Partita.setTempoDiGioco(true);
         }
     }
 }

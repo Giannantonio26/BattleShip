@@ -125,8 +125,8 @@ public final class Partita {
         return minutiTrascorsi;
     }
     
-    public static void setTempoDiGiocoAttivo(){
-        tempoDiGiocoAttivo = true;
+    public static void setTempoDiGioco(boolean b){
+        tempoDiGiocoAttivo = b;
     }
     
     public static boolean isTempoDiGiocoAttivo(){
