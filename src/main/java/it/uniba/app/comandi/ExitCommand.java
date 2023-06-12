@@ -17,14 +17,14 @@ public class ExitCommand implements Comando {
 */
     @Override
     public void esegui() {
-       try (Scanner input = new Scanner(System.in, "UTF-8")) {
+        Scanner input = new Scanner(System.in, "UTF-8");
         System.out.println("\nSei davvero sicuro di voler uscire ?\n"
                 + "In caso affermativo digita 'si' altrimenti digita 'no'");
         while (input.hasNext()) {
             String risposta = input.next();
             if (risposta.equalsIgnoreCase("si")) {
                 Partita.setIniziata(false);
-                throw new RuntimeException();
+                System.exit(0);
             } else if (risposta.equalsIgnoreCase("no")) {
                 //System.out.print("\n");
                 break;                    // L'istruzione break termina
@@ -33,6 +33,5 @@ public class ExitCommand implements Comando {
                 System.out.println("A quanto pare hai digitato qualcosa di non valido, riprova");
             }
         }
-    }
     }
 }
