@@ -30,11 +30,11 @@ public class ComandoAttacco implements Comando{
             if (riga > Partita.getDimensioneGriglia() || colonna > Partita.getDimensioneGriglia()) {
                 System.out.println("Coordinate errate. Ritenta.\n");
             } else {
-            CampoDiBattaglia.getLivelloPartita().setNumeroTentativi(CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() - 1);
             Coord tentativo = new Coord(colonna, riga);
             for (Coord chiave : CampoDiBattaglia.getCampoBattaglia().keySet()) {
                 if (tentativo.equals(chiave)) {
                     if (CampoDiBattaglia.getCampoBattaglia().get(chiave) == null) {
+                         CampoDiBattaglia.getLivelloPartita().setNumeroTentativi(CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() - 1);
                         System.out.println("\nAcqua!");
                     } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getCoordinate().get(chiave) == StatoPosizione.INTEGRA) {
                         if (CampoDiBattaglia.getCampoBattaglia().get(chiave).isAffondata()) {

@@ -16,7 +16,7 @@ public final class ComandoSvelaGriglia implements Comando {
         if (!Partita.isIniziata()) {
             System.out.println("\nDevi prima iniziare una partita");
         } else {
-            CampoDiBattaglia.svelaGriglia(Partita.getCampo().getCampoBattaglia());
+            CampoDiBattaglia.svelaGriglia(CampoDiBattaglia.getCampoBattaglia());
         }
     }
 }
