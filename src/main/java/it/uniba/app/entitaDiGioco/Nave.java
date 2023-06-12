@@ -32,6 +32,7 @@ public class Nave {
     private final int dimensione;
     private int esemplariInGioco;
     private final Map<Coord, StatoPosizione> coordinate = new HashMap<>();
+    private int colpiRicevuti = 0;
 
 /**
  *
@@ -158,5 +159,18 @@ public class Nave {
                 break;
         }
         return quadrato;
+    }
+    
+    public void colpita(Coord chiave) {
+        this.colpiRicevuti++;
+        coordinate.put(chiave, StatoPosizione.COLPITA);
+    }
+
+    public boolean isAffondata() {
+        return colpiRicevuti == dimensione - 1;
+    }
+
+    public boolean isColpita(Coord chiave) {
+        return coordinate.get(chiave) == StatoPosizione.COLPITA;
     }
 }

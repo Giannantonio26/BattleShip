@@ -19,25 +19,25 @@ public final class Coord {
  * @param riga
  * @param colonna
  */
-    public Coord(final int riga, final int colonna) {
-        this.x = riga;
-        this.y = colonna;
+    public Coord(final int colonna, final int riga) {
+        this.x = colonna;
+        this.y = riga;
     }
 
     public int getX() {
         return x;
     }
 
-    public void setX(final int riga) {
-        this.x = riga;
+    public void setX(final int colonna) {
+        this.x = colonna;
     }
 
     public int getY() {
         return y;
     }
 
-    public void setY(final int colonna) {
-        this.y = colonna;
+    public void setY(final int riga) {
+        this.y = riga;
     }
 
 /**

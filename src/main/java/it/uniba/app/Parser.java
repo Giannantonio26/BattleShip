@@ -11,6 +11,9 @@ import it.uniba.app.comandi.ComandoMostraTempo;
 import it.uniba.app.comandi.ComandoSvelaGriglia;
 import it.uniba.app.comandi.ComandoTempo;
 import it.uniba.app.comandi.ComandoDimensioneGriglia;
+import it.uniba.app.comandi.ComandoAttacco;
+import it.uniba.app.comandi.ComandoAbbandona;
+import it.uniba.app.comandi.ComandoMostraGriglia;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import it.uniba.app.entitaDiGioco.Partita;
@@ -46,6 +49,10 @@ public final class Parser {
         String regex2 = "(/tentativi)\\s(\\d+)";
         Pattern pattern2 = Pattern.compile(regex2);
         Matcher matcher2 = pattern2.matcher(comando);
+        
+        String regex3 = "([A-Za-z])-(\\d+)";
+        Pattern pattern3 = Pattern.compile(regex3);
+        Matcher matcher3 = pattern3.matcher(comando);
     
         if (comando.equalsIgnoreCase("/help")) {
             Comando help = new ComandoHelp();
@@ -93,8 +100,35 @@ public final class Parser {
         } else if (comando.equals("/standard") || comando.equals("/large") || comando.equals("/extralarge")) {
             Comando dimensioneGriglia = new ComandoDimensioneGriglia(comando);
             dimensioneGriglia.esegui();
+        } else if(matcher3.matches()) {
+            int coord1 = convertLetterStringToInt(matcher3.group(1));
+            int coord2 = Integer.parseInt(matcher3.group(2));
+            Comando comandoAttacco = new ComandoAttacco(coord1, coord2);
+            comandoAttacco.esegui();
+        } else if (comando.equalsIgnoreCase("/mostragriglia")) {
+            Comando mostraGriglia = new ComandoMostraGriglia();
+            mostraGriglia.esegui();
+        } else if (comando.equalsIgnoreCase("/abbandona")) {
+            Comando comandoAbbandona = new ComandoAbbandona();
+            comandoAbbandona.esegui();
         } else {
             System.out.println("Comando non valido");
+        }
+    }
+    
+    public int convertLetterStringToInt(String letterString) {
+        if (letterString.length() != 1) {
+            throw new IllegalArgumentException("La stringa fornita non contiene una singola lettera.");
+        }
+
+        char letter = letterString.charAt(0);
+
+        if (Character.isUpperCase(letter)) {
+            return letter - 'A' + 1;
+        } else if (Character.isLowerCase(letter)) {
+            return letter - 'a' + 1;
+        } else {
+            throw new IllegalArgumentException("Il carattere fornito non è una lettera dell'alfabeto.");
         }
     }
 }

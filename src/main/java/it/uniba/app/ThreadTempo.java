@@ -5,6 +5,9 @@
 package it.uniba.app;
 
 import it.uniba.app.entitaDiGioco.Partita;
+import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -34,7 +37,8 @@ public class ThreadTempo implements Runnable{
             }
         }
         System.out.println("TEMPO SCADUTO");
-        //chiamare metodo per abbandonare la partita
+        Partita.setIniziata(false);
+        CampoDiBattaglia.reset();
     }
     
 }
