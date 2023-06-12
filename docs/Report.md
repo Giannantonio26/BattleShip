@@ -118,6 +118,113 @@ Come giocatore voglio svelare la griglia con le navi posizionate, digitando il c
 >`/svelagriglia`
 
 L'applicazione risponde visualizzando, una griglia 10x10, con le righe numerate da 1 a 10 e le colonne numerate da A a J, e tutte le navi posizionate
+#
+Requisito funzionale 8 : *Impostare tentativi falliti per livello di gioco*
+
+Come giocatore voglio impostare il numero massimo di tentativi falliti per livello di gioco, digitando i comandi :
+
+>`/facile numero`
+
+L'applicazione risponde con Ok e imposta a *numero* il numero massimo di tentativi falliti
+
+>`/medio numero`
+
+L'applicazione risponde con Ok e imposta a *numero* il numero massimo di tentativi falliti
+
+>`/difficile  numero`
+
+L'applicazione risponde con Ok e imposta a *numero* il numero massimo di tentativi falliti
+#
+Requisito funzionale 9 : *Impostare il numero massimo di tentativi che si possono fallire*
+
+Come giocatore voglio impostare direttamente il numero massimo di tentativi che si possono fallire, digitando il comando:
+
+>`/tentativi numero `
+
+L'applicazione risponde con Ok e imposta a *numero* il numero massimo di tentativi falliti
+#
+Requisito funzionale 10 : *Impostare taglia griglia*
+
+Come giocatore voglio impostare la taglia della griglia, digitando i comandi :
+
+>`/standard `
+
+L'applicazione risponde con Ok e imposta a 10x10 la dimensione della griglia (default)
+
+>`/large `
+
+L'applicazione risponde con Ok e imposta a 18x18 la dimensione della griglia
+
+>`/extralarge`
+
+L'applicazione risponde con Ok e imposta a 26x26 la dimensione della griglia
+#
+Requisito funzionale 11 : *Impostare tempo di gioco*
+
+Come giocatore voglio impostare il tempo di gioco, digitando il comando:
+
+>`/tempo`
+
+L'app risponde con Ok e imposta a *numero* il numero di minuti a disposizione per giocare
+#
+Requisito funzionale 12 : *Mostrare tempo di gioco*
+
+Come giocatore voglio mostrare il tempo di gioco, digitando il comando:
+
+>`/mostratempo`
+
+L'app risponde visualizzando il numero di minuti trascorsi nel gioco e il numero di minuti ancora disponibili 
+#
+Requisito funzionale 13 : *Tentativo per colpire la nave*
+
+Come giocatore voglio effettuare un tentativo per colpire una nave, digitando una coppia di caratteri separati da un trattino, corrispondenti rispettivamente al numero di riga e alla lettera della colonna, (es B-4), l'app risponde: 
+
+* "*Acqua*" se sulla cella non è posizionata nessuna nave
+
+* "*Colpito*" se sulla cella è posizionata una nave
+
+* "*Colpito e affondato*" se sulla cella è posizionata una nave ed è l'ultima cella non colpita
+
+<br>
+
+Qualunque sia l'esito del tentativo, l'applicazione mostra la griglia con le navi colpite parzialmente o affondate, il numero di tentativi già effettuati, e il tempo trascorso.
+
+La partita termina con successo se il tentativo ha affondato l'ultima nave.
+
+La partita termina con insuccesso se è stato raggiunto il numero massimo di tentativi falliti o se è scaduto il tempo di gioco.
+
+<br>
+
+#
+Requisito funzionale 14: *Mostrare griglia con navi colpite e affondate*
+
+Come giocatore voglio mostrare la griglia con le navi colpite e affondate, digitando il comando :
+
+>`/mostragriglia`
+
+L'app risponde visualizzando, una griglia con le righe numerate a partire da 1 e le colonne numerate a partire da A, con le navi affodnare e le sole parti già colpite dalle navi non affondate
+#
+Requisito funzionale 15 : *Mostrare tentativi effettuati e falltii*
+
+Come giocatore voglio mostrare il numero di tentativi già efettuati e il numero di tentativi falliti, digitando il comando :
+
+>`/mostratentativi`
+
+L'app risponde visualizzando il numero di tentativi già effettuati, il numero di tentativi falliti e il numero massimo di tentativi falliti
+#
+Requisito funionale 16 : *Abbandonare partita*
+
+Come giocatore voglio abbandonare la partita, digitando il comando:
+
+>`/abbandona`
+
+L'app chiede conferma :
+
+* Se la conferma è *positiva* , l'applicazione risponde visualizzando sulla griglia la posizione di tutte le navi e si predispone a ricevere nuovi comandi
+
+* Se la conferma è *negativa* , l'applicazione si predispone a ricevere nuovi tentativi o comandi
+
+<br>
 
 ---
 
