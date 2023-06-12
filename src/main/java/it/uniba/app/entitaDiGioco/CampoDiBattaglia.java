@@ -15,7 +15,7 @@ import java.util.HashSet;
  * Classe CampoDiBattaglia.
  */
 public final class CampoDiBattaglia {
-    public static final Map<Coord, Nave> campoBattaglia = new HashMap<>();
+    private static final Map<Coord, Nave> campoBattaglia = new HashMap<>();
     static final List<Nave> NAVI = new ArrayList<>();
     private final Random random = new Random();
     static LivelloDiGioco livelloPartita;
