@@ -32,6 +32,7 @@ public class Nave {
     private final int dimensione;
     private int esemplariInGioco;
     private final Map<Coord, StatoPosizione> coordinate = new HashMap<>();
+    private int colpiRicevuti = 0;
 
 /**
  *
@@ -143,20 +144,33 @@ public class Nave {
         String quadrato = "";
         switch (dimensione) {
             case DIMENSIONE2:
-                quadrato = ROSSO + "\u22A0\t" + RESET;
+                quadrato = ROSSO + "#\t" + RESET;
                 break;
             case DIMENSIONE3:
-                quadrato = VERDE + "\u22A0\t" + RESET;
+                quadrato = VERDE + "#\t" + RESET;
                 break;
             case DIMENSIONE4:
-                quadrato =  BLU + "\u22A0\t" + RESET;
+                quadrato =  BLU + "#\t" + RESET;
                 break;
             case DIMENSIONE5:
-                quadrato = GIALLO + "\u22A0\t" + RESET;
+                quadrato = GIALLO + "#\t" + RESET;
                 break;
             default:
                 break;
         }
         return quadrato;
+    }
+    
+    public void colpita(Coord chiave) {
+        this.colpiRicevuti++;
+        coordinate.put(chiave, StatoPosizione.COLPITA);
+    }
+
+    public boolean isAffondata() {
+        return colpiRicevuti == dimensione - 1;
+    }
+
+    public boolean isColpita(Coord chiave) {
+        return coordinate.get(chiave) == StatoPosizione.COLPITA;
     }
 }
