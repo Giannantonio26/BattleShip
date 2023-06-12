@@ -65,7 +65,11 @@ public final class Parser {
             gioca.esegui();          
         } else if (comando.equalsIgnoreCase("/esci")) {
             Comando exit = new ExitCommand();
-            exit.esegui();      
+            try{
+                exit.esegui();                
+            }catch(RuntimeException e){
+                throw new RuntimeException();
+            }
         } else if (comando.equalsIgnoreCase("/mostranavi")) {
             Comando mostranavi = new ComandoMostraNavi();
             mostranavi.esegui();           
