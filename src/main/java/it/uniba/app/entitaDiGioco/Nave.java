@@ -144,16 +144,16 @@ public class Nave {
         String quadrato = "";
         switch (dimensione) {
             case DIMENSIONE2:
-                quadrato = ROSSO + "#\t" + RESET;
+                quadrato = ROSSO + "\u22A0\t" + RESET;
                 break;
             case DIMENSIONE3:
-                quadrato = VERDE + "#\t" + RESET;
+                quadrato = VERDE + "\u22A0\t" + RESET;
                 break;
             case DIMENSIONE4:
-                quadrato =  BLU + "#\t" + RESET;
+                quadrato =  BLU + "\u22A0\t" + RESET;
                 break;
             case DIMENSIONE5:
-                quadrato = GIALLO + "#\t" + RESET;
+                quadrato = GIALLO + "\u22A0\t" + RESET;
                 break;
             default:
                 break;
