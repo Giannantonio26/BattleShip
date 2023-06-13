@@ -5,8 +5,9 @@
 package it.uniba.app.entitaDiGioco;
 
 /**
- * @author leonardo
  * Classe LivelloDiGioco.
+ * @javadoc
+ * @author leonardo
  */
 public final class LivelloDiGioco {
     private TipoLivello tipoLivello;

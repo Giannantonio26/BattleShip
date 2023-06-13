@@ -10,7 +10,8 @@ import java.util.Scanner;
  *
  * @author gabri
  */
-public class InputScanner {
+public final class InputScanner {
+    private boolean attivo = false;
     public static void userInputScanner() {
         try (Scanner s = new Scanner(System.in, "UTF-8")) {
             while (s.hasNextLine()) {
@@ -23,5 +24,8 @@ public class InputScanner {
                 System.out.println("\nDigita un nuovo comando: ");
             }
         }
+    }
+    public boolean isAttivo() {
+        return attivo;
     }
 }

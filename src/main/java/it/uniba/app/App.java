@@ -1,6 +1,4 @@
 package it.uniba.app;
-import java.util.Scanner;
-
 /**
  * Main class of the application.
  */

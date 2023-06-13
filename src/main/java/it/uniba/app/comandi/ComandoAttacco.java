@@ -40,16 +40,21 @@ public final class ComandoAttacco implements Comando {
                          LivelloDiGioco lvl = CampoDiBattaglia.getLivelloPartita();
                          lvl.setNumeroTentativi(CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() - 1);
                         System.out.println("\nAcqua!");
-                    } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getCoordinate().get(chiave) == StatoPosizione.INTEGRA) {
+                    } else if (CampoDiBattaglia.getCampoBattaglia().
+                            get(chiave).getCoordinate().
+                            get(chiave) == StatoPosizione.INTEGRA) {
                         if (CampoDiBattaglia.getCampoBattaglia().get(chiave).isAffondata()) {
                             CampoDiBattaglia.getCampoBattaglia().get(chiave).colpita(chiave);
                             System.out.println("\nColpita e Affondata!");
                             CampoDiBattaglia.setNaviAffondate(CampoDiBattaglia.getNaviAffondate() + 1);
                         } else {
                             System.out.println("\nColpita!");
-                            CampoDiBattaglia.getCampoBattaglia().get(chiave).colpita(chiave);
+                            CampoDiBattaglia.getCampoBattaglia().
+                                    get(chiave).colpita(chiave);
                         }
-                    } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getCoordinate().get(chiave) == StatoPosizione.COLPITA) {
+                    } else if (CampoDiBattaglia.getCampoBattaglia().
+                            get(chiave).getCoordinate().
+                            get(chiave) == StatoPosizione.COLPITA) {
                         System.out.println("\nGià colpita!");
                     }
                 }

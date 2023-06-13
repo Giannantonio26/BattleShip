@@ -284,7 +284,7 @@ public final class CampoDiBattaglia {
         for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
             Coord coord = new Coord(riga, i);
             if (campobattaglia.get(coord) == null
-                || campobattaglia.get(coord).isColpita(coord) == false) {
+                || !(campobattaglia.get(coord).isColpita(coord))) {
                 System.out.print("\u25A2\t");
             } else if (campobattaglia.get(coord).isColpita(coord)
                     || campobattaglia.get(coord).isAffondata()) {
