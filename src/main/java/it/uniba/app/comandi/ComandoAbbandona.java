@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class ComandoAbbandona implements Comando {
     @Override
     public void esegui() {
-        if(!Partita.isIniziata()) {
+        if (!Partita.isIniziata()) {
             System.out.println("\nDevi prima iniziare una partita");
         } else {
             Scanner input = new Scanner(System.in, "UTF-8");
@@ -29,10 +29,10 @@ public class ComandoAbbandona implements Comando {
                     CampoDiBattaglia.reset();
                     return;
                 } else if (risposta.equalsIgnoreCase("no")) {
-                    return;                    
+                    return;
                 } else {
                     System.out.println("A quanto pare hai digitato qualcosa di non valido, riprova");
-                }  
+                }
             }
         }
     }

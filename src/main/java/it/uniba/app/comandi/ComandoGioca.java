@@ -25,14 +25,14 @@ public final class ComandoGioca implements Comando {
             System.out.println("\nUna partita è già iniziata. "
                     + "Il comando /gioca non è disponibile");
         } else {
-            CampoDiBattaglia campo = 
+            CampoDiBattaglia campo =
                     new CampoDiBattaglia(Partita.getLivello(), Partita.getTentativi());
             Partita.setCampo(campo);
             campo.nuovaPartita();
             //se il tempo di gioco � attivo parte il timer
-            if(Partita.isTempoDiGiocoAttivo()){
-                System.out.println("Hai a disposizione "+Partita.getMinutiDiGioco()+" minuti per giocare");
-                Thread t = new Thread(new ThreadTempo());                   
+            if (Partita.isTempoDiGiocoAttivo()) {
+                System.out.println("Hai a disposizione " + Partita.getMinutiDiGioco() + " minuti per giocare");
+                Thread t = new Thread(new ThreadTempo());
                 t.start();
             }
         }
