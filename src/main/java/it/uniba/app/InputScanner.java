@@ -11,7 +11,11 @@ import java.util.Scanner;
  * @author gabri
  */
 public final class InputScanner {
-    private boolean attivo = false;
+    
+    private InputScanner(){
+        
+    }
+    
     public static void userInputScanner() {
         try (Scanner s = new Scanner(System.in, "UTF-8")) {
             while (s.hasNextLine()) {
@@ -22,10 +26,7 @@ public final class InputScanner {
                     return;
                 }
                 System.out.println("\nDigita un nuovo comando: ");
-            }
+            }             
         }
-    }
-    public boolean isAttivo() {
-        return attivo;
     }
 }
