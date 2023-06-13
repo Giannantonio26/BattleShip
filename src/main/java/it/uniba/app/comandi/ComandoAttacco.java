@@ -33,7 +33,6 @@ public class ComandoAttacco implements Comando{
             Coord tentativo = new Coord(colonna, riga);
             for (Coord chiave : CampoDiBattaglia.getCampoBattaglia().keySet()) {
                 if (tentativo.equals(chiave)) {
-                    Partita.setTentativiEffettuati(Partita.getTentativiEffettuati() + 1);
                     if (CampoDiBattaglia.getCampoBattaglia().get(chiave) == null) {
                          CampoDiBattaglia.getLivelloPartita().setNumeroTentativi(CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() - 1);
                         System.out.println("\nAcqua!");

@@ -290,7 +290,6 @@ public final class CampoDiBattaglia {
         campoBattaglia.clear();
         NAVI.clear();
         naviAffondate = 0;
-        Partita.setTentativiEffettuati(0);
         if(Partita.isTempoDiGiocoAttivo()){
             Partita.setMinutiTrascorsi(0);  
         }
