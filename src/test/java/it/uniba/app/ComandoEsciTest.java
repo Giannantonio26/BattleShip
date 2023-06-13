@@ -6,19 +6,19 @@ package it.uniba.app;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.io.ByteArrayInputStream;
 /**
  *
  * @author gabri
  */
-public class ComandoEsciTest {
+class ComandoEsciTest {
     @Test
     @DisplayName("Corretto funzionamento comando di uscita")
-    void testEsci(){
+    void testEsci() {
         assertThrows(RuntimeException.class, () -> {
             Parser p = new Parser("/esci");
-            System.setIn(new ByteArrayInputStream("si".getBytes()));
+            System.setIn(new ByteArrayInputStream("si".getBytes("UTF-8")));
             p.elabora();
             System.setIn(System.in);
         });

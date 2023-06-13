@@ -4,43 +4,49 @@
  */
 package it.uniba.app;
 
-import it.uniba.app.entitaDiGioco.*;
+import it.uniba.app.entitaDiGioco.Nave;
+import it.uniba.app.entitaDiGioco.StatoPosizione;
+import it.uniba.app.entitaDiGioco.Coord;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  *
  * @author gabri
  */
 
 class NaveTest {
+    private static final int DIM_NAVE_VALIDA = 3;
+    private static final int DIM_NAVE_NON_VALIDA = 0;
+    private static final int COORDINATE = 4;
     @Test
     @DisplayName("Test costruttore con dimensione corretta")
-    void testNaveValida(){
-        Nave naveTest = new Nave(3);
-        assertAll( () -> {
-            assertTrue(naveTest.getNome().equals("Incrociatore"));
-            assertEquals(3, naveTest.getDimensione());
-            /*assertEquals(3, naveTest.getEsemplariInGioco());*/
+    void testNaveValida() {
+        Nave naveTest = new Nave(DIM_NAVE_VALIDA);
+        assertAll(() -> {
+            assertEquals("Incrociatore", naveTest.getNome(), "Nome impostato correttamente");
+            assertEquals(DIM_NAVE_VALIDA, naveTest.getDimensione(), "Dimensione impostata correttamente");
         });
     }
 
     @Test
     @DisplayName("Test costruttore con dimensione non valida")
-    void testNaveNonValida(){
+    void testNaveNonValida() {
         assertThrows(IllegalArgumentException.class, () -> {
-        Nave n = new Nave(0);
+        Nave n = new Nave(DIM_NAVE_NON_VALIDA);
     });
-    
     }
 
     @Test
     @DisplayName("Test metodo aggiungiPosizione")
-    void testAggiungiPosizione(){
-        Nave naveTest = new Nave(2);
-        Coord coordTest = new Coord(3,3);
+    void testAggiungiPosizione() {
+        Nave naveTest = new Nave(DIM_NAVE_VALIDA);
+        Coord coordTest = new Coord(COORDINATE, COORDINATE);
         naveTest.aggiungiPosizione(coordTest);
-        assertEquals(StatoPosizione.INTEGRA, naveTest.getCoordinate().get(coordTest));
+        assertEquals(StatoPosizione.INTEGRA, naveTest.getCoordinate().get(coordTest), "Cella della nave"
+                + "correttamente impostata");
     }
 }
 
