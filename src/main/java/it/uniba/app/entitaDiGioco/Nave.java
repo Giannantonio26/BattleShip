@@ -10,24 +10,22 @@ import java.util.HashMap;
 /**
  * @author leonardo
  * Classe Nave.
- */
+@javadoc
+* */
 public class Nave {
     static final String ROSSO = "\u001B[31m";
     static final String VERDE = "\u001B[32m";
     static final String BLU = "\u001B[34m";
     static final String GIALLO = "\u001B[33m";
     static final String RESET = "\u001B[0m";
-
     static final int DIMENSIONE2 = 2;
     static final int DIMENSIONE3 = 3;
     static final int DIMENSIONE4 = 4;
     static final int DIMENSIONE5 = 5;
-
     static final int ESEMPLARE_1 = 1;
     static final int ESEMPLARE_2 = 2;
     static final int ESEMPLARE_3 = 3;
     static final int ESEMPLARE_4 = 4;
-
     private String nome;
     private final int dimensione;
     private int esemplariInGioco;
@@ -160,17 +158,16 @@ public class Nave {
         }
         return quadrato;
     }
-    
-    public void colpita(Coord chiave) {
+    public final void colpita(final Coord chiave) {
         this.colpiRicevuti++;
         coordinate.put(chiave, StatoPosizione.COLPITA);
     }
 
-    public boolean isAffondata() {
+    public final boolean isAffondata() {
         return colpiRicevuti == dimensione - 1;
     }
 
-    public boolean isColpita(Coord chiave) {
+    public final boolean isColpita(final Coord chiave) {
         return coordinate.get(chiave) == StatoPosizione.COLPITA;
     }
 }

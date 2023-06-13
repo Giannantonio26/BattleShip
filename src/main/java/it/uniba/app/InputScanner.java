@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author gabri
  */
 public class InputScanner {
-    public static void userInputScanner(){
+    public static void userInputScanner() {
         try (Scanner s = new Scanner(System.in, "UTF-8")) {
             while (s.hasNextLine()) {
                 Parser parser = new Parser(s.nextLine());
