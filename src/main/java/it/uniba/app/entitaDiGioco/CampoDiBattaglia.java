@@ -20,6 +20,10 @@ public final class CampoDiBattaglia {
     private final Random random = new Random();
     static LivelloDiGioco livelloPartita;
     static int naviAffondate = 0;
+    private static int esemplari2 = 4;
+    private static int esemplari3 = 3;
+    private static int esemplari4 = 2;
+    private static int esemplari5 = 1;
 
     static final int MIN_COORD = 1;
     static final int DIMENSIONE2 = 2;
@@ -40,6 +44,38 @@ public final class CampoDiBattaglia {
     public CampoDiBattaglia(TipoLivello livello, int tentativi) {
         livelloPartita = new LivelloDiGioco(livello, tentativi);
     }
+
+    public static int getEsemplari2() {
+        return esemplari2;
+    }
+
+    public static void setEsemplari2(int esemplari2) {
+        CampoDiBattaglia.esemplari2 = esemplari2;
+    }
+
+    public static int getEsemplari3() {
+        return esemplari3;
+    }
+
+    public static void setEsemplari3(int esemplari3) {
+        CampoDiBattaglia.esemplari3 = esemplari3;
+    }
+
+    public static int getEsemplari4() {
+        return esemplari4;
+    }
+
+    public static void setEsemplari4(int esemplari4) {
+        CampoDiBattaglia.esemplari4 = esemplari4;
+    }
+
+    public static int getEsemplari5() {
+        return esemplari5;
+    }
+
+    public static void setEsemplari5(int esemplari5) {
+        CampoDiBattaglia.esemplari5 = esemplari5;
+    }
     
      public static LivelloDiGioco getLivelloPartita() {
         return livelloPartita;
@@ -57,6 +93,10 @@ public final class CampoDiBattaglia {
         CampoDiBattaglia.naviAffondate = naviAffondate;
     }
 
+    public static List<Nave> getNAVI() {
+        return NAVI;
+    }
+
     /**
      * Inizio nuova partita.
      */
@@ -66,6 +106,10 @@ public final class CampoDiBattaglia {
         inizializzaNavi();
         posizionaNavi();
         mostraGrigliaVuota();
+        esemplari2 = 4;
+        esemplari3 = 3;
+        esemplari4 = 2;
+        esemplari5 = 1;
     }
 
     /*

@@ -40,6 +40,15 @@ public class ComandoAttacco implements Comando{
                     } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getCoordinate().get(chiave) == StatoPosizione.INTEGRA) {
                         if (CampoDiBattaglia.getCampoBattaglia().get(chiave).isAffondata()) {
                             CampoDiBattaglia.getCampoBattaglia().get(chiave).colpita(chiave);
+                            if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == 2) {
+                                    CampoDiBattaglia.setEsemplari2(CampoDiBattaglia.getEsemplari2() - 1);
+                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == 3) {
+                                    CampoDiBattaglia.setEsemplari3(CampoDiBattaglia.getEsemplari3() - 1);
+                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == 4) {
+                                    CampoDiBattaglia.setEsemplari4(CampoDiBattaglia.getEsemplari4() - 1);
+                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == 5) {
+                                    CampoDiBattaglia.setEsemplari5(CampoDiBattaglia.getEsemplari5() - 1);
+                            }
                             System.out.println("\nColpita e Affondata!");
                             CampoDiBattaglia.setNaviAffondate(CampoDiBattaglia.getNaviAffondate() + 1);
                         } else {

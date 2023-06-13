@@ -20,6 +20,5 @@ public class ComandoMostraTempo implements Comando{
         }else{
             System.out.println("Tempo di gioco non impostato!");
         }
-    }
-       
+    }   
 }
