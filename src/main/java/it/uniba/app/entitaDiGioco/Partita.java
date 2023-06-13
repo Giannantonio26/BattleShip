@@ -14,6 +14,7 @@ public final class Partita {
     private static boolean iniziata = false;
     private static boolean tempoDiGiocoAttivo = false;
     private static int dimensioneGriglia = 10;
+    private static int tentativiEffettuati = 0;
     
     public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
@@ -42,7 +43,13 @@ public final class Partita {
     public static CampoDiBattaglia getCampo() {
         return campo;
     }
+    public static int getTentativiEffettuati() {
+        return tentativiEffettuati;
+    }
 
+    public static void setTentativiEffettuati(int tentativiEffettuati) {
+        Partita.tentativiEffettuati = tentativiEffettuati;
+    }
 /**
  *
  * @param campoDiBattaglia

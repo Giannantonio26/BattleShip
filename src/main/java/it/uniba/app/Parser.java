@@ -17,6 +17,7 @@ import it.uniba.app.comandi.ComandoMostraGriglia;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import it.uniba.app.entitaDiGioco.Partita;
+import it.uniba.app.comandi.ComandoMostraTentativi;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -115,6 +116,9 @@ public final class Parser {
         } else if (comando.equalsIgnoreCase("/abbandona")) {
             Comando comandoAbbandona = new ComandoAbbandona();
             comandoAbbandona.esegui();
+        } else if (comando.equalsIgnoreCase("/mostratentativi")) {
+            Comando mostratentativi = new ComandoMostraTentativi();
+            mostratentativi.esegui();
         } else {
             System.out.println("Comando non valido");
         }
