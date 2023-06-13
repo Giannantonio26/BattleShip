@@ -77,8 +77,8 @@ public final class Partita {
         return dimensioneGriglia;
     }
 
-    public static void setDimensioneGriglia(final int dimensioneGriglia) {
-        Partita.dimensioneGriglia = dimensioneGriglia;
+    public static void setDimensioneGriglia(final int dimGriglia) {
+        Partita.dimensioneGriglia = dimGriglia;
     }
 
 /**
@@ -124,7 +124,7 @@ public final class Partita {
     }
     public static int getMinutiTrascorsi() {
         return minutiTrascorsi;
-    }  
+    }
     public static void setTempoDiGioco(final boolean b) {
         tempoDiGiocoAttivo = b;
     }
