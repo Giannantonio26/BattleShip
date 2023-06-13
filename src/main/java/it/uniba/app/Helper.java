@@ -65,7 +65,7 @@ public final class Helper {
             + " specificando per ognuna il numero di navi presenti.\n\n";
     private static final String COMANDO_SVELA_GRIGLIA = "/svelagriglia:\t\t"
             + "comando con il quale viene stampata la griglia della partita attuale.\n\n";
-    private static String comandohelp = "Benvenuto al gioco della battaglia navale!\n"
+    private static String comandoHelp = "Benvenuto al gioco della battaglia navale!\n"
     + "Il tuo obiettivo è indovinare dove potrebbero essere le navi, "
     + "fornire una serie di coordinate dove colpire e cercare di abbatterle tutte "
     + "prima di esaurire i tuoi tentativi.\n"
