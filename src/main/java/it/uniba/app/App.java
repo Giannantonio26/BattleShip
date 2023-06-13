@@ -23,23 +23,16 @@ public final class App {
     public static void main(final String[] args) {
         if (args.length > 0) {
             if (args[0].equals("--help") || args[0].equals("-h")) {
-                Helper.stampaHelp();
+                String help = Helper.getHelp();
+                System.out.println(help);
             } else {
-                Helper.stampaBenvenuto();
+                String benvenuto = Helper.getBenvenuto();
+                System.out.println(benvenuto);
             }
         } else {
-            Helper.stampaBenvenuto();
+            String benvenuto = Helper.getBenvenuto();
+            System.out.println(benvenuto);
         }
-        try (Scanner s = new Scanner(System.in, "UTF-8")) {
-            while (s.hasNextLine()) {
-                Parser parser = new Parser(s.nextLine());
-                try {
-                    parser.elabora();
-                } catch (RuntimeException e) {
-                    return;
-                }
-                System.out.println("\nDigita un nuovo comando: ");
-            }
-        }
+        InputScanner.userInputScanner();
     }
 }
