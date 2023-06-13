@@ -14,9 +14,12 @@ import it.uniba.app.entitaDiGioco.LivelloDiGioco;
  */
 public final class ComandoLivello implements Comando {
     private final String nome;
-    private static int tentativiFacile = 50;
-    private static int tentativiMedio = 30;
-    private static int tentativiDifficile = 10;
+    static final int FACILE = 50;
+    static final int MEDIO = 50;
+    static final int DIFFICILE = 50;
+    private static int tentativiFacile = FACILE;
+    private static int tentativiMedio = MEDIO;
+    private static int tentativiDifficile = DIFFICILE;
 
 /**
  *
@@ -25,7 +28,11 @@ public final class ComandoLivello implements Comando {
     public ComandoLivello(final String comando) {
         this.nome = comando;
     }
-    
+    /**
+     *
+     * @param comando
+     * @param tentativi
+     */
     public ComandoLivello(final String comando, final int tentativi) {
         this.nome = comando;
         switch (nome) {

@@ -6,25 +6,27 @@ package it.uniba.app.comandi;
 import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 import it.uniba.app.entitaDiGioco.Coord;
+import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 import it.uniba.app.entitaDiGioco.StatoPosizione;
-
 /**
  *
  * @author leonardo
  */
-public class ComandoAttacco implements Comando{
-    
+public final class ComandoAttacco implements Comando {
     private final int riga;
     private final int colonna;
-    
-    public ComandoAttacco(int colonna, int riga) {
-        this.riga = colonna;
-        this.colonna = riga;
+    /**
+     *
+     * @param colonnaIn
+     * @param rigaIn
+     */
+    public ComandoAttacco(final int colonnaIn, final int rigaIn) {
+        this.riga = colonnaIn;
+        this.colonna = rigaIn;
     }
-    
     @Override
     public void esegui() {
-        if(!Partita.isIniziata()) {
+        if (!Partita.isIniziata()) {
             System.out.println("\nNon puoi effettuare un tentativo se non cominci una partita.");
         } else {
             if (riga > Partita.getDimensioneGriglia() || colonna > Partita.getDimensioneGriglia()) {
@@ -35,7 +37,8 @@ public class ComandoAttacco implements Comando{
                 if (tentativo.equals(chiave)) {
                     Partita.setTentativiEffettuati(Partita.getTentativiEffettuati() + 1);
                     if (CampoDiBattaglia.getCampoBattaglia().get(chiave) == null) {
-                         CampoDiBattaglia.getLivelloPartita().setNumeroTentativi(CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() - 1);
+                         LivelloDiGioco lvl = CampoDiBattaglia.getLivelloPartita();
+                         lvl.setNumeroTentativi(CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() - 1);
                         System.out.println("\nAcqua!");
                     } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getCoordinate().get(chiave) == StatoPosizione.INTEGRA) {
                         if (CampoDiBattaglia.getCampoBattaglia().get(chiave).isAffondata()) {
@@ -51,9 +54,10 @@ public class ComandoAttacco implements Comando{
                     }
                 }
             }
-            if(Partita.isTempoDiGiocoAttivo()){
-            System.out.println("Minuti trascorsi: "+Partita.getMinutiTrascorsi());
-            System.out.println("Minuti ancora disponibili: "+(Partita.getMinutiDiGioco()-Partita.getMinutiTrascorsi()));
+            if (Partita.isTempoDiGiocoAttivo()) {
+            System.out.println("Minuti trascorsi: " + Partita.getMinutiTrascorsi());
+            System.out.println("Minuti ancora disponibili: "
+            + (Partita.getMinutiDiGioco() - Partita.getMinutiTrascorsi()));
             }
             CampoDiBattaglia.mostraGrigliaAggiornata();
                 if (CampoDiBattaglia.getLivelloPartita().getNumeroTentativi() == 0) {
@@ -63,8 +67,10 @@ public class ComandoAttacco implements Comando{
                     Partita.setIniziata(false);
                     CampoDiBattaglia.reset();
                 }
-                if (CampoDiBattaglia.getNaviAffondate() == 10) {
-                    System.out.println("\nHai affondato tutte le navi, hai vinto! Digita /gioca per comiciarne un'altra.");
+                final int numNavi = 10;
+                if (CampoDiBattaglia.getNaviAffondate() == numNavi) {
+                    System.out.println("\nHai affondato tutte le navi, hai vinto!"
+                            + " Digita /gioca per comiciarne un'altra.");
                     Partita.setIniziata(false);
                     CampoDiBattaglia.reset();
                 }

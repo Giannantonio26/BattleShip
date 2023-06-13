@@ -10,15 +10,16 @@ import  it.uniba.app.entitaDiGioco.Partita;
  *
  * @author 39379
  */
-public class ComandoMostraTentativi implements Comando {
+public final class ComandoMostraTentativi implements Comando {
    @Override
-    public void esegui(){
-        if(!Partita.isIniziata()){
+    public void esegui() {
+        if (!Partita.isIniziata()) {
             System.out.println("Devi prima iniziare una partita");
-         } else{
+         } else {
             System.out.println("Numero tentativi già effettuati: " + Partita.getTentativiEffettuati());
-            System.out.println("Numero tentativi falliti: " + (Partita.getTentativi() - CampoDiBattaglia.getLivelloPartita().getNumeroTentativi()));
+            System.out.println("Numero tentativi falliti: "
+            + "" + (Partita.getTentativi() - CampoDiBattaglia.getLivelloPartita().getNumeroTentativi()));
             System.out.println("Numero massimo di tentativi falliti: " + Partita.getTentativi());
-         } 
+         }
     }
 }

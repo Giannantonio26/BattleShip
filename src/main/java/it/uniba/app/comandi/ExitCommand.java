@@ -5,9 +5,6 @@
 package it.uniba.app.comandi;
 import java.util.Scanner;
 import it.uniba.app.entitaDiGioco.Partita;
-import java.lang.Exception;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  * @author leonardo
  * Classe ExitCommand.
@@ -17,10 +14,10 @@ public class ExitCommand implements Comando {
 * Questo metodo statico si occupa di gestire l'interazione con l'utente
 * nel momento in cui abbia inserito il comando /esci,
 * prima di chiudere l'applicativo viene chiesta conferma.
-     * @throws java.lang.Exception
+* //@throws java.lang.Exception
 */
     @Override
-    public void esegui(){
+    public void esegui() {
         Scanner input = new Scanner(System.in, "UTF-8");
         System.out.println("\nSei davvero sicuro di voler uscire ?\n"
                 + "In caso affermativo digita 'si' altrimenti digita 'no'");
