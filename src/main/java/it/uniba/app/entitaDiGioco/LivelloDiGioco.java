@@ -5,8 +5,9 @@
 package it.uniba.app.entitaDiGioco;
 
 /**
- * @author leonardo
  * Classe LivelloDiGioco.
+ * @javadoc
+ * @author leonardo
  */
 public final class LivelloDiGioco {
     private TipoLivello tipoLivello;
@@ -47,8 +48,7 @@ public final class LivelloDiGioco {
                 break;
         }
     }
-    
-    public LivelloDiGioco (TipoLivello livello, int tentativi) {
+    public LivelloDiGioco(final TipoLivello livello, final int tentativi) {
         this.tipoLivello = livello;
         this.numeroTentativi = tentativi;
     }

@@ -119,7 +119,7 @@ public final class Parser {
             System.out.println("Comando non valido");
         }
     }
-    public int convertLetterStringToInt(String letterString) {
+    public int convertLetterStringToInt(final String letterString) {
         if (letterString.length() != 1) {
             throw new IllegalArgumentException("La stringa fornita non contiene una singola lettera.");
         }

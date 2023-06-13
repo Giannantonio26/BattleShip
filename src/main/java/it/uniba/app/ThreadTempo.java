@@ -16,16 +16,17 @@ public class ThreadTempo implements Runnable {
     private final int millis = 1000;
     private final int numsecondi = 60;
     @Override
-    public void run() {
+    public final void run() {
         int minTempoDiGioco;
         minTempoDiGioco = Partita.getMinutiDiGioco();   //tempo di gioco in minuti
         int secondiTempoDiGioco = minTempoDiGioco * numsecondi; //tempo di gioco in secondi
-        int min = 0, sec = 0;
-        for (int i = 0;i < secondiTempoDiGioco; i++) {
+        int min = 0;
+        int sec = 0;
+        for (int i = 0; i < secondiTempoDiGioco; i++) {
             //se la partita è stata abbandonata interrompi il timer
             if (!Partita.isIniziata()) {
                 return;
-            }         
+            }
             if (i % numsecondi == 0 && i != 0) {
                 min++;
                 Partita.setMinutiTrascorsi(min);
@@ -39,7 +40,8 @@ public class ThreadTempo implements Runnable {
                 return;
             }
         }
-        System.out.println("TEMPO SCADUTO");
+        System.out.println("\nTEMPO SCADUTO");
+        System.out.println("\nPartita abbandonata");
         Partita.setIniziata(false);
         CampoDiBattaglia.reset();
     }

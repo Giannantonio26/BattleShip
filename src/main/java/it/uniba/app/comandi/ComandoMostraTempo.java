@@ -10,16 +10,16 @@ import it.uniba.app.entitaDiGioco.Partita;
  *
  * @author Giannantonio
  */
-public class ComandoMostraTempo implements Comando{
+public final class ComandoMostraTempo implements Comando {
 
     @Override
-    public void esegui() {  
-        if(Partita.isTempoDiGiocoAttivo()){
-            System.out.println("Minuti trascorsi: "+Partita.getMinutiTrascorsi());
-            System.out.println("Minuti ancora disponibili: "+(Partita.getMinutiDiGioco()-Partita.getMinutiTrascorsi()));
-        }else{
+    public void esegui() {
+        if (Partita.isTempoDiGiocoAttivo()) {
+            System.out.println("Minuti trascorsi: " + Partita.getMinutiTrascorsi());
+            System.out.println("Minuti ancora disponibili: "
+            + (Partita.getMinutiDiGioco() - Partita.getMinutiTrascorsi()));
+        } else {
             System.out.println("Tempo di gioco non impostato!");
         }
     }
-       
 }

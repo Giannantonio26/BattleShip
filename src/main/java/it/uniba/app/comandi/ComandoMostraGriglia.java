@@ -10,12 +10,16 @@ import it.uniba.app.entitaDiGioco.Partita;
  *
  * @author leonardo
  */
-public class ComandoMostraGriglia implements Comando {
+public final class ComandoMostraGriglia implements Comando {
+    /**
+     *
+     */
     public void esegui() {
-        if(!Partita.isIniziata()) {
+        if (!Partita.isIniziata()) {
             System.out.println("\nDevi prima iniziare una partita");
         } else {
             CampoDiBattaglia.mostraGrigliaAggiornata();
         }
     }
 }
+

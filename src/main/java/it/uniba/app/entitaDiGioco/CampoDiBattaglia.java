@@ -8,18 +8,18 @@ import java.util.List;
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * @author leonardo
  * Classe CampoDiBattaglia.
  */
 public final class CampoDiBattaglia {
-    private static final Map<Coord, Nave> campoBattaglia = new HashMap<>();
+    private static final Map<Coord, Nave> CAMPO_BATTAGLIA = new HashMap<>();
     static final List<Nave> NAVI = new ArrayList<>();
     private final Random random = new Random();
-    static LivelloDiGioco livelloPartita;
-    static int naviAffondate = 0;
+    private static LivelloDiGioco livelloPartita;
+    private static int naviAffondate = 0;
+    private static final int NUM = 10;
 
     static final int MIN_COORD = 1;
     static final int DIMENSIONE2 = 2;
@@ -34,45 +34,35 @@ public final class CampoDiBattaglia {
     /**
      *
      * @param livello Livello di gioco
-     * @param tentativi.
      */
 
-    public CampoDiBattaglia(TipoLivello livello, int tentativi) {
+    public CampoDiBattaglia(final TipoLivello livello, final int tentativi) {
         livelloPartita = new LivelloDiGioco(livello, tentativi);
     }
-    
      public static LivelloDiGioco getLivelloPartita() {
         return livelloPartita;
     }
-     
     public static Map<Coord, Nave> getCampoBattaglia() {
-        return new HashMap(campoBattaglia);
+        return new HashMap(CAMPO_BATTAGLIA);
     }
-    
     public static int getNaviAffondate() {
         return naviAffondate;
     }
-
-    public static void setNaviAffondate(int naviAffondate) {
-        CampoDiBattaglia.naviAffondate = naviAffondate;
+    public static void setNaviAffondate(final int naviAff) {
+        CampoDiBattaglia.naviAffondate = naviAff;
     }
-    
-    /*metodo per testing*/
-    public static void aggiungiNave(Nave n) {
+    public static void aggiungiNave(final Nave n) {
         NAVI.add(n);
     }
-    
     /*metodo per testing*/
-    public void posizionaNaveInCoordinata(int colonna, int riga, Nave n) {
-        campoBattaglia.put(new Coord(colonna, riga),n);
+    public void posizionaNaveInCoordinata(final int colonna, final int riga, final Nave n) {
+        CAMPO_BATTAGLIA.put(new Coord(colonna, riga), n);
         n.aggiungiPosizione(new Coord(colonna, riga));
     }
     /*metodo per testing*/
     public List<Nave> getNavi() {
         return new ArrayList(NAVI);
     }
-    
-
     /**
      * Inizio nuova partita.
      */
@@ -94,7 +84,7 @@ public final class CampoDiBattaglia {
     public void inizializzaCampo() {
         for (int i = 1; i < Partita.getDimensioneGriglia() + 1; i++) {
             for (int j = 1; j < Partita.getDimensioneGriglia() + 1; j++) {
-                campoBattaglia.put(new Coord(i, j), null);
+                CAMPO_BATTAGLIA.put(new Coord(i, j), null);
             }
         }
     }
@@ -140,10 +130,10 @@ public final class CampoDiBattaglia {
                     posizionata = true;
                     for (int i = 0; i < nave.getDimensione(); i++) {
                         if (orizzontale) {
-                            campoBattaglia.put(new Coord(colonna, riga + i), nave);
+                            CAMPO_BATTAGLIA.put(new Coord(colonna, riga + i), nave);
                             nave.aggiungiPosizione(new Coord(colonna, riga + i));
                         }   else {
-                            campoBattaglia.put(new Coord(colonna + i, riga), nave);
+                            CAMPO_BATTAGLIA.put(new Coord(colonna + i, riga), nave);
                             nave.aggiungiPosizione(new Coord(colonna + i, riga));
                             }
                     }
@@ -175,7 +165,7 @@ public final class CampoDiBattaglia {
             // che dovrà occupare la nave sono libere.
             for (int i = riga; i < riga + nave.getDimensione(); i++) {
                 Coord coord = new Coord(colonna, i);
-                if (campoBattaglia.get(coord) != null) {
+                if (CAMPO_BATTAGLIA.get(coord) != null) {
                     return false;
                 }
             }
@@ -190,7 +180,7 @@ public final class CampoDiBattaglia {
             // che dovrà occupare la nave sono libere
             for (int i = colonna; i < colonna + nave.getDimensione(); i++) {
                 Coord coord = new Coord(i, riga);
-                if (campoBattaglia.get(coord) != null) {
+                if (CAMPO_BATTAGLIA.get(coord) != null) {
                     return false;
                 }
             }
@@ -204,13 +194,13 @@ public final class CampoDiBattaglia {
      */
     public static void svelaGriglia(final Map<Coord, Nave> campo) {
         System.out.print("    ");
-        for(int i = 0; i < Partita.getDimensioneGriglia(); i++) {
+        for (int i = 0; i < Partita.getDimensioneGriglia(); i++) {
             char letteraColonna = (char) ('A' + i);
             System.out.print(letteraColonna + "\t");
         }
         System.out.println();
         for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
-            if (i < 10) {
+            if (i < NUM) {
                 System.out.print(i + "   ");
                 svelaRiga(i, campo);
                 System.out.println();
@@ -242,13 +232,13 @@ public final class CampoDiBattaglia {
      */
     public void mostraGrigliaVuota() {
         System.out.print("    ");
-        for(int i = 0; i < Partita.getDimensioneGriglia(); i++) {
+        for (int i = 0; i < Partita.getDimensioneGriglia(); i++) {
             char letteraColonna = (char) ('A' + i);
             System.out.print(letteraColonna + "\t");
         }
         System.out.println();
         for (int i = 1; i < Partita.getDimensioneGriglia() + 1; i++) {
-            if (i < 10) {
+            if (i < NUM) {
                 System.out.print(i + "   " + stampaRigaVuota() + "\n");
             } else {
                 System.out.print(i + "  " + stampaRigaVuota() + "\n");
@@ -264,15 +254,14 @@ public final class CampoDiBattaglia {
     public String stampaRigaVuota() {
         String riga = "";
         for (int i = 0; i < Partita.getDimensioneGriglia(); i++) {
-            riga = riga +"\u25A2\t";
+            riga = riga + "\u25A2\t";
         }
         return riga;
     }
-    
     public static void mostraGrigliaAggiornata() {
         System.out.println("\n Tentativi Rimasti ---> " + livelloPartita.getNumeroTentativi());
         System.out.print("    ");
-        for(int i = 0; i < Partita.getDimensioneGriglia(); i++) {
+        for (int i = 0; i < Partita.getDimensioneGriglia(); i++) {
             char letteraColonna = (char) ('A' + i);
             System.out.print(letteraColonna + "\t");
         }
@@ -280,35 +269,36 @@ public final class CampoDiBattaglia {
         for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
             if (i >= Partita.getDimensioneGriglia()) {
                 System.out.print(i + "  ");
-                svelaRigaAggiornata(i, campoBattaglia);
+                svelaRigaAggiornata(i, CAMPO_BATTAGLIA);
                 System.out.println();
                 break;
             } else {
                 System.out.print(i + "   ");
-                svelaRigaAggiornata(i, campoBattaglia);
+                svelaRigaAggiornata(i, CAMPO_BATTAGLIA);
                 System.out.println();
             }
         }
     }
 
-    public static void svelaRigaAggiornata(int riga, Map<Coord, Nave> campo_battaglia) {
+    public static void svelaRigaAggiornata(final int riga, final Map<Coord, Nave> campobattaglia) {
         for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
             Coord coord = new Coord(riga, i);
-            if (campo_battaglia.get(coord) == null || campo_battaglia.get(coord).isColpita(coord) == false)  {
+            if (campobattaglia.get(coord) == null
+                || !(campobattaglia.get(coord).isColpita(coord))) {
                 System.out.print("\u25A2\t");
-            } else if (campo_battaglia.get(coord).isColpita(coord) || campo_battaglia.get(coord).isAffondata()) {
-                System.out.print(campo_battaglia.get(coord).stampaQuadratoColorato());
+            } else if (campobattaglia.get(coord).isColpita(coord)
+                    || campobattaglia.get(coord).isAffondata()) {
+                System.out.print(campobattaglia.get(coord).stampaQuadratoColorato());
             }
         }
     }
-    
     public static void reset() {
-        campoBattaglia.clear();
+        CAMPO_BATTAGLIA.clear();
         NAVI.clear();
         naviAffondate = 0;
         Partita.setTentativiEffettuati(0);
-        if(Partita.isTempoDiGiocoAttivo()){
-            Partita.setMinutiTrascorsi(0);  
+        if (Partita.isTempoDiGiocoAttivo()) {
+            Partita.setMinutiTrascorsi(0);
         }
     }
 }

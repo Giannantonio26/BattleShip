@@ -261,6 +261,11 @@ Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il coma
 <br>
 <br>
 
+# 4. System Design
+
+## Diagramma dei package
+![diagramma_package](./img/diagramma_package.png)
+
 
 # 5. OO Design
 

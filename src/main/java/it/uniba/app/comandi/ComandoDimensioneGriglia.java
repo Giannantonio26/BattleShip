@@ -9,25 +9,33 @@ import it.uniba.app.entitaDiGioco.Partita;
  *
  * @author leonardo
  */
-public class ComandoDimensioneGriglia implements Comando {
+public final class ComandoDimensioneGriglia implements Comando {
      private int dimensioneCampo;
-
-    public ComandoDimensioneGriglia(String dimensione) {
+     /**
+      *
+      * @param dimensione
+      */
+    public ComandoDimensioneGriglia(final String dimensione) {
+        final int dimensioneStandard = 10;
+        final int dimensioneLarge = 18;
+        final int dimensioneExtraLarge = 26;
         switch (dimensione) {
             case "/standard":
-                this.dimensioneCampo = 10;
+                this.dimensioneCampo = dimensioneStandard;
                 break;
             case "/large":
-                this.dimensioneCampo = 18;
+                this.dimensioneCampo = dimensioneLarge;
                 break;
             case "/extralarge":
-                this.dimensioneCampo = 26;
+                this.dimensioneCampo = dimensioneExtraLarge;
                 break;
             default:
                 System.out.println("Dimensione non riconosciuta");
         }
     }
-
+    /**
+     *
+     */
     public void esegui() {
         if (Partita.isIniziata()) {
             System.out.println("\nNon puoi cambiare la dimensione del campo durante una partita");

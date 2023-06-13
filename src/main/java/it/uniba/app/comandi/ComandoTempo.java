@@ -5,30 +5,27 @@
 package it.uniba.app.comandi;
 
 import it.uniba.app.entitaDiGioco.Partita;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Giannantonio
  */
-public class ComandoTempo implements Comando{
-
+public final class ComandoTempo implements Comando {
     private int minuti;
-    
-    public ComandoTempo(int minuti){
-        this.minuti = minuti;
+    /**
+     *
+     * @param minutiIn
+     */
+    public ComandoTempo(final int minutiIn) {
+        this.minuti = minutiIn;
     }
-    
     @Override
-    public void esegui(){
-        if(Partita.isIniziata()){
+    public void esegui() {
+        if (Partita.isIniziata()) {
             System.out.println("Impossibile impostare il tempo di gioco a partita in corso");
-        }else{
+        } else {
             System.out.println("OK");
             Partita.setMinutDiGioco(minuti);
             Partita.setTempoDiGioco(true);
         }
     }
 }
-   
