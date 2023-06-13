@@ -30,16 +30,6 @@ public final class App {
         } else {
             Helper.stampaBenvenuto();
         }
-        try (Scanner s = new Scanner(System.in, "UTF-8")) {
-            while (s.hasNextLine()) {
-                Parser parser = new Parser(s.nextLine());
-                try {
-                    parser.elabora();
-                } catch (RuntimeException e) {
-                    return;
-                }
-                System.out.println("\nDigita un nuovo comando: ");
-            }
-        }
+        InputScanner.userInputScanner();
     }
 }
