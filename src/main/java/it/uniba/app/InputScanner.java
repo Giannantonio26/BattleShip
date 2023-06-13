@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public final class InputScanner {
     
-    private InputScanner(){
+    private InputScanner() {
         
     }
     
