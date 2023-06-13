@@ -6,23 +6,22 @@ import java.util.List;
  *  Classe partita.
  */
 public final class Partita {
+    private static final int NUMERO_TENTATIVI = 50;
+    private static final int DIMENSIONE_GRIGLIA = 10;
     private static CampoDiBattaglia campo;
     private static TipoLivello livello = TipoLivello.FACILE;
-    private static int tentativi = 50;
+    private static int tentativi = NUMERO_TENTATIVI;
     private static int minutiDiGioco; //numero di minuti a disposizione per giocare
     private static int minutiTrascorsi; //numero di minuti che sono trascorsi
     private static boolean iniziata = false;
     private static boolean tempoDiGiocoAttivo = false;
-    private static int dimensioneGriglia = 10;
+    private static int dimensioneGriglia = DIMENSIONE_GRIGLIA;
     private static int tentativiEffettuati = 0;
-    
     public static final List<LivelloDiGioco> LIVELLI = List.of(
         new LivelloDiGioco(TipoLivello.FACILE),
         new LivelloDiGioco(TipoLivello.MEDIO),
         new LivelloDiGioco(TipoLivello.DIFFICILE)
     );
-    
-
     private Partita() {
     }
 
@@ -47,8 +46,8 @@ public final class Partita {
         return tentativiEffettuati;
     }
 
-    public static void setTentativiEffettuati(int tentativiEffettuati) {
-        Partita.tentativiEffettuati = tentativiEffettuati;
+    public static void setTentativiEffettuati(final int tentEffettuati) {
+        Partita.tentativiEffettuati = tentEffettuati;
     }
 /**
  *
@@ -70,15 +69,15 @@ public final class Partita {
         return tentativi;
     }
 
-    public static void setTentativi(int tentativi) {
-        Partita.tentativi = tentativi;
+    public static void setTentativi(final int tent) {
+        Partita.tentativi = tent;
     }
 
     public static int getDimensioneGriglia() {
         return dimensioneGriglia;
     }
 
-    public static void setDimensioneGriglia(int dimensioneGriglia) {
+    public static void setDimensioneGriglia(final int dimensioneGriglia) {
         Partita.dimensioneGriglia = dimensioneGriglia;
     }
 
@@ -105,7 +104,6 @@ public final class Partita {
     public static void setIniziata(final boolean isIniziata) {
         Partita.iniziata = isIniziata;
     }
-
 /**
  * metodo mostraNavi.
  */
@@ -115,29 +113,22 @@ public final class Partita {
             System.out.println(nave.toString());
         }
     }
-    
-    public static void setMinutDiGioco(final int minuti){
+    public static void setMinutDiGioco(final int minuti) {
         minutiDiGioco = minuti;
     }
-    
-    public static int getMinutiDiGioco(){
+    public static int getMinutiDiGioco() {
         return minutiDiGioco;
     }
-    
-    public static void setMinutiTrascorsi(int minuti){
+    public static void setMinutiTrascorsi(final int minuti) {
         minutiTrascorsi = minuti;
     }
-    
-    public static int getMinutiTrascorsi(){
+    public static int getMinutiTrascorsi() {
         return minutiTrascorsi;
-    }
-    
-    public static void setTempoDiGioco(boolean b){
+    }  
+    public static void setTempoDiGioco(final boolean b) {
         tempoDiGiocoAttivo = b;
     }
-    
-    public static boolean isTempoDiGiocoAttivo(){
+    public static boolean isTempoDiGiocoAttivo() {
         return tempoDiGiocoAttivo;
     }
-    
 }
