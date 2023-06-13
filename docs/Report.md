@@ -259,6 +259,54 @@ Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il coma
 ---
 
 <br>
+<br>
+
+
+# 5. OO Design
+
+Di seguito sono riportate le immagini dei diagrammi di sequenza per le user story considerate più importanti.
+
+<br>
+
+**1)Come giocatore voglio effettuare un tentativo per colpire una nave**
+<br>
+
+![immagine1](./img%20diagrammi%20di%20sequenza/comando%20attacco.PNG)
+
+<br>
+<br>
+
+**2)Come giocatore voglio abbandonare una partita**
+<br>
+
+![immagine2](./img%20diagrammi%20di%20sequenza/comando%20abbandona.PNG)
+
+
+**3)Come giocatore voglio iniziare una nuova partita**
+<br>
+
+![immagine3](./img%20diagrammi%20di%20sequenza/comando%20gioca.PNG)
+
+<br>
+<br
+
+**4)Come giocatore voglio mostrare la griglia con le navi colpite e affondate**
+<br>
+
+![immagine4](./img%20diagrammi%20di%20sequenza/comando%20svelagriglia.PNG)
+
+<br>
+<br
+
+**5)Come giocatore voglio impostare il numero massimo di tentativi falliti per livello di gioco**
+<br>
+
+![immagine5](./img%20diagrammi%20di%20sequenza/comando%20livello%20tentativi.PNG)
+
+<br>
+<br>
+
+
 
 # 7. Manuale utente
 
