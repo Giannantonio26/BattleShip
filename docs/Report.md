@@ -432,7 +432,7 @@ All'utente è concessa la possibilità di impostare i tentativi a disposizione p
 
  **Output comando `/tentativi 40`**
 
-![comando_/difficile numero](./img%20manuale%20utente/tentativi_numero.PNG)
+![comando_/tentativi numero](./img%20manuale%20utente/tentativi_numero.PNG)
 
 ---
 
@@ -450,7 +450,13 @@ All'utente è concessa la possibilità di visualizzare il numero di tentativi gi
 
  **Output comando `/mostratentativi`**
 
-![comando_/difficile numero](.)
+![comando_/mostratentativi](./img%20manuale%20utente/comando%20mostratentativi.PNG)
+
+<br>
+
+Nel caso in cui si provi a lanciare questo comando prima di aver avviato una partita il gioco risponderà in questo modo :
+
+![errore mostratentativi](./img%20manuale%20utente/errore%20mostra%20tentativi.PNG)
 
 ---
 
@@ -549,13 +555,13 @@ All'utente è concessa la possibilità di visualizzare una griglia con le navi a
 
 **Output comando `/mostragriglia`**
 
-![comando_/svelagriglia](./img%20manuale%20utente/comando%20mostragriglia.PNG)
+![comando_/mostragriglia](./img%20manuale%20utente/comando%20mostragriglia.PNG)
 
 <br>
 
 Se si prova a lanciare questo comando quando non è ancora stata avviata nessuna partita il gioco risponde con il seguente output :
 
-![comando_/svelagriglia](./img%20manuale%20utente/errore_mostragriglia.PNG)
+![errore mostragriglia](./img%20manuale%20utente/errore_mostragriglia.PNG)
 
 ---
 
@@ -594,7 +600,7 @@ I comandi da utilizzare sono rispettivamente :
 
 **Output comando `/extralarge`**
 
-![comando_/svelagriglia](./img%20manuale%20utente/comando%20extralarge.PNG)
+![comando_/extralarge](./img%20manuale%20utente/comando%20extralarge.PNG)
 
 ---
 
@@ -609,7 +615,7 @@ All'utente è concessa la possibilità di poter abbandonare una partita inziata 
 
 >`/abbandona`
 
-**Output comando `/svelagriglia`**
+**Output comando `/abbandona`**
 
 ![comando_/abbandona](./img%20manuale%20utente/comando%20abbandona.PNG)
 
@@ -621,7 +627,7 @@ Una volta lanciato il comando, viene restituito il campo di bttaglia con le navi
 
 Se si prova a lanciare questo comando quando non è in corso nessuna partita il gioco fornisce il seguente output :
 
-![comando_/abbandona](./img%20manuale%20utente/errore_abbandona.PNG)
+![errore abbandona](./img%20manuale%20utente/errore_abbandona.PNG)
 
 ---
 
@@ -666,6 +672,54 @@ Se il numero di tentativi dell'utente è pari a 0 la partita termina con una sco
 
 <br>
 <br>
+
+
+## Impostare il tempo di gioco
+
+All'utente è concessa la possibilità di impostare il tempo di gioco, in termini di minuti di gioco. Ipotizzando di volere impostare ad un minuto il tempo di gioco, il comando da utilizzare è 
+
+<br>
+
+>`/tempo 1`
+
+**Output comando `/tempo 1`**
+
+![comando_/tempo 1](./img%20manuale%20utente/comando%20tempo%20numero.PNG)
+
+<br>
+
+Il timer parte dal momento in cui si avvia una nuova partita. Per ulteriori informazioni su come avviare una nuova partita rimandiamo alla voce  **Avvio di una nuova partita** di questa guida.
+
+<br>
+
+Se il tempo di gioca scade prima di riuscire a vincere la partita, essa termina automaticamente con una sconfitta. L'output è il seguente :
+
+![tempo scduto](./img%20manuale%20utente/tempo%20scaduto.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Mostrare il tempo di gioco ed i minuti trascorsi
+
+All'utente è concessa la possibilità di mostrare i minuti di gioco impostati e di visualizzare quelli trascorsi attraverso il comando
+
+<br>
+
+>`/mostratempo`
+
+**Output comando `/mostratempo`**
+
+![comando_/mostratempo](./img%20manuale%20utente/comando%20mostra%20tempo.PNG)
+
+---
+
+<br>
+<br>
+
+
 
 ## Uscire dal gioco
 
