@@ -23,6 +23,11 @@ public class ThreadTempo implements Runnable{
         
         int min=0,sec=0;
         for(int i=0;i<secondiTempoDiGioco;i++){
+            //se la partita è stata abbandonata interrompi il timer
+            if(!Partita.isIniziata()){
+                return;
+            }
+            
             if (i % 60 == 0 && i!=0) {
                 min++;
                 Partita.setMinutiTrascorsi(min);
