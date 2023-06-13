@@ -319,7 +319,7 @@ All'apertura, il gioco si interfaccia con l'utente chiedendogli di visualizzare 
 
 **Output comando `/help`**
 
-![Comando_/help](./img%20manuale%20utente/help.PNG)
+![Comando_/help](./img%20manuale%20utente/comando%20help.PNG)
 
 ---
 
@@ -359,7 +359,7 @@ Più il livello di difficoltà aumenta, più diminuiscono i tentativi in cui l'u
 
 **Output comando `/difficile`**
 
-![comando_/difficile](./img%20manuale%20utente/facile.PNG)
+![comando_/difficile](./img%20manuale%20utente/difficile.PNG)
 
 <br>
 
@@ -386,6 +386,78 @@ All'utente è permessa la visualizzazione del livello di difficoltà corrente at
 <br>
 <br>
 
+
+## Impostare i tentativi a disposizione per livello di difficoltà
+
+All'utente è concessa la possibilità di impostare i tentativi a disposizione per il livello considerato. Ad esempio, l'utente potrebbe decidere di aumentare o diminuire i tentativi a disposizione nel livello facile. Ragionamento analogo per i livello medio e difficile. Ipotizziamo di voler impostare 45 tentativi per il livello facile, 32 per il livello medio e 8 per il livello difficile. I comandi che realizzano questa funzionalità sono :
+
+<br>
+
+>`/facile 45`
+
+**Output comando `/facile 45`**
+
+![comando_/facile numero](./img%20manuale%20utente/facile_numero.PNG)
+
+<br>
+<br>
+
+>`/medio 32`
+
+**Output comando `/medio 32`**
+
+![comando_/medio numero](./img%20manuale%20utente/medio_numero.PNG)
+
+<br>
+<br>
+
+>`/difficile 8`
+
+**Output comando `/difficile 8`**
+
+![comando_/difficile numero](./img%20manuale%20utente/difficile_numero.PNG)
+
+---
+
+<br>
+<br>
+
+ ## Impostare arbitrariamente il numero massimo di tentativi failliti
+
+ All'utente è concessa la possibilità di impostare un numero arbitrario di tentativi falliti massimi, a prescindere dal livello di gioco. Ipotizzando di volere impostare un numero di tentativi falliti massimi pari a 40, si utilizza il comando
+
+ <br>
+
+ >`tentativi 40`
+
+ **Output comando `/tentativi 40`**
+
+![comando_/difficile numero](./img%20manuale%20utente/tentativi_numero.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Mostrare il numero di tentativi effettuati, il numero di tentativi falliti e il numero di tentativi falliti a disposizione
+
+All'utente è concessa la possibilità di visualizzare il numero di tentativi gia' effettuati, il numero di tentativi falliti e il numero massimo di tentantivi falliti. Basta lanciare il comando 
+
+ <br>
+
+ >`/mostratentativi`
+
+ **Output comando `/mostratentativi`**
+
+![comando_/difficile numero](.)
+
+---
+
+<br>
+<br>
+
+
 ## Visualizzare tipo e numero di navi
 
 All'utente è concessa la possibilità di visualizzare i tipi di navi presenti nel gioco. Inoltre per ogni tipo di nave l'utente conosce quante di esse saranno posizionate nel campo di battaglia. Tutto questo viene visualizzato attraverso il comando 
@@ -397,6 +469,13 @@ All'utente è concessa la possibilità di visualizzare i tipi di navi presenti n
 **Output comando `/mostranavi`**
 
 ![comando_/mostranavi](./img%20manuale%20utente/mostranavi.PNG)
+
+Nel gioco sarano presenti :
+
+- 4 esemplari di Cacciatorpediniere, la cui dimensione è 2
+- 3 esemplari di Incrociatore, la cui dimensione è 3
+- 2 esemplari di Corazzata, la cui dimensione è 4
+- 1 esemplari di Portaerei, la cui dimensione è 5
 
 ---
 
@@ -413,15 +492,19 @@ Per avviare una nuova partita, l'utente deve lanciare il comando
 
 **Output comando `/gioca`**
 
-![comando_/gioca](./img%20manuale%20utente/gioca.PNG)
+![comando_/gioca](./img%20manuale%20utente/comando%20gioca.PNG)
 
 <br>
 
 
-All'utente viene prima mostrato il campo di battaglia prima del suo popolamento attraverso le navi. Una volta lanciato il comando, il campo di battaglia viene popolato in modo casuale. Il numero di navi posizionate, per ogni tipo , rispetta quello citato alla voce **Visualizzazione tipo e numero di navi** di questa guida.
+All'utente viene mostrato il campo di battaglia prima del suo popolamento attraverso le navi ed il numero di tentativi a disposizione per vincere la partita. Una volta lanciato il comando, il campo di battaglia viene popolato in modo casuale. Il numero di navi posizionate, per ogni tipo , rispetta quello citato alla voce **Visualizzazione tipo e numero di navi** di questa guida.
 Si ricordi che una volta avviata la partita non sarà più possibile modificare il livello di difficoltà impostato precedentemente. Nel caso si provasse a cambiare livello di difficoltà durante una partita avviata, si avrà il seguente messaggio a schermo : 
 
-![comando_/errore_livello_difficoltà](./img%20manuale%20utente/errore_livello_difficoltà.PNG)
+![comando_/errore_livello_difficoltà](./img%20manuale%20utente/errore_livello_difficolta.PNG)
+
+<br>
+
+Una volta avviata la partita l'utente volendo può iniziare a giocare alla battagli navale, cioè iniziare ad affondare le navi. Per giocare alla battaglia navale rimandiamo alla voce **Effettuare un tentativo per colpire una nave** di questa guida.
 
 ---
 
@@ -433,7 +516,7 @@ Si ricordi che una volta avviata la partita non sarà più possibile modificare 
 
 <br>
 
-All'utente è permesso poter visualizzare il campo di battaglia lanciando il comando
+All'utente è permesso poter visualizzare il campo di battaglia  con le navi posizionate durante una partita lanciando il comando
 
 >`/svelagriglia`
 
@@ -441,14 +524,143 @@ All'utente è permesso poter visualizzare il campo di battaglia lanciando il com
 
 **Output comando `/svelagriglia`**
 
-![comando_/svelagriglia](./img%20manuale%20utente/svelagriglia.PNG)
+![comando_/svelagriglia](./img%20manuale%20utente/comando%20svelagriglia.PNG)
 
 <br>
 
 Questo comando è utilizzabile solo se si è già avviata una partita. Per ulteriori informazioni su come avviare una nuova partita rimandiamo alla voce 
-**Avvio di una nuova partita** di questa guida. In caso si provi a lanciare questa comando prima dell'avvio di un nuova partita, il gioco risponderà in questo modo :
+**Avvio di una nuova partita** di questa guida. In caso si provi a lanciare questa comando prima dell'avvio di un nuova partita, il gioco risponde in questo modo :
 
-![comando_/errore_svelagriglia](./img%20manuale%20utente/errore_svelagriglia.PNG)
+![comando_/errore_svelagriglia](./img%20manuale%20utente/errore_svela_griglia.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Mostrare navi colpite e affondate
+
+All'utente è concessa la possibilità di visualizzare una griglia con le navi affondate e le sole parti gia' colpite delle navi non ancora affondate. Si utilizza il comando 
+
+>`/mostragriglia`
+
+<br>
+
+**Output comando `/mostragriglia`**
+
+![comando_/svelagriglia](./img%20manuale%20utente/comando%20mostragriglia.PNG)
+
+<br>
+
+Se si prova a lanciare questo comando quando non è ancora stata avviata nessuna partita il gioco risponde con il seguente output :
+
+![comando_/svelagriglia](./img%20manuale%20utente/errore_mostragriglia.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Impostare la grandezza del campo da gioco
+All'utente è permesso cambiare la dimensione del campo da gioco secondo secondo 3 formati diversi:
+
+- Standard    (dimensione di default, 10x10)
+- Large       (dimensione 18x18)
+- Extralarge  (dimensione 26x26)
+
+<br>
+
+I comandi da utilizzare sono rispettivamente :
+
+>`/standard`
+
+**Output comando `/standard`**
+
+![comando_/standard](./img%20manuale%20utente/comando%20standard.PNG)
+
+<br>
+
+>`/large`
+
+**Output comando `/large`**
+
+![comando_/large](./img%20manuale%20utente/comando%20large.PNG)
+
+<br>
+
+>`/extralarge`
+
+**Output comando `/extralarge`**
+
+![comando_/svelagriglia](./img%20manuale%20utente/comando%20extralarge.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Abbandonare una partita in corso
+All'utente è concessa la possibilità di poter abbandonare una partita inziata senza uscire dal gioco. Basta lanciare il comando
+ 
+ <br>
+
+>`/abbandona`
+
+**Output comando `/svelagriglia`**
+
+![comando_/abbandona](./img%20manuale%20utente/comando%20abbandona.PNG)
+
+<br>
+
+Una volta lanciato il comando, viene restituito il campo di bttaglia con le navi posizionate nella partita appena abbandonata. Il gioco adesso è pronto ad accettare nuovi comandi e, volendo , ad iniziare una nuova partita. Per ulteriori informazioni su come avviare una nuova partita rimandiamo alla voce  **Avvio di una nuova partita** di questa guida. 
+
+<br>
+
+Se si prova a lanciare questo comando quando non è in corso nessuna partita il gioco fornisce il seguente output :
+
+![comando_/abbandona](./img%20manuale%20utente/errore_abbandona.PNG)
+
+---
+
+<br>
+<br>
+
+
+## Effettuare un tentativo per colpire una nave
+
+Questa funzionalità rappresenta il cuore della battaglia navale poichè all'utente è permesso di effettuare un tentativo per colpire una nave. Basta fornire delle coordinate al gioco. Il sistema di coordinte del gioco è gestito in questo modo:
+
+- le colonne del campo da gioco sono enumerate con le lettere che vanno dalla A alla J (nel caso in cui il campo da gioco sia 10x10) o dalla A alla R (nel caso in cui il campo da gioco sia 18x18) o dalla A alla Z (nel caso in cui il campo da gioco sia 26x26)
+ 
+- le righe del campo da gioco sono numerate con i numeri che vanno da 1 a 10 (nel caso in cui il campo da gioco sia 10x10) o da 1 a 18 (nel caso in cui il campo da gioco sia 18x18) o da 1 a 26 (nel caso in cui il campo da gioco sia 26x26)
+
+<br>
+
+L'utente fornisce le coordinate separate dal simbolo **-** (ad esempio A-3) ed il gioco risponde con 
+
+- **Acqua** se non si è colpita nessuna nave
+- **Colpita** se si è colpita una nave
+- **Colpita e affondata** se si è affondata una nave
+- **Hai affondato tutte le navi, hai vinto! Digita /gioca per comiciarne un'altra** se si è riusciti a vincere la battaglia navale
+
+<br>
+
+**Output tentativo utente**
+
+![tentativo utente](./img%20manuale%20utente/colpita.PNG);
+
+<br>
+
+Ad ogni tentativo vengono mostrati il numero dei tentativi rimasti e una griglia con le celle in cui l'utente è riuscito a colpire una nave ed il colore della nave colpita. Ogni volta che l'utente effettua un tentativo in cui nessuna nave viene colpita viene decrementato il numero dei tentativi a disposizione.
+
+<br>
+
+Se il numero di tentativi dell'utente è pari a 0 la partita termina con una sconfitta e viene mostrata la griglia con le navi posizionate nella partita appena persa. L'output è il seguente :
+
+![tentativi esauriti](./img%20manuale%20utente/tentativi_esauriti.PNG)
 
 ---
 
@@ -460,7 +672,7 @@ Questo comando è utilizzabile solo se si è già avviata una partita. Per ulter
 All'utente è permesso uscire dal gioco in qualisiasi momento, anche mentre è in corso una partita.  Per ulteriori informazioni su come avviare una nuova partita rimandiamo alla voce **Avvio di una nuova partita** di questa guida.
 <br>
 
-Basta lanciando il comando
+Basta lanciare il comando
 
 >`/esci`
 
@@ -468,7 +680,7 @@ Basta lanciando il comando
 
 **Output comando `/esci`**
 
-![comando_/esci](./img%20manuale%20utente/esci.PNG)
+![comando_/esci](./img%20manuale%20utente/comando%20esci.PNG)
 
 <br>
 
@@ -477,6 +689,7 @@ Se la risposta dell'utente è si, si esce dal gioco come richiesto, altrimenti i
 ---
 <br>
 <br>
+
 
 ## 8. Processo di sviluppo e organizzazione del lavoro
 #
