@@ -15,8 +15,8 @@ import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 public final class ComandoLivello implements Comando {
     private final String nome;
     static final int FACILE = 50;
-    static final int MEDIO = 50;
-    static final int DIFFICILE = 50;
+    static final int MEDIO = 30;
+    static final int DIFFICILE = 10;
     private static int tentativiFacile = FACILE;
     private static int tentativiMedio = MEDIO;
     private static int tentativiDifficile = DIFFICILE;
