@@ -16,6 +16,8 @@ public final class ComandoHelp implements Comando {
      */
     @Override
     public void esegui() {
-        Helper.stampaHelp();
+        String help = Helper.getHelp();
+        System.out.println(help);
     }
 }
+

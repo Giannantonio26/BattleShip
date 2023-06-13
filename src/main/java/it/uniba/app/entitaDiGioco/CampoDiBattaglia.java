@@ -56,6 +56,22 @@ public final class CampoDiBattaglia {
     public static void setNaviAffondate(int naviAffondate) {
         CampoDiBattaglia.naviAffondate = naviAffondate;
     }
+    
+    /*metodo per testing*/
+    public static void aggiungiNave(Nave n) {
+        NAVI.add(n);
+    }
+    
+    /*metodo per testing*/
+    public void posizionaNaveInCoordinata(int colonna, int riga, Nave n) {
+        campoBattaglia.put(new Coord(colonna, riga),n);
+        n.aggiungiPosizione(new Coord(colonna, riga));
+    }
+    /*metodo per testing*/
+    public List<Nave> getNavi() {
+        return new ArrayList(NAVI);
+    }
+    
 
     /**
      * Inizio nuova partita.

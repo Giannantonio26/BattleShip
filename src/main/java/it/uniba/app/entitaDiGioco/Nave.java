@@ -39,7 +39,7 @@ public class Nave {
  *
  * @param dim dimensione nave
  */
-    public Nave(final int dim) {
+    public Nave(final int dim) throws IllegalArgumentException {
         this.dimensione = dim;
         switch (dimensione) {
             case DIMENSIONE2:
@@ -59,7 +59,7 @@ public class Nave {
                 this.esemplariInGioco = ESEMPLARE_1;
                 break;
             default:
-                break;
+                throw new IllegalArgumentException("Dimensione nave non valida");
         }
     }
 

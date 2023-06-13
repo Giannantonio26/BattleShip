@@ -23,12 +23,15 @@ public final class App {
     public static void main(final String[] args) {
         if (args.length > 0) {
             if (args[0].equals("--help") || args[0].equals("-h")) {
-                Helper.stampaHelp();
+                String help = Helper.getHelp();
+                System.out.println(help);
             } else {
-                Helper.stampaBenvenuto();
+                String benvenuto = Helper.getBenvenuto();
+                System.out.println(benvenuto);
             }
         } else {
-            Helper.stampaBenvenuto();
+            String benvenuto = Helper.getBenvenuto();
+            System.out.println(benvenuto);
         }
         InputScanner.userInputScanner();
     }
