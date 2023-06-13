@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author leonardo
  */
-public class ComandoAbbandona implements Comando {
+public final class ComandoAbbandona implements Comando {
     @Override
     public void esegui() {
         if (!Partita.isIniziata()) {

@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package it.uniba.app;
-
 import java.util.Scanner;
-
 /**
  *
  * @author gabri
  */
-public class InputScanner {
+public final class InputScanner {
+    private InputScanner() {
+    }
     public static void userInputScanner() {
         try (Scanner s = new Scanner(System.in, "UTF-8")) {
             while (s.hasNextLine()) {

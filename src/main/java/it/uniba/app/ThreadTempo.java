@@ -40,7 +40,8 @@ public class ThreadTempo implements Runnable {
                 return;
             }
         }
-        System.out.println("TEMPO SCADUTO");
+        System.out.println("\nTEMPO SCADUTO");
+        System.out.println("\nPartita abbandonata");
         Partita.setIniziata(false);
         CampoDiBattaglia.reset();
     }
