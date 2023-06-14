@@ -6,6 +6,9 @@
    1. Requisiti funzionali
      2. Requisiti non funzionali
 4. System Design
+   1. Stile architetturale adottato
+   2. Diagramma dei package
+   3. Diagramma dei componenti
 5. OO Design
 6. Riepilogo del test
 7. Manuale utente
@@ -264,14 +267,20 @@ Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il coma
 
 # 4. System Design
 
-## Diagramma dei package
+<br>
+
+## 4.1 Stile architetturale adottato
+
+Lo stile architetturale adottato è lo stile ECB(Entity-Control-Boundary). Il seguente stile architetturale bene si adatta alle dimensioni di questo progetto.
+<br>
+
+## 4.2 Diagramma dei package
 
 ![diagramma_package](./img/diagramma_package.png)
 
 <br>
-<br>
 
-## Diagramma dei componenti 
+## 4.3 Diagramma dei componenti 
  
  <br>
 
