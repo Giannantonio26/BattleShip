@@ -11,7 +11,8 @@
 7. Manuale utente
 8. Processo di sviluppo e organizzazione del lavoro
 9. Analisi retrospettiva
-   1. Sprint 0  
+   1. Sprint 0
+   2. Sprint 1  
  
  ---
 # 1. Introduzione
@@ -756,7 +757,15 @@ Il team si è coordinato utilizzando principalmente le piattaforme di comunicazi
 
 
 ![Immagine_Gruppo_WhatsApp](./img/ImmagineGruppoWhatsApp.png)
+							
+![Immagine_Gruppo_Discord](./img/img_discord.png)
 
+Il gruppo Whatsapp è stato utilizzato per comunicazioni più veloci ed informali, mentre sulla piattaforma Discord abbiamo utilizzato tre canali di comunicazione: 
+- Pianificazione issue
+- Assistenza
+- Analisi retrospettiva
+  
+Nel canale di comunicazione "pianificazione issue" abbiamo discusso sulla pianificazione e suddivisione degli issue con date di scadenza annesse, il canale "assistenza" è stato utilizzato da ognuno di noi per supportare uno o più dei nostri compagni nella risoluzione degli issue, mentre il canale "analisi retrospettiva" è stato utilizzato per analizzare il nostro stato d'animo e il modo in cui si è lavorato nello Sprint concluso.
 Il team durante lo svolgimento delle consegne ha perseguito una strategia precisa nell’organizzazione e nella suddivisione del lavoro.
 
 
@@ -792,5 +801,8 @@ Infine, un paio di giorni prima della data di consegna del progetto, per ogni sp
 ##    Sprint 0
 ![Analisi retrospettiva](./img/Analisi_retrospettiva.png "analisi retrospettiva")
 
+<br>
+<br>
 
-
+##    Sprint 1
+![Analisi retrospettiva1](./img/Analisi_retrospettiva1.png "Analisi retrospettiva1")
