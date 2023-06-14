@@ -62,7 +62,7 @@ class CampoDiBattagliaTest {
     @DisplayName("Test di corretta inizializzazione lista di navi")
     void testInizializzaNavi() {
         CampoDiBattaglia campoTest = new CampoDiBattaglia(TipoLivello.FACILE, TENTATIVI_FACILE);
-        List<Nave> navi = campoTest.getNavi();
+        List<Nave> navi = campoTest.getNAVI();
         assertEquals(NUM_NAVI, navi.size(), "Lista di navi inizializzata correttamente, giusto numero di navi");
     }
 
@@ -72,7 +72,7 @@ class CampoDiBattagliaTest {
         CampoDiBattaglia campoTest = new CampoDiBattaglia(TipoLivello.FACILE, TENTATIVI_FACILE);
         campoTest.nuovaPartita();
         Map<Coord, Nave> campo = campoTest.getCampoBattaglia();
-        List<Nave> navi = campoTest.getNavi();
+        List<Nave> navi = campoTest.getNAVI();
         for (int i = 0; i < navi.size(); i++) {
             assertTrue(campo.containsValue(navi.get(i)), "Navi posizionate nella griglia");
         }
@@ -92,7 +92,7 @@ class CampoDiBattagliaTest {
         campoTest.reset();
         assertAll(() -> {
             assertTrue(campoTest.getCampoBattaglia().isEmpty(), "Campo di battaglia giustamente vuoto");
-            assertTrue(campoTest.getNavi().isEmpty(), "Lista di navi giustamente vuota");
+            assertTrue(campoTest.getNAVI().isEmpty(), "Lista di navi giustamente vuota");
             assertEquals(VAL_NULLO, campoTest.getNaviAffondate(), "Zero navi affondate su un campo resettato");
             assertEquals(VAL_NULLO, Partita.getMinutiTrascorsi(), "Tempo azzerato dopo reset campo");
         });

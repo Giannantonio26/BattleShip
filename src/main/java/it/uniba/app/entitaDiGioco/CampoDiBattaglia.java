@@ -37,12 +37,9 @@ public final class CampoDiBattaglia {
     static final int DIMENSIONE4 = 4;
     static final int DIMENSIONE5 = 5;
 
-    /*
-     il costruttore assegna il livello di gioco, utile per il controllo
-     dei tentativi rimasti e inizializza il campo di battaglia.
-     */
     /**
-     *
+     *il costruttore assegna il livello di gioco, utile per il controllo
+     *dei tentativi rimasti e inizializza il campo di battaglia.
      * @param livello Livello di gioco
      */
 
@@ -94,23 +91,37 @@ public final class CampoDiBattaglia {
         CampoDiBattaglia.esemplari5 = es5;
     }
 
+    /**
+     * Metodo getNavi per avere la lista delle Navi.
+     * Restituisce una nuova lista creata a partire dall'attributo NAVI, per non esporre rappresentazione interna.
+     * @return
+     */
     public static List<Nave> getNAVI() {
         List<Nave> listaNavi = new ArrayList<>(NAVI);
         return listaNavi;
     }
 
+    /**
+     * Metodo di aggiunta nave al vettore NAVI.
+     * Creato principalmente a fini di testing.
+     * @param n nave
+     */
     public static void aggiungiNave(final Nave n) {
         NAVI.add(n);
     }
-    /*metodo per testing*/
+
+    /**
+     * Metodo per posizionare una nave nella griglia campo di battaglia
+     * alle coordinate fornite.
+     * @param colonna
+     * @param riga
+     * @param n
+     */
     public void posizionaNaveInCoordinata(final int colonna, final int riga, final Nave n) {
         CAMPO_BATTAGLIA.put(new Coord(colonna, riga), n);
         n.aggiungiPosizione(new Coord(colonna, riga));
     }
-    /*metodo per testing*/
-    public List<Nave> getNavi() {
-        return new ArrayList(NAVI);
-    }
+
     /**
      * Inizio nuova partita.
      */
@@ -306,6 +317,10 @@ public final class CampoDiBattaglia {
         }
         return riga;
     }
+
+    /**
+     * Metodo che mostra a schermo la griglia di gioco aggiornata all'ultimo tentativo effettuato.
+     */
     public static void mostraGrigliaAggiornata() {
         System.out.println("\n Tentativi Rimasti ---> " + livelloPartita.getNumeroTentativi());
         System.out.print("    ");
@@ -328,6 +343,12 @@ public final class CampoDiBattaglia {
         }
     }
 
+    /**
+     * Metodo usato da @see it.uniba.app.entitaDiGioco.CampoDiBattaglia#mostraGrigliaAggiornata()
+     * per mostrare ogni riga aggiornata della griglia.
+     * @param riga
+     * @param campobattaglia
+     */
     public static void svelaRigaAggiornata(final int riga, final Map<Coord, Nave> campobattaglia) {
         for (int i = 1; i <= Partita.getDimensioneGriglia(); i++) {
             Coord coord = new Coord(riga, i);
@@ -340,6 +361,10 @@ public final class CampoDiBattaglia {
             }
         }
     }
+
+    /**
+     * Metodo per resettare tutto ciò che riguarda il campo di battaglia e la partita.
+     */
     public static void reset() {
         CAMPO_BATTAGLIA.clear();
         NAVI.clear();
