@@ -265,10 +265,22 @@ Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il coma
 # 4. System Design
 
 ## Diagramma dei package
+
 ![diagramma_package](./img/diagramma_package.png)
+
+---
+
+<br>
+<br>
 
 
 # 5. OO Design
+
+<br>
+
+## Diagrammi di sequenza per le user story più importanti
+ 
+ <br>
 
 Di seguito sono riportate le immagini dei diagrammi di sequenza per le user story considerate più importanti.
 
@@ -312,6 +324,39 @@ Di seguito sono riportate le immagini dei diagrammi di sequenza per le user stor
 <br>
 <br>
 
+
+## Diagramma delle classi
+
+<br>
+
+Di seguito è riportato il diagrammma delle classi :
+
+<br>
+
+![diagrama delle classi](./img/Diagramma%20delle%20classi(dongarra).drawio%20(3).png)
+
+<br>
+<br>
+
+## Applicazione dei principi di OO Design
+
+<br>
+
+Per la realizzazione della battaglia navale si è fatto largo uso dei principi fondamentali dell' OO Design. Osserviamo la loro applicazione all'interno del gioco :
+
+- Il principio di **information hiding** è sicuramente quello che di più di tutti si nota, dato l'utilizzo di un linguaggio ad oggetti come java.
+
+- Ogni singola classe si occupa di svolgere compiti specifici che solo lei può effettuare. Cioè, ogni classe ha un' **alta coesione** e quindi una ben definita responsabilità. Ad esempio, ogni singolo comando lanciabile dall'utente è gestito da una singola classe. 
+
+- Grazie all'alta coesione e all'information hiding dato dalla programmazione ad oggetti, (che permette di tenere incapsulata nella classe, e solo in essa, tutto ciò che è di pertinenza dell'entità che la classe modella), i vari componenti presentano un basso **livello di accoppiamento**, cioè sono poco sensibili ai cambiamenti, visto che tutto ciò che li riguarda si trova solo nella classe che li modella. 
+- Quest ultima osservazione è sostenuta anche dal fatto che la logica iniettata si trova solo in determinati punti del codice e non è ripetuta in diverse parti di codice **(DRY, Don't repeat yourself).**
+
+- I componenti la cui responsabilità era quella di interagire con l'utente (prendere in input e restituire in output) che è l'unico sistema esterno presente nel gioco, sono ben separati dal resto delle componenti. Difatti le classi adibite a questo sono separate dalle altre e indipendenti dal gioco stesso. In altre parole, **la parte di codice relativa alla presentazione è tenuta separata dal resto dell’applicazione.**
+
+---
+
+<br>
+<br>
 
 
 # 7. Manuale utente
