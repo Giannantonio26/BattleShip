@@ -23,11 +23,6 @@ public final class LivelloDiGioco {
 
     }
 
-    public LivelloDiGioco(final LivelloDiGioco liv) {
-        this.tipoLivello = liv.tipoLivello;
-        this.numeroTentativi = liv.numeroTentativi;
-    }
-
 /*
  * Costruttore che inizializza il livello di gioco settando
  * il numero dei tentativi in base al tipo di livello

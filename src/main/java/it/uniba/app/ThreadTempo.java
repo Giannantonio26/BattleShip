@@ -13,13 +13,13 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
  * @author Giannantonio
  */
 public class ThreadTempo implements Runnable {
-    private static final int MILLIS = 1000;
-    private static final int NUM_SECONDI = 60;
+    private final int millis = 1000;
+    private final int numsecondi = 60;
     @Override
     public final void run() {
         int minTempoDiGioco;
         minTempoDiGioco = Partita.getMinutiDiGioco();   //tempo di gioco in minuti
-        int secondiTempoDiGioco = minTempoDiGioco * NUM_SECONDI; //tempo di gioco in secondi
+        int secondiTempoDiGioco = minTempoDiGioco * numsecondi; //tempo di gioco in secondi
         int min = 0;
         int sec = 0;
         for (int i = 0; i < secondiTempoDiGioco; i++) {
@@ -27,7 +27,7 @@ public class ThreadTempo implements Runnable {
             if (!Partita.isIniziata()) {
                 return;
             }
-            if (i % NUM_SECONDI == 0 && i != 0) {
+            if (i % numsecondi == 0 && i != 0) {
                 min++;
                 Partita.setMinutiTrascorsi(min);
                 sec = 0;
@@ -35,7 +35,7 @@ public class ThreadTempo implements Runnable {
                 sec++;
             }
             try {
-                Thread.sleep(MILLIS);
+                Thread.sleep(millis);
             } catch (InterruptedException e) {
                 return;
             }

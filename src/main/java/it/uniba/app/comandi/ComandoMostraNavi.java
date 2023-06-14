@@ -19,10 +19,10 @@ public final class ComandoMostraNavi implements Comando {
  * stampa le navi del gioco chiamando
  * il metodo statico della classe Partita.
  */
-    private static final int DIM_DUE = 2;
-    private static final int DIM_TRE = 3;
-    private static final int DIM_QUATTRO = 4;
-    private static final int DIM_CINQUE = 5;
+    private final int dimdue = 2;
+    private final int dimtre = 3;
+    private final int dimquattro = 4;
+    private final int dimcinque = 5;
     @Override
     public void esegui() {
         if (!Partita.isIniziata()) {
@@ -33,7 +33,7 @@ public final class ComandoMostraNavi implements Comando {
             boolean nave4 = false;
             boolean nave5 = false;
             for (Nave nave : CampoDiBattaglia.getNAVI()) {
-                if (nave.getDimensione() == DIM_DUE) {
+                if (nave.getDimensione() == dimdue) {
                     if (!nave2) {
                         nave2 = true;
                         System.out.println("NAVE: " + nave.getNome()
@@ -41,10 +41,11 @@ public final class ComandoMostraNavi implements Comando {
                         + nave.stampaNaveInQuadrati()
                         + "; ESEMPLARI IN GIOCO: "
                         + CampoDiBattaglia.getEsemplari2() + "\n");
-                    } else {
+                    }
+                    else {
                         System.out.print("");
                     }
-                } else if (nave.getDimensione() == DIM_TRE) {
+                } else if (nave.getDimensione() == dimtre) {
                     if (!nave3) {
                         nave3 = true;
                         System.out.println("NAVE: " + nave.getNome()
@@ -52,10 +53,11 @@ public final class ComandoMostraNavi implements Comando {
                         + nave.stampaNaveInQuadrati()
                         + "; ESEMPLARI IN GIOCO: "
                         + CampoDiBattaglia.getEsemplari3() + "\n");
-                    } else {
+                    }
+                    else {
                         System.out.print("");
                     }
-                } else if (nave.getDimensione() == DIM_QUATTRO) {
+                } else if (nave.getDimensione() == dimquattro) {
                     if (!nave4) {
                         nave4 = true;
                         System.out.println("NAVE: " + nave.getNome()
@@ -63,10 +65,11 @@ public final class ComandoMostraNavi implements Comando {
                                 + nave.stampaNaveInQuadrati()
                                 + "; ESEMPLARI IN GIOCO: "
                                 + CampoDiBattaglia.getEsemplari4() + "\n");
-                    } else {
+                    }
+                    else {
                         System.out.print("");
                     }
-                } else if (nave.getDimensione() == DIM_CINQUE) {
+                } else if (nave.getDimensione() == dimcinque) {
                     if (!nave5) {
                         nave5 = true;
                         System.out.println("NAVE: " + nave.getNome()
@@ -74,7 +77,8 @@ public final class ComandoMostraNavi implements Comando {
                                 + nave.stampaNaveInQuadrati()
                                 + "; ESEMPLARI IN GIOCO: "
                                 + CampoDiBattaglia.getEsemplari5() + "\n");
-                    } else {
+                    }
+                    else {
                         System.out.print("");
                     }
                 }

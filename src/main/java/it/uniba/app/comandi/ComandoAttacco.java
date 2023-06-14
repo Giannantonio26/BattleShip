@@ -15,9 +15,9 @@ import it.uniba.app.entitaDiGioco.StatoPosizione;
 public final class ComandoAttacco implements Comando {
     private final int riga;
     private final int colonna;
-    private static final int DIM_TRE = 3;
-    private static final int DIM_QUATTRO = 4;
-    private static final int DIM_CINQUE = 5;
+    private final int dimtre = 3;
+    private final int dimquattro = 4;
+    private final int dimcinque = 5;
     /**
      *
      * @param colonnaIn
@@ -50,12 +50,11 @@ public final class ComandoAttacco implements Comando {
                             CampoDiBattaglia.getCampoBattaglia().get(chiave).colpita(chiave);
                             if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == 2) {
                                     CampoDiBattaglia.setEsemplari2(CampoDiBattaglia.getEsemplari2() - 1);
-                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == DIM_TRE) {
+                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == dimtre) {
                                     CampoDiBattaglia.setEsemplari3(CampoDiBattaglia.getEsemplari3() - 1);
-                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione()
-                                    == DIM_QUATTRO) {
+                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == dimquattro) {
                                     CampoDiBattaglia.setEsemplari4(CampoDiBattaglia.getEsemplari4() - 1);
-                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == DIM_CINQUE) {
+                            } else if (CampoDiBattaglia.getCampoBattaglia().get(chiave).getDimensione() == dimcinque) {
                                     CampoDiBattaglia.setEsemplari5(CampoDiBattaglia.getEsemplari5() - 1);
                             }
                             System.out.println("\nColpita e Affondata!");
