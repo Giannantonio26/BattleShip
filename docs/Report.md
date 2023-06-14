@@ -792,5 +792,8 @@ Infine, un paio di giorni prima della data di consegna del progetto, per ogni sp
 ##    Sprint 0
 ![Analisi retrospettiva](./img/Analisi_retrospettiva.png "analisi retrospettiva")
 
+<br>
+<br>
 
-
+##    Sprint 1
+![Analisi retrospettiva1](./img/Anali_sprint1.png "Analisi retrospettiva 1")
