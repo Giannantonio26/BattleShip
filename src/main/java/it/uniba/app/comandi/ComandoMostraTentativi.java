@@ -7,8 +7,9 @@ import  it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 import  it.uniba.app.entitaDiGioco.Partita;
 
 /**
- *
+ * 'Control'.
  * @author 39379
+ * Comando per mostrare tentativi fatti, falliti e rimasti.
  */
 public final class ComandoMostraTentativi implements Comando {
    @Override

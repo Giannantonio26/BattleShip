@@ -1,6 +1,10 @@
 package it.uniba.app;
+
 /**
- * Main class of the application.
+ * 'Boundary'.
+ * Classe Main del programma, si preoccupa di mostrare all'utente un benvenuto
+ * oppure direttamente il comando help parametrizzato.
+ * Dopodichè delega alla classe InputScanner la creazione dello scanner per ricevere comandi in input.
  */
 public final class App {
 

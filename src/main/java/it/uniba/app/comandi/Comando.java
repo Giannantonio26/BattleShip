@@ -5,8 +5,9 @@
 package it.uniba.app.comandi;
 
  /**
+  * 'Control'.
   * @author leonardo
-  * Interfaccia Comando.
+  * Interfaccia Comando implementata poi da tutti i comandi di gioco.
   */
 
 public interface Comando {

@@ -9,7 +9,8 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 
 
 /**
- *
+ * 'Control'.
+ * Classe ThreadTempo per gestire il tempo di gioco di una partita.
  * @author Giannantonio
  */
 public class ThreadTempo implements Runnable {

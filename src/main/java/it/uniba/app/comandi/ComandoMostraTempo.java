@@ -7,7 +7,8 @@ package it.uniba.app.comandi;
 import it.uniba.app.entitaDiGioco.Partita;
 
 /**
- *
+ * 'Control.
+ * Comando per mostrare quanto tempo è passato e quanto se ne ha a disposizione.
  * @author Giannantonio
  */
 public final class ComandoMostraTempo implements Comando {

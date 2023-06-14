@@ -9,8 +9,9 @@ import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ComandoGioca.
+ * Comando per iniziare una nuova partita.
  */
 public final class ComandoGioca implements Comando {
      /* il metodo esegui del comando ComandoGioca

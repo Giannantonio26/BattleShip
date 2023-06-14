@@ -20,6 +20,7 @@ import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.comandi.ComandoMostraTentativi;
 
 /**
+ * 'Control'.
  * Classe Parser per elaborare comandi ricevuti.
  */
 public final class Parser {
@@ -119,6 +120,12 @@ public final class Parser {
             System.out.println("Comando non valido");
         }
     }
+
+    /**
+     * Metodo di conversione della lettera indicante la colonna, da String a int.
+     * @param letterString
+     * @return
+     */
     public int convertLetterStringToInt(final String letterString) {
         if (letterString.length() != 1) {
             throw new IllegalArgumentException("La stringa fornita non contiene una singola lettera.");

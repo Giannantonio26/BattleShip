@@ -8,8 +8,9 @@ import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 import it.uniba.app.entitaDiGioco.Partita;
 
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ComandoMostraLivello.
+ * Comando per mostrare i parametri del livello attuale.
  */
 public final class ComandoMostraLivello implements Comando {
     /**

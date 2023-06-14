@@ -7,8 +7,9 @@ package it.uniba.app.comandi;
 import it.uniba.app.Helper;
 
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ComandoHelp.
+ * Comando per mostrare l'help.
  */
 public final class ComandoHelp implements Comando {
     /**

@@ -6,15 +6,16 @@ package it.uniba.app.comandi;
 import java.util.Scanner;
 import it.uniba.app.entitaDiGioco.Partita;
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ExitCommand.
+ * Comando per uscire dal programma.
  */
 public class ExitCommand implements Comando {
 /**
 * Questo metodo statico si occupa di gestire l'interazione con l'utente
 * nel momento in cui abbia inserito il comando /esci,
 * prima di chiudere l'applicativo viene chiesta conferma.
-* //@throws java.lang.Exception
+* //@throws java.lang.RuntimeException
 */
     @Override
     public void esegui() {

@@ -5,8 +5,8 @@
 package it.uniba.app.entitaDiGioco;
 
 /**
- * Classe LivelloDiGioco.
- * @javadoc
+ * 'Entity'.
+ * Classe LivelloDiGioco contenente parametri della partita.
  * @author leonardo
  */
 public final class LivelloDiGioco {
@@ -23,6 +23,10 @@ public final class LivelloDiGioco {
 
     }
 
+    /**
+     * Costruttore del LivelloDiGioco passandogliene un altro.
+     * @param liv
+     */
     public LivelloDiGioco(final LivelloDiGioco liv) {
         this.tipoLivello = liv.tipoLivello;
         this.numeroTentativi = liv.numeroTentativi;
@@ -34,8 +38,8 @@ public final class LivelloDiGioco {
  */
 
 /**
- *
- * @param livello
+ * Costruttore che imposta soltanto la difficoltà.
+ * @param livello Livello di difficoltà
  */
     public LivelloDiGioco(final TipoLivello livello) {
         this.tipoLivello = livello;
@@ -53,6 +57,12 @@ public final class LivelloDiGioco {
                 break;
         }
     }
+
+    /**
+     * Costruttore usato per impostare anche il numero di tentativi specificato.
+     * @param livello Livello di difficoltà
+     * @param tentativi Numero tentativi massimi
+     */
     public LivelloDiGioco(final TipoLivello livello, final int tentativi) {
         this.tipoLivello = livello;
         this.numeroTentativi = tentativi;

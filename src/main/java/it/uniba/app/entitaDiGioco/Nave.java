@@ -8,10 +8,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
+ * 'Entity'.
  * @author leonardo
- * Classe Nave.
-@javadoc
-* */
+ * Classe Nave. Gli oggetti Nave vengono usati per popolare la griglia di gioco.
+ *
+*/
 public class Nave {
     static final String ROSSO = "\u001B[31m";
     static final String VERDE = "\u001B[32m";
@@ -93,7 +94,7 @@ public class Nave {
     }
 
 /**
- *
+ * Metodo per stampa di informazioni sulla nave.
  * @return
  */
     @Override
@@ -135,7 +136,8 @@ public class Nave {
     }
 
 /**
- *
+ * Metodo per la stampa di navi sotto forma di quadrati colorati, diversi per ogni
+ * tipo di nave.
  * @return Simbolo nave colorato.
  */
     public String stampaQuadratoColorato() {
@@ -158,15 +160,30 @@ public class Nave {
         }
         return quadrato;
     }
+
+    /**
+     * Metodo chiamato quando una nave viene colpita. Aumenta il contatore di colpi ricevuti e imposta
+     * la griglia colpita nell'omonimo StatoPosizione.
+     * @param chiave
+     */
     public final void colpita(final Coord chiave) {
         this.colpiRicevuti++;
         coordinate.put(chiave, StatoPosizione.COLPITA);
     }
 
+    /**
+     * Metodo usato per controllare se l'ultimo colpo arrivato alla nave la farà affondare.
+     * @return
+     */
     public final boolean isAffondata() {
         return colpiRicevuti == dimensione - 1;
     }
 
+    /**
+     * Metodo usato per controllare se la cella della nave è stata colpita.
+     * @param chiave
+     * @return
+     */
     public final boolean isColpita(final Coord chiave) {
         return coordinate.get(chiave) == StatoPosizione.COLPITA;
     }

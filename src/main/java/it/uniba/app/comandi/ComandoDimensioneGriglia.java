@@ -6,8 +6,9 @@ package it.uniba.app.comandi;
 import it.uniba.app.entitaDiGioco.Partita;
 
 /**
- *
+ * 'Control'.
  * @author leonardo
+ * Comando per impostare la dimensione della griglia in base a quella digitata dall'utente.
  */
 public final class ComandoDimensioneGriglia implements Comando {
      private int dimensioneCampo;

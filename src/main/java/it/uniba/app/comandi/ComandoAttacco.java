@@ -9,8 +9,9 @@ import it.uniba.app.entitaDiGioco.Coord;
 import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 import it.uniba.app.entitaDiGioco.StatoPosizione;
 /**
- *
+ * 'Control'.
  * @author leonardo
+ * Comando per dare un comando di attacco.
  */
 public final class ComandoAttacco implements Comando {
     private final int riga;

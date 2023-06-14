@@ -9,8 +9,9 @@ import it.uniba.app.entitaDiGioco.TipoLivello;
 import it.uniba.app.entitaDiGioco.LivelloDiGioco;
 
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ComandoLivello.
+ * Comando per impostare il livello di difficoltà ed i tentativi.
  */
 public final class ComandoLivello implements Comando {
     private final String nome;
