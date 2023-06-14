@@ -756,7 +756,15 @@ Il team si è coordinato utilizzando principalmente le piattaforme di comunicazi
 
 
 ![Immagine_Gruppo_WhatsApp](./img/ImmagineGruppoWhatsApp.png)
+							
+![Immagine_Gruppo_Discord](./img/img_discord.png)
 
+Il gruppo Whatsapp è stato utilizzato per comunicazioni più veloci ed informali, mentre sulla piattaforma Discord abbiamo utilizzato tre canali di comunicazione: 
+- Pianificazione issue
+- Assistenza
+- Analisi retrospettiva
+  
+Nel canale di comunicazione "pianificazione issue" abbiamo discusso sulla pianificazione e suddivisione degli issue con date di scadenza annesse, il canale "assistenza" è stato utilizzato da ognuno di noi per supportare uno o più dei nostri compagni nella risoluzione degli issue, mentre il canale "analisi retrospettiva" è stato utilizzato per analizzare il nostro stato d'animo e il modo in cui si è lavorato nello Sprint concluso.
 Il team durante lo svolgimento delle consegne ha perseguito una strategia precisa nell’organizzazione e nella suddivisione del lavoro.
 
 
