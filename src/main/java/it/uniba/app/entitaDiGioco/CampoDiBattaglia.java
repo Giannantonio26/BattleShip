@@ -20,6 +20,11 @@ public final class CampoDiBattaglia {
     private static LivelloDiGioco livelloPartita;
     private static int naviAffondate = 0;
     private static final int NUM = 10;
+    
+     private static int esemplari2 = 4;
+    private static int esemplari3 = 3;
+    private static int esemplari4 = 2;
+    private static int esemplari5 = 1;
 
     static final int MIN_COORD = 1;
     static final int DIMENSIONE2 = 2;
@@ -35,7 +40,7 @@ public final class CampoDiBattaglia {
      *
      * @param livello Livello di gioco
      */
-
+ 
     public CampoDiBattaglia(final TipoLivello livello, final int tentativi) {
         livelloPartita = new LivelloDiGioco(livello, tentativi);
     }
@@ -51,6 +56,43 @@ public final class CampoDiBattaglia {
     public static void setNaviAffondate(final int naviAff) {
         CampoDiBattaglia.naviAffondate = naviAff;
     }
+
+    public static int getEsemplari2() {
+        return esemplari2;
+    }
+
+    public static void setEsemplari2(int esemplari2) {
+        CampoDiBattaglia.esemplari2 = esemplari2;
+    }
+
+    public static int getEsemplari3() {
+        return esemplari3;
+    }
+
+    public static void setEsemplari3(int esemplari3) {
+        CampoDiBattaglia.esemplari3 = esemplari3;
+    }
+
+    public static int getEsemplari4() {
+        return esemplari4;
+    }
+
+    public static void setEsemplari4(int esemplari4) {
+        CampoDiBattaglia.esemplari4 = esemplari4;
+    }
+
+    public static int getEsemplari5() {
+        return esemplari5;
+    }
+
+    public static void setEsemplari5(int esemplari5) {
+        CampoDiBattaglia.esemplari5 = esemplari5;
+    }
+
+    public static List<Nave> getNAVI() {
+        return NAVI;
+    }
+
     public static void aggiungiNave(final Nave n) {
         NAVI.add(n);
     }
@@ -300,5 +342,9 @@ public final class CampoDiBattaglia {
         if (Partita.isTempoDiGiocoAttivo()) {
             Partita.setMinutiTrascorsi(0);
         }
+        esemplari2 = DIMENSIONE4;
+        esemplari3 = DIMENSIONE3;
+        esemplari4 = DIMENSIONE2;
+        esemplari5 = 1;   
     }
 }
