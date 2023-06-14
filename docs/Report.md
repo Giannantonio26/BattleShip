@@ -367,6 +367,22 @@ Per la realizzazione della battaglia navale si è fatto largo uso dei principi f
 <br>
 <br>
 
+# 6. Riepilogo dei test
+<br>
+
+![reportCheckstyleMain](./img/checkstyleSummary.png)
+![reportCheckstyleTest](./img/checkstyleTestSummary.png)
+![reportPMD](./img/pmdReport.png)
+![reportJUnit](./img/testSummary.png)
+<br>
+Per la realizzazione dei casi di test si è fatto uso della suddivisione in classi di equivalenza, ad esempio testando la corretta elaborazione di un singolo input utente valido, per poter così validarne il resto automaticamente.
+Si è deciso di non scrivere casi di test per metodi get/set banali, il cui unico compito è impostare uno o due parametri.
+Sono invece stati scritti casi di test per quei metodi che impostano diversi parametri di gioco divisi tra più classi, al fine di verificarne la corretta impostazione a seguito di relative chiamate a metodi.
+Tutto sommato si è raggiunta una discreta copertura del codice e si è assicurato il corretto funzionamento del programma e dell'interazione con l'utente.
+
+---
+<br>
+<br>
 
 # 7. Manuale utente
 
