@@ -17,9 +17,9 @@ public final class ComandoLivello implements Comando {
     static final int FACILE = 50;
     static final int MEDIO = 30;
     static final int DIFFICILE = 10;
-    private static int tentativiFacile = FACILE;
-    private static int tentativiMedio = MEDIO;
-    private static int tentativiDifficile = DIFFICILE;
+    private int tentativiFacile = FACILE;
+    private int tentativiMedio = MEDIO;
+    private int tentativiDifficile = DIFFICILE;
 
 /**
  *
