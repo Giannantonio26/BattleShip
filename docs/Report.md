@@ -380,6 +380,9 @@ Si è deciso di non scrivere casi di test per metodi get/set banali, il cui unic
 Sono invece stati scritti casi di test per quei metodi che impostano diversi parametri di gioco divisi tra più classi, al fine di verificarne la corretta impostazione a seguito di relative chiamate a metodi.
 Tutto sommato si è raggiunta una discreta copertura del codice e si è assicurato il corretto funzionamento del programma e dell'interazione con l'utente.
 
+Si noti che PMD restituisce una serie di errori di tipo JUnitTestContainsTooManyAsserts. Come già detto nel canale Assistenza del Microsoft Team, riteniamo di aver fatto un uso ragionevole di asserzioni multiple usando assertAll
+che ad oggi non fa scattare più questo tipo di errore.
+
 ---
 <br>
 <br>
