@@ -7,8 +7,9 @@ package it.uniba.app.entitaDiGioco;
 import java.util.Objects;
 
 /**
+ * 'Entity'.
  * @author leonardo
- * Classe Coord.
+ * Classe Coord i cui oggetti sono usati come parti delle navi.
  */
 public final class Coord {
     private int x;

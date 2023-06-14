@@ -9,8 +9,9 @@ import it.uniba.app.entitaDiGioco.Nave;
 import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ComandoMostraNavi.
+ * Comando per mostrare le navi ancora in gioco.
  */
 public final class ComandoMostraNavi implements Comando {
 

@@ -6,7 +6,8 @@ package it.uniba.app.comandi;
 
 import it.uniba.app.entitaDiGioco.Partita;
 /**
- *
+ * 'Control'.
+ * Comando per impostare il tempo di gioco.
  * @author Giannantonio
  */
 public final class ComandoTempo implements Comando {

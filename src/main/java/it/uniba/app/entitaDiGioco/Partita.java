@@ -3,7 +3,9 @@ package it.uniba.app.entitaDiGioco;
 import java.util.List;
 
 /**
- *  Classe partita.
+ * 'Entity'.
+ *  Classe Partita contenente i parametri della partita in corso, come dimensione griglia,
+ * numero tentativi, campo di battaglia, tempo di gioco e difficoltà.
  */
 public final class Partita {
     private static final int NUMERO_TENTATIVI = 50;

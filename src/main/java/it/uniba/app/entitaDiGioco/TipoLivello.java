@@ -6,7 +6,7 @@ package it.uniba.app.entitaDiGioco;
 
 /**
   * @author Giannantonio
-  * Tipo enumerativo per comandoGioca.
+  * Tipo enumerativo per comandoGioca, rappresenta i livelli di difficoltà.
  */
 public enum TipoLivello {
       FACILE,

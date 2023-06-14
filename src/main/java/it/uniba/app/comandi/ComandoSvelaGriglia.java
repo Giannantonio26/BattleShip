@@ -7,8 +7,9 @@ import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 
 /**
+ * 'Control'.
  * @author leonardo
- * Classe ComandoSvelaGriglia.
+ * Comando per svelare la griglia con le navi piazzate.
  */
 public final class ComandoSvelaGriglia implements Comando {
     @Override

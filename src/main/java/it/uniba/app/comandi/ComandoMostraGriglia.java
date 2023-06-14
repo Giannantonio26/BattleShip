@@ -7,7 +7,8 @@ import it.uniba.app.entitaDiGioco.CampoDiBattaglia;
 import it.uniba.app.entitaDiGioco.Partita;
 
 /**
- *
+ * 'Control'.
+ * Comando per mostrare la griglia di gioco aggiornata.
  * @author leonardo
  */
 public final class ComandoMostraGriglia implements Comando {

@@ -5,8 +5,8 @@
 package it.uniba.app.entitaDiGioco;
 
 /**
- * Classe LivelloDiGioco.
- * @javadoc
+ * 'Entity'.
+ * Classe LivelloDiGioco contenente parametri della partita.
  * @author leonardo
  */
 public final class LivelloDiGioco {

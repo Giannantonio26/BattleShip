@@ -6,7 +6,7 @@ package it.uniba.app.entitaDiGioco;
 
 /**
  * @author leonardo
- * Enum StatoPosizione.
+ * Enum StatoPosizione per ogni cella delle navi.
  */
 public enum StatoPosizione {
     COLPITA,

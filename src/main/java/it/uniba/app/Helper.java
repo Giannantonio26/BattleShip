@@ -1,7 +1,8 @@
 package it.uniba.app;
 
 /**
- * Classe Helper.
+ * 'Boundary'.
+ * Classe Helper contenente il testo di tutti i comandi.
  */
 
 public final class Helper {

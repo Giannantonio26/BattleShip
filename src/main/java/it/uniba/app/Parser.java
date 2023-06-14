@@ -20,6 +20,7 @@ import it.uniba.app.entitaDiGioco.Partita;
 import it.uniba.app.comandi.ComandoMostraTentativi;
 
 /**
+ * 'Control'.
  * Classe Parser per elaborare comandi ricevuti.
  */
 public final class Parser {

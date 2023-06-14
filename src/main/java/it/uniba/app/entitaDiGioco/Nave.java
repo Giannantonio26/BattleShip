@@ -8,10 +8,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
+ * 'Entity'.
  * @author leonardo
- * Classe Nave.
-@javadoc
-* */
+ * Classe Nave. Gli oggetti Nave vengono usati per popolare la griglia di gioco.
+ *
+*/
 public class Nave {
     static final String ROSSO = "\u001B[31m";
     static final String VERDE = "\u001B[32m";

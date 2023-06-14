@@ -8,8 +8,9 @@ import it.uniba.app.entitaDiGioco.Partita;
 import java.util.Scanner;
 
 /**
- *
+ * 'Control'.
  * @author leonardo
+ * Comando per abbandonare la partita in corso.
  */
 public final class ComandoAbbandona implements Comando {
     @Override

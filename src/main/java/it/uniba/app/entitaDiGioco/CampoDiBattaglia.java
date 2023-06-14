@@ -10,8 +10,13 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
+ * 'Entity'.
  * @author leonardo
- * Classe CampoDiBattaglia.
+ * Classe CampoDiBattaglia, contiene la griglia di gioco, la lista delle navi,
+ * il livello della partita con relativi parametri.
+ * Da questa classe parte l'inizio di una nuova partita con l'inizializzazione del campo,
+ * il popolamento con le navi.
+ * Contiene inoltre metodi per mostrare a schermo la griglia di gioco.
  */
 public final class CampoDiBattaglia {
     private static final Map<Coord, Nave> CAMPO_BATTAGLIA = new HashMap<>();
