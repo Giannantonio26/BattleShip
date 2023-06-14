@@ -268,6 +268,15 @@ Dopo aver eseguito il comando docker pull copiandolo da GitHub Packages, Il coma
 
 ![diagramma_package](./img/diagramma_package.png)
 
+<br>
+<br>
+
+## Diagramma dei componenti 
+ 
+ <br>
+
+Volutamente è stato scelto di non includere in questa relazione tecnica un diagramma dei componenti, poichè la battaglia navale rappresenta un sistema troppo poco complesso per richiederne uno.
+
 ---
 
 <br>
